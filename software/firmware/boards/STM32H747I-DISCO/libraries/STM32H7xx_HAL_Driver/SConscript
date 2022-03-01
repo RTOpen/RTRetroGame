@@ -1,0 +1,131 @@
+import rtconfig
+from building import *
+
+# get current directory
+cwd = GetCurrentDir()
+
+# The set of source files associated with this SConscript file.
+
+src = Split('''
+Src/stm32h7xx_hal.c
+Src/stm32h7xx_hal_comp.c
+Src/stm32h7xx_hal_cortex.c
+Src/stm32h7xx_hal_crc.c
+Src/stm32h7xx_hal_crc_ex.c
+Src/stm32h7xx_hal_cryp.c
+Src/stm32h7xx_hal_cryp_ex.c
+Src/stm32h7xx_hal_dma.c
+Src/stm32h7xx_hal_mdma.c
+Src/stm32h7xx_hal_dma_ex.c
+Src/stm32h7xx_hal_exti.c
+Src/stm32h7xx_hal_pwr.c
+Src/stm32h7xx_hal_pwr_ex.c
+Src/stm32h7xx_hal_rcc.c
+Src/stm32h7xx_hal_rcc_ex.c
+Src/stm32h7xx_hal_rng.c
+Src/stm32h7xx_hal_gpio.c
+Src/stm32h7xx_ll_utils.c
+Src/stm32h7xx_ll_adc.c
+Src/stm32h7xx_ll_comp.c
+Src/stm32h7xx_ll_crc.c
+Src/stm32h7xx_ll_crs.c
+Src/stm32h7xx_ll_dac.c
+Src/stm32h7xx_ll_dma.c
+Src/stm32h7xx_ll_exti.c
+Src/stm32h7xx_ll_fmc.c
+Src/stm32h7xx_ll_gpio.c
+Src/stm32h7xx_ll_hrtim.c
+Src/stm32h7xx_ll_i2c.c
+Src/stm32h7xx_ll_lptim.c
+Src/stm32h7xx_ll_lpuart.c
+Src/stm32h7xx_ll_opamp.c
+Src/stm32h7xx_ll_pwr.c
+Src/stm32h7xx_ll_rcc.c
+Src/stm32h7xx_ll_rng.c
+Src/stm32h7xx_ll_rtc.c
+Src/stm32h7xx_ll_spi.c
+Src/stm32h7xx_ll_tim.c
+Src/stm32h7xx_ll_usart.c
+''')
+
+if GetDepend(['RT_USING_SERIAL']):
+    src += ['Src/stm32h7xx_hal_uart.c']
+    src += ['Src/stm32h7xx_hal_uart_ex.c']
+    src += ['Src/stm32h7xx_hal_usart.c']
+    src += ['Src/stm32h7xx_hal_usart_ex.c']
+
+if GetDepend(['RT_USING_I2C']):
+    src += ['Src/stm32h7xx_hal_i2c.c']
+    src += ['Src/stm32h7xx_hal_i2c_ex.c']
+
+if GetDepend(['RT_USING_SPI']):
+    src += ['Src/stm32h7xx_hal_spi.c']
+    src += ['Src/stm32h7xx_hal_spi_ex.c']
+    src += ['Src/stm32h7xx_hal_qspi.c']
+
+if GetDepend(['RT_USING_USB_HOST']) or GetDepend(['RT_USING_USB_DEVICE']):
+    src += ['Src/stm32h7xx_hal_pcd.c']
+    src += ['Src/stm32h7xx_hal_pcd_ex.c']
+    src += ['Src/stm32h7xx_ll_usb.c']
+
+if GetDepend(['RT_USING_CAN']):
+    src += ['Src/stm32g4xx_hal_can.c']
+
+if GetDepend(['RT_USING_HWTIMER']) or GetDepend(['RT_USING_PWM']):
+    src += ['Src/stm32h7xx_hal_lptim.c']
+    src += ['Src/stm32h7xx_hal_tim.c']
+    src += ['Src/stm32h7xx_hal_tim_ex.c']
+
+if GetDepend(['RT_USING_ADC']):
+    src += ['Src/stm32h7xx_hal_adc.c']
+    src += ['Src/stm32h7xx_hal_adc_ex.c']
+
+if GetDepend(['RT_USING_RTC']):
+    src += ['Src/stm32h7xx_hal_rtc.c']
+    src += ['Src/stm32h7xx_hal_rtc_ex.c']
+
+if GetDepend(['RT_USING_WDT']):
+    src += ['Src/stm32h7xx_hal_iwdg.c']
+    src += ['Src/stm32h7xx_hal_wwdg.c']
+
+if GetDepend(['RT_USING_AUDIO']):
+    src += ['Src/stm32h7xx_hal_sai.c']
+    src += ['Src/stm32h7xx_hal_sai_ex.c']
+
+if GetDepend(['RT_USING_MTD_NOR']):
+    src += ['Src/stm32h7xx_hal_nor.c']
+
+if GetDepend(['RT_USING_MTD_NAND']):
+    src += ['Src/stm32h7xx_hal_nand.c']
+
+if GetDepend(['RT_USING_PM']):
+    src += ['Src/stm32h7xx_hal_lptim.c']
+
+if GetDepend(['BSP_USING_ON_CHIP_FLASH']):
+    src += ['Src/stm32h7xx_hal_flash.c']
+    src += ['Src/stm32h7xx_hal_flash_ex.c']
+    src += ['Src/stm32h7xx_hal_flash_ramfunc.c']
+
+
+if GetDepend(['BSP_USING_SRAM']):
+    src += ['Src/stm32h7xx_hal_sram.c']
+
+if GetDepend(['BSP_USING_SDRAM']):
+    src += ['Src/stm32h7xx_hal_sdram.c']
+
+if GetDepend(['BSP_USING_LCD']):
+    src += ['Src/stm32h7xx_hal_ltdc.c']
+    src += ['Src/stm32h7xx_hal_ltdc_ex.c']
+
+if GetDepend(['BSP_USING_DSI']):
+    src += ['Src/stm32h7xx_hal_dsi.c']
+
+if GetDepend(['BSP_USING_OSPI']):
+    src += ['Src/stm32h7xx_hal_ospi.c']
+
+path = [cwd + '/Inc']
+
+CPPDEFINES = ['USE_HAL_DRIVER','USE_FULL_LL_DRIVER']
+group = DefineGroup('STM32H7xx_HAL_Driver', src, depend = [''], CPPPATH = path, CPPDEFINES = CPPDEFINES)
+
+Return('group')

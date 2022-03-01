@@ -1,0 +1,19 @@
+import rtconfig
+from building import *
+
+# get current directory
+cwd = GetCurrentDir()
+
+# The set of source files associated with this SConscript file.
+
+src = Split('''
+Device/ST/STM32H7xx/Source/Templates/system_stm32h7xx.c
+''')
+
+
+path = [cwd + '/Device/ST/STM32H7xx/Include',
+    cwd + '/Include']
+
+group = DefineGroup('CMSIS', src, depend = [''], CPPPATH = path)
+
+Return('group')

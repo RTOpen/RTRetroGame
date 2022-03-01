@@ -1,0 +1,4 @@
+h
+loadfile ./rtthread.bin 0x08000000
+r
+qc
