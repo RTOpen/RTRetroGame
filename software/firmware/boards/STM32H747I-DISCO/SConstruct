@@ -59,8 +59,5 @@ objs.extend(SConscript(os.path.join(libraries_path_prefix, stm32_library, 'SCons
 # include CMSIS
 objs.extend(SConscript(os.path.join(libraries_path_prefix, 'CMSIS', 'SConscript'), variant_dir = bsp_vdir + '/CMSIS', duplicate = 0))
 
-# include Drivers
-objs.extend(SConscript(os.path.join(SDK_ROOT, 'drivers', 'SConscript'), variant_dir = bsp_vdir + '/drivers', duplicate = 0))
-
 # make a building
 DoBuilding(TARGET, objs)
