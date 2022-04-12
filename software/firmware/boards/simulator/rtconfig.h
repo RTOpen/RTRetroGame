@@ -101,7 +101,6 @@
 
 /* POSIX (Portable Operating System Interface) layer */
 
-#define RT_USING_POSIX_FS
 
 /* Interprocess Communication (IPC) */
 
@@ -138,8 +137,6 @@
 
 /* language packages */
 
-#define PKG_USING_PIKASCRIPT
-#define PKG_USING_PIKASCRIPT_V020
 
 /* multimedia packages */
 
@@ -176,7 +173,6 @@
 /* entertainment: terminal games and other interesting software packages */
 
 #define SOC_SIMULATOR
-#define RT_USING_DFS_WINSHAREDIR
 #define BSP_USING_LVGL
 #define BSP_LCD_WIDTH 800
 #define BSP_LCD_HEIGHT 480
