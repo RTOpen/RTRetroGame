@@ -144,7 +144,7 @@ menu "On-chip Peripheral Drivers"
         default n
 
 
-    source "../libraries/HAL_Drivers/Kconfig"
+    source "./drivers/Kconfig"
 
 endmenu
 

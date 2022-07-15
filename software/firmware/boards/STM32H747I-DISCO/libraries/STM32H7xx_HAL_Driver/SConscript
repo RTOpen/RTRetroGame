@@ -104,7 +104,6 @@ if GetDepend(['RT_USING_PM']):
 if GetDepend(['BSP_USING_ON_CHIP_FLASH']):
     src += ['Src/stm32h7xx_hal_flash.c']
     src += ['Src/stm32h7xx_hal_flash_ex.c']
-    src += ['Src/stm32h7xx_hal_flash_ramfunc.c']
 
 
 if GetDepend(['BSP_USING_SRAM']):
