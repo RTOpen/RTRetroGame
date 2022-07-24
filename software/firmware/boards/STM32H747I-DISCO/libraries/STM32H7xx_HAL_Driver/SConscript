@@ -69,7 +69,7 @@ if GetDepend(['RT_USING_USB_HOST']) or GetDepend(['RT_USING_USB_DEVICE']):
     src += ['Src/stm32h7xx_ll_usb.c']
 
 if GetDepend(['RT_USING_CAN']):
-    src += ['Src/stm32g4xx_hal_can.c']
+    src += ['Src/stm32H7xx_hal_can.c']
 
 if GetDepend(['RT_USING_HWTIMER']) or GetDepend(['RT_USING_PWM']):
     src += ['Src/stm32h7xx_hal_lptim.c']
@@ -115,9 +115,8 @@ if GetDepend(['BSP_USING_SDRAM']):
 if GetDepend(['BSP_USING_LCD']):
     src += ['Src/stm32h7xx_hal_ltdc.c']
     src += ['Src/stm32h7xx_hal_ltdc_ex.c']
-
-if GetDepend(['BSP_USING_DSI']):
     src += ['Src/stm32h7xx_hal_dsi.c']
+
 
 if GetDepend(['BSP_USING_OSPI']):
     src += ['Src/stm32h7xx_hal_ospi.c']

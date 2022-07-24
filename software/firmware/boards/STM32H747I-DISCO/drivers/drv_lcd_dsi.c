@@ -2,7 +2,7 @@
 #include <rtdevice.h>
 #include <board.h>
 
-#ifdef BSP_USING_DSI
+#ifdef BSP_USING_LCD
 #include <string.h>
 #include "hw_config.h"
 #include "drv_gpio.h"
@@ -627,7 +627,6 @@ void HAL_DSI_EndOfRefreshCallback(DSI_HandleTypeDef *hdsi)
 {
     m_refresh_flag = 0;
     m_refreshing = 0;
-    //rtgui_send_vsync();
 }
 
 #ifdef RT_USING_DEVICE_OPS
