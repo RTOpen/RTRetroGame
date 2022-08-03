@@ -1,0 +1,47 @@
+import os
+import rtconfig
+from building import *
+
+cwd = GetCurrentDir()
+
+# add general drivers
+src = Split('''
+drv_cache.c
+drv_led.c
+''')
+
+if GetDepend(['BSP_USING_GPIO']):
+    src += ['drv_gpio.c']
+
+if GetDepend(['BSP_USING_UART']):
+    src += ['drv_usart.c']
+
+if GetDepend(['BSP_USING_SDRAM']):
+    src += ['drv_sdram.c']
+    src += ['is42s32800j.c']
+
+if GetDepend(['BSP_USING_SPI']):
+    src += ['drv_spi.c']
+
+if GetDepend(['BSP_USING_QSPI']):
+    src += ['drv_qspi.c']
+
+if GetDepend(['BSP_USING_SDIO']):
+    src += ['drv_sdio.c']
+
+if GetDepend(['BSP_USING_LCD']):
+    src += ['drv_lcd_dsi.c']
+    src += ['otm8009a.c']
+
+if GetDepend(['BSP_USING_ETH']):
+    src += ['drv_eth.c']
+
+if GetDepend(['BSP_USING_USBD']):
+    src += ['drv_usbd.c']
+
+path = [cwd]
+
+
+group = DefineGroup('Drivers', src, depend = [''], CPPPATH = path)
+
+Return('group')

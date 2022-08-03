@@ -9,7 +9,7 @@
   * @{
   */
 
-
+static uint8_t IsInitialized = 0;
 /** @defgroup FT6X06_Private_Function_Prototypes FT6X06 Private Function Prototypes
   * @{
   */
@@ -52,25 +52,25 @@ int32_t FT6X06_GetCapabilities(FT6X06_Capabilities_t *Capabilities)
   * @param  pObj Component object pointer
   * @retval Component status
   */
-int32_t FT6X06_Init(FT6X06_Object_t *pObj)
+int32_t FT6X06_Init(void)
 {
   int32_t ret = FT6X06_OK;
   
-  if(pObj->IsInitialized == 0U)
+  if(IsInitialized == 0U)
   {    
     /* Initialize IO BUS layer */
-    pObj->IO.Init();
+
     
 #if (FT6X06_AUTO_CALIBRATION_ENABLED == 1)
     /* Hw Calibration sequence start : should be done once after each power up */
     /* This is called internal calibration of the touch screen                 */
-    ret += FT6X06_TS_Calibration(pObj);
+    ret += FT6X06_TS_Calibration();
 #endif /* (FT6X06_AUTO_CALIBRATION_ENABLED == 1) */    
     /* By default set FT6X06 IC in Polling mode : no INT generation on FT6X06 for new touch available */
     /* Note TS_INT is active low                                                                      */
     ret += FT6X06_DisableIT();
     
-    pObj->IsInitialized = 1;
+    IsInitialized = 1;
   }
   
   if(ret != FT6X06_OK)

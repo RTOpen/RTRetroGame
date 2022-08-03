@@ -50,3 +50,4 @@ modules.order
 Module.symvers
 Mkfile.old
 dkms.conf
+/software/firmware/boards/STM32H747I-DISCO/build/keil/Obj
