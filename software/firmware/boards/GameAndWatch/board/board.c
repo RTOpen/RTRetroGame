@@ -20,42 +20,43 @@
 
 /**
   * @brief  System Clock Configuration
-  *         The system Clock is configured as follow : 
-  *            System Clock source            = PLL (HSE BYPASS)
-  *            SYSCLK(Hz)                     = 400000000 (CPU Clock)
-  *            HCLK(Hz)                       = 200000000 (AXI and AHBs Clock)
-  *            AHB Prescaler                  = 2
-  *            D1 APB3 Prescaler              = 2 (APB3 Clock  100MHz)
-  *            D2 APB1 Prescaler              = 2 (APB1 Clock  100MHz)
-  *            D2 APB2 Prescaler              = 2 (APB2 Clock  100MHz)
-  *            D3 APB4 Prescaler              = 2 (APB4 Clock  100MHz)
-  *            HSE Frequency(Hz)              = 25000000
-  *            PLL_M                          = 5
-  *            PLL_N                          = 160
+  *         The system Clock is configured as follow :
+  *            System Clock source            = PLL (HSE)
+  *            SYSCLK(Hz)                     = 280000000 (CPU Clock)
+  *            HCLK(Hz)                       = 280000000 (Bus matrix and AHBs Clock)
+  *            AHB Prescaler                  = 1
+  *            CD APB3 Prescaler              = 2 (APB3 Clock  140MHz)
+  *            CD APB1 Prescaler              = 2 (APB1 Clock  140MHz)
+  *            CD APB2 Prescaler              = 2 (APB2 Clock  140MHz)
+  *            SRD APB4 Prescaler             = 2 (APB4 Clock  140MHz)
+  *            HSE Frequency(Hz)              = 24000000
+  *            PLL_M                          = 12
+  *            PLL_N                          = 280
   *            PLL_P                          = 2
-  *            PLL_Q                          = 4
+  *            PLL_Q                          = 2
   *            PLL_R                          = 2
   *            VDD(V)                         = 3.3
-  *            Flash Latency(WS)              = 4
+  *            Flash Latency(WS)              = 6
   * @param  None
   * @retval None
   */
-static void SystemClock_Config(void)
+void SystemClock_Config(void)
 {
-  /* Power configuration */
+  /* Power Configuration */
   LL_PWR_ConfigSupply(LL_PWR_DIRECT_SMPS_SUPPLY);
-  LL_PWR_SetRegulVoltageScaling(LL_PWR_REGU_VOLTAGE_SCALE1);
-  while(LL_PWR_IsActiveFlag_VOS() == 0) {}
-  
+  LL_PWR_SetRegulVoltageScaling(LL_PWR_REGU_VOLTAGE_SCALE0);
+  while (LL_PWR_IsActiveFlag_VOS() == 0)
+  {
+  }
+
   /* Enable HSE oscillator */
-	//LL_RCC_HSE_EnableBypass();
   LL_RCC_HSE_Enable();
   while(LL_RCC_HSE_IsReady() != 1)
   {
-  };
+  }
 
   /* Set FLASH latency */
-  LL_FLASH_SetLatency(LL_FLASH_LATENCY_4);
+  LL_FLASH_SetLatency(LL_FLASH_LATENCY_6);
 
   /* Main PLL configuration and activation */
   LL_RCC_PLL_SetSource(LL_RCC_PLLSOURCE_HSE);
@@ -63,21 +64,22 @@ static void SystemClock_Config(void)
   LL_RCC_PLL1Q_Enable();
   LL_RCC_PLL1R_Enable();
   LL_RCC_PLL1FRACN_Disable();
-  LL_RCC_PLL1_SetVCOInputRange(LL_RCC_PLLINPUTRANGE_2_4);
+  LL_RCC_PLL1_SetVCOInputRange(LL_RCC_PLLINPUTRANGE_1_2);
   LL_RCC_PLL1_SetVCOOutputRange(LL_RCC_PLLVCORANGE_WIDE);
-  LL_RCC_PLL1_SetM(5);
-  LL_RCC_PLL1_SetN(160);
+  LL_RCC_PLL1_SetM(12);
+  LL_RCC_PLL1_SetN(280);
   LL_RCC_PLL1_SetP(2);
-  LL_RCC_PLL1_SetQ(4);
+  LL_RCC_PLL1_SetQ(2);
   LL_RCC_PLL1_SetR(2);
   LL_RCC_PLL1_Enable();
+
   while(LL_RCC_PLL1_IsReady() != 1)
   {
-  };
+  }
 
   /* Set Sys & AHB & APB1 & APB2 & APB4  prescaler */
   LL_RCC_SetSysPrescaler(LL_RCC_SYSCLK_DIV_1);
-  LL_RCC_SetAHBPrescaler(LL_RCC_AHB_DIV_2);
+  LL_RCC_SetAHBPrescaler(LL_RCC_AHB_DIV_1);
   LL_RCC_SetAPB1Prescaler(LL_RCC_APB1_DIV_2);
   LL_RCC_SetAPB2Prescaler(LL_RCC_APB2_DIV_2);
   LL_RCC_SetAPB4Prescaler(LL_RCC_APB4_DIV_2);
@@ -86,48 +88,10 @@ static void SystemClock_Config(void)
   LL_RCC_SetSysClkSource(LL_RCC_SYS_CLKSOURCE_PLL1);
   while(LL_RCC_GetSysClkSource() != LL_RCC_SYS_CLKSOURCE_STATUS_PLL1)
   {
-  };
+  }
 
-	/* Update CMSIS variable (which can be updated also through SystemCoreClockUpdate function) */
-  SystemCoreClock = 400000000;
-	
-  /* Set systick to 1ms */
-  SysTick_Config(SystemCoreClock / 1000);
-
-	/* Select clock source for RNG peripheral */
-  LL_RCC_SetRNGClockSource(LL_RCC_RNG_CLKSOURCE_PLL1Q);
-
-  /* PLL3 configuration and activation */
-  LL_RCC_PLL3P_Enable();
-  LL_RCC_PLL3Q_Enable();
-  LL_RCC_PLL3R_Enable();
-	LL_RCC_PLL3FRACN_Disable();
-  LL_RCC_PLL3_SetVCOInputRange(LL_RCC_PLLINPUTRANGE_2_4);
-  LL_RCC_PLL3_SetVCOOutputRange(LL_RCC_PLLVCORANGE_WIDE);
-  LL_RCC_PLL3_SetM(25);
-  LL_RCC_PLL3_SetN(336);
-  LL_RCC_PLL3_SetP(2);
-  LL_RCC_PLL3_SetQ(7);
-  LL_RCC_PLL3_SetR(2);
-  LL_RCC_PLL3_Enable();
-  while(LL_RCC_PLL3_IsReady() != 1)
-  {
-  };
-  
-	/* Select clock source for USB peripheral */
-	LL_RCC_SetUSBClockSource(LL_RCC_USB_CLKSOURCE_PLL3Q);
-  /* Select clock source for SDMMC peripheral */
-  LL_RCC_SetSDMMCClockSource(LL_RCC_SDMMC_CLKSOURCE_PLL1Q);
-  /* Enable CSI clock */
-  LL_RCC_CSI_Enable();
-  /* Enable SYSCFG clock */
-  LL_APB4_GRP1_EnableClock(LL_APB4_GRP1_PERIPH_SYSCFG) ;
-	
-	/* Enables the I/O Compensation Cell */    
-	LL_SYSCFG_EnableCompensationCell();
-		
-	/* Enable the CRC Module */
-	LL_AHB4_GRP1_EnableClock(LL_AHB4_GRP1_PERIPH_CRC); 
+  /* Update CMSIS variable (which can be updated also through SystemCoreClockUpdate function) */
+  SystemCoreClock = 280000000;
 }
 
 /**
