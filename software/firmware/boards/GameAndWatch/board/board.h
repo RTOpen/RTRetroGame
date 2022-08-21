@@ -12,7 +12,7 @@
 #include "rtthread.h"
 #include "stm32h7xx.h"
 #include "stm32h7xx_hal.h"
-#include "drv_sdram.h"
+
 /* board configuration */
 #define HEAP_BEGIN       0x24000000
 

@@ -18,15 +18,15 @@ path = [cwd]
 startup_path_prefix = SDK_LIB
 
 if rtconfig.CROSS_TOOL == 'gcc':
-    src += [startup_path_prefix + '/CMSIS/Device/ST/STM32H7xx/Source/Templates/gcc/startup_stm32h747xx.s']
+    src += [startup_path_prefix + '/CMSIS/Device/ST/STM32H7xx/Source/Templates/gcc/startup_stm32h7b0xx.s']
 elif rtconfig.CROSS_TOOL == 'keil':
-    src += [startup_path_prefix + '/CMSIS/Device/ST/STM32H7xx/Source/Templates/arm/startup_stm32h747xx.s']
+    src += [startup_path_prefix + '/CMSIS/Device/ST/STM32H7xx/Source/Templates/arm/startup_stm32h7b0xx.s']
 elif rtconfig.CROSS_TOOL == 'iar':
-    src += [startup_path_prefix + '/CMSIS/Device/ST/STM32H7xx/Source/Templates/iar/startup_stm32h747xx.s']
+    src += [startup_path_prefix + '/CMSIS/Device/ST/STM32H7xx/Source/Templates/iar/startup_stm32h7b0xx.s']
 
 # STM32H743xx || STM32H750xx || STM32F753xx
 # You can select chips from the list above
-CPPDEFINES = ['STM32H747xx','CORE_CM7']
+CPPDEFINES = ['STM32H7B0xx','CORE_CM7']
 group = DefineGroup('Drivers', src, depend = [''], CPPPATH = path, CPPDEFINES = CPPDEFINES)
 
 Return('group')
