@@ -11,7 +11,6 @@
     <ProjectGuid>{4A6BF1B1-C645-4BAD-A9B7-7B6E3DB67B2C}</ProjectGuid>
     <RootNamespace>vs2008</RootNamespace>
     <Keyword>Win32Proj</Keyword>
-    <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
@@ -37,8 +36,8 @@
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
       <Optimization>Disabled</Optimization>
-      <AdditionalIncludeDirectories>.;..\..\rt-thread\components\dfs\include;..\..\rt-thread\components\drivers\include;..\..\rt-thread\components\finsh;..\..\rt-thread\components\libc\compilers\common;..\..\rt-thread\components\libc\compilers\common\extension;..\..\rt-thread\components\libc\posix\io\poll;..\..\rt-thread\components\libc\posix\io\stdio;..\..\rt-thread\components\libc\posix\ipc;..\..\rt-thread\include;..\..\rt-thread\libcpu\sim\win32;applications;applications\lvgl;drivers;packages\LVGL-latest\demos;packages\LVGL-latest\demos\benchmark;packages\LVGL-latest\demos\benchmark\assets;packages\LVGL-latest\demos\keypad_encoder;packages\LVGL-latest\demos\music;packages\LVGL-latest\demos\music\assets;packages\LVGL-latest\demos\stress;packages\LVGL-latest\demos\stress\assets;packages\LVGL-latest\demos\widgets;packages\LVGL-latest\demos\widgets\assets;packages\LVGL-latest\env_support\rt-thread;packages\LVGL-latest\src;packages\LVGL-latest\src\core;packages\LVGL-latest\src\draw;packages\LVGL-latest\src\draw\nxp_pxp;packages\LVGL-latest\src\draw\nxp_vglite;packages\LVGL-latest\src\draw\sdl;packages\LVGL-latest\src\draw\stm32_dma2d;packages\LVGL-latest\src\draw\sw;packages\LVGL-latest\src\extra;packages\LVGL-latest\src\extra\layouts;packages\LVGL-latest\src\extra\layouts\flex;packages\LVGL-latest\src\extra\layouts\grid;packages\LVGL-latest\src\extra\libs;packages\LVGL-latest\src\extra\libs\bmp;packages\LVGL-latest\src\extra\libs\ffmpeg;packages\LVGL-latest\src\extra\libs\freetype;packages\LVGL-latest\src\extra\libs\fsdrv;packages\LVGL-latest\src\extra\libs\gif;packages\LVGL-latest\src\extra\libs\png;packages\LVGL-latest\src\extra\libs\qrcode;packages\LVGL-latest\src\extra\libs\rlottie;packages\LVGL-latest\src\extra\libs\sjpg;packages\LVGL-latest\src\extra\others;packages\LVGL-latest\src\extra\others\fragment;packages\LVGL-latest\src\extra\others\gridnav;packages\LVGL-latest\src\extra\others\monkey;packages\LVGL-latest\src\extra\others\snapshot;packages\LVGL-latest\src\extra\themes;packages\LVGL-latest\src\extra\themes\basic;packages\LVGL-latest\src\extra\themes\default;packages\LVGL-latest\src\extra\themes\mono;packages\LVGL-latest\src\extra\widgets;packages\LVGL-latest\src\extra\widgets\animimg;packages\LVGL-latest\src\extra\widgets\calendar;packages\LVGL-latest\src\extra\widgets\chart;packages\LVGL-latest\src\extra\widgets\colorwheel;packages\LVGL-latest\src\extra\widgets\imgbtn;packages\LVGL-latest\src\extra\widgets\keyboard;packages\LVGL-latest\src\extra\widgets\led;packages\LVGL-latest\src\extra\widgets\list;packages\LVGL-latest\src\extra\widgets\menu;packages\LVGL-latest\src\extra\widgets\meter;packages\LVGL-latest\src\extra\widgets\msgbox;packages\LVGL-latest\src\extra\widgets\span;packages\LVGL-latest\src\extra\widgets\spinbox;packages\LVGL-latest\src\extra\widgets\spinner;packages\LVGL-latest\src\extra\widgets\tabview;packages\LVGL-latest\src\extra\widgets\tileview;packages\LVGL-latest\src\extra\widgets\win;packages\LVGL-latest\src\font;packages\LVGL-latest\src\gpu;packages\LVGL-latest\src\hal;packages\LVGL-latest\src\misc;packages\LVGL-latest\src\widgets;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
-      <PreprocessorDefinitions>__RTTHREAD__;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>.;..\..\rt-thread\components\dfs\filesystems\devfs;..\..\rt-thread\components\dfs\filesystems\elmfat;..\..\rt-thread\components\dfs\include;..\..\rt-thread\components\drivers\include;..\..\rt-thread\components\finsh;..\..\rt-thread\components\libc\compilers\common\extension;..\..\rt-thread\components\libc\compilers\common\extension\fcntl\msvc;..\..\rt-thread\components\libc\compilers\common\include;..\..\rt-thread\components\libc\posix\io\poll;..\..\rt-thread\components\libc\posix\io\stdio;..\..\rt-thread\components\libc\posix\ipc;..\..\rt-thread\components\net\netdev\include;..\..\rt-thread\components\net\sal\include;..\..\rt-thread\components\net\sal\include\dfs_net;..\..\rt-thread\components\net\sal\include\socket;..\..\rt-thread\components\net\sal\include\socket\sys_socket;..\..\rt-thread\include;..\..\rt-thread\libcpu\sim\win32;SDL2\include;applications;drivers;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>RT_USING_LIBC;_CRT_DECLARE_NONSTDC_NAMES=0;_CRT_ERRNO_DEFINED;_CRT_NO_TIME_T;_CRT_SECURE_NO_WARNINGS;NORESOURCE;WIN32_LEAN_AND_MEAN;__RTTHREAD__;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
       <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
       <PrecompiledHeader />
@@ -47,8 +46,8 @@
       <AdditionalOptions>/utf-8 %(AdditionalOptions)</AdditionalOptions>
     </ClCompile>
     <Link>
-      <AdditionalDependencies>winmm.lib;%(AdditionalDependencies)</AdditionalDependencies>
-      <AdditionalLibraryDirectories>.\pcap\Lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>winmm.lib;SDL2.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>SDL2\lib\x86;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <SubSystem>Console</SubSystem>
       <TargetMachine>MachineX86</TargetMachine>
@@ -71,75 +70,108 @@
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="..\..\rt-thread\components\libc\compilers\common\time.c">
+    <ClCompile Include="..\..\rt-thread\components\libc\compilers\common\cctype.c">
       <ObjectFileName>$(IntDir)kernel\components\libc\compilers\common\</ObjectFileName>
     </ClCompile>
-    <ClCompile Include="..\..\rt-thread\components\libc\compilers\common\stdlib.c">
+    <ClCompile Include="..\..\rt-thread\components\libc\compilers\common\cstdio.c">
+      <ObjectFileName>$(IntDir)kernel\components\libc\compilers\common\</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="..\..\rt-thread\components\libc\compilers\common\cstdlib.c">
+      <ObjectFileName>$(IntDir)kernel\components\libc\compilers\common\</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="..\..\rt-thread\components\libc\compilers\common\cstring.c">
+      <ObjectFileName>$(IntDir)kernel\components\libc\compilers\common\</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="..\..\rt-thread\components\libc\compilers\common\ctime.c">
+      <ObjectFileName>$(IntDir)kernel\components\libc\compilers\common\</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="..\..\rt-thread\components\libc\compilers\common\cwchar.c">
       <ObjectFileName>$(IntDir)kernel\components\libc\compilers\common\</ObjectFileName>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="..\..\rt-thread\libcpu\sim\win32\startup.c">
-      <ObjectFileName>$(IntDir)kernel\libcpu\sim\win32\</ObjectFileName>
-    </ClCompile>
     <ClCompile Include="..\..\rt-thread\libcpu\sim\win32\cpu_port.c">
       <ObjectFileName>$(IntDir)kernel\libcpu\sim\win32\</ObjectFileName>
     </ClCompile>
+    <ClCompile Include="..\..\rt-thread\libcpu\sim\win32\startup.c">
+      <ObjectFileName>$(IntDir)kernel\libcpu\sim\win32\</ObjectFileName>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="..\..\rt-thread\components\drivers\misc\pin.c">
-      <ObjectFileName>$(IntDir)kernel\components\drivers\misc\</ObjectFileName>
-    </ClCompile>
-    <ClCompile Include="..\..\rt-thread\components\drivers\ipc\workqueue.c">
-      <ObjectFileName>$(IntDir)kernel\components\drivers\ipc\</ObjectFileName>
-    </ClCompile>
-    <ClCompile Include="..\..\rt-thread\components\drivers\ipc\ringblk_buf.c">
-      <ObjectFileName>$(IntDir)kernel\components\drivers\ipc\</ObjectFileName>
-    </ClCompile>
-    <ClCompile Include="..\..\rt-thread\components\drivers\ipc\waitqueue.c">
+    <ClCompile Include="..\..\rt-thread\components\drivers\ipc\completion.c">
       <ObjectFileName>$(IntDir)kernel\components\drivers\ipc\</ObjectFileName>
     </ClCompile>
     <ClCompile Include="..\..\rt-thread\components\drivers\ipc\dataqueue.c">
       <ObjectFileName>$(IntDir)kernel\components\drivers\ipc\</ObjectFileName>
     </ClCompile>
+    <ClCompile Include="..\..\rt-thread\components\drivers\ipc\pipe.c">
+      <ObjectFileName>$(IntDir)kernel\components\drivers\ipc\</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="..\..\rt-thread\components\drivers\ipc\ringblk_buf.c">
+      <ObjectFileName>$(IntDir)kernel\components\drivers\ipc\</ObjectFileName>
+    </ClCompile>
     <ClCompile Include="..\..\rt-thread\components\drivers\ipc\ringbuffer.c">
       <ObjectFileName>$(IntDir)kernel\components\drivers\ipc\</ObjectFileName>
     </ClCompile>
-    <ClCompile Include="..\..\rt-thread\components\drivers\ipc\completion.c">
+    <ClCompile Include="..\..\rt-thread\components\drivers\ipc\waitqueue.c">
       <ObjectFileName>$(IntDir)kernel\components\drivers\ipc\</ObjectFileName>
     </ClCompile>
-    <ClCompile Include="..\..\rt-thread\components\drivers\ipc\pipe.c">
+    <ClCompile Include="..\..\rt-thread\components\drivers\ipc\workqueue.c">
       <ObjectFileName>$(IntDir)kernel\components\drivers\ipc\</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="..\..\rt-thread\components\drivers\rtc\rtc.c">
+      <ObjectFileName>$(IntDir)kernel\components\drivers\rtc\</ObjectFileName>
     </ClCompile>
     <ClCompile Include="..\..\rt-thread\components\drivers\serial\serial.c">
       <ObjectFileName>$(IntDir)kernel\components\drivers\serial\</ObjectFileName>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="drivers\drv_rtc.c">
+    <ClCompile Include="drivers\winsock\drv_win_eth.c">
+      <ObjectFileName>$(IntDir)bsp\drivers\winsock\</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="drivers\dfs_win32.c">
       <ObjectFileName>$(IntDir)bsp\drivers\</ObjectFileName>
     </ClCompile>
     <ClCompile Include="drivers\uart_console.c">
       <ObjectFileName>$(IntDir)bsp\drivers\</ObjectFileName>
     </ClCompile>
-    <ClCompile Include="drivers\board.c">
+    <ClCompile Include="drivers\winsock\sal_winsock.c">
+      <ObjectFileName>$(IntDir)bsp\drivers\winsock\</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="drivers\sd_sim.c">
       <ObjectFileName>$(IntDir)bsp\drivers\</ObjectFileName>
     </ClCompile>
-    <ClCompile Include="drivers\dfs_win32.c">
+    <ClCompile Include="drivers\drv_rtc.c">
+      <ObjectFileName>$(IntDir)bsp\drivers\</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="drivers\board.c">
       <ObjectFileName>$(IntDir)bsp\drivers\</ObjectFileName>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="..\..\rt-thread\components\dfs\src\dfs_posix.c">
-      <ObjectFileName>$(IntDir)kernel\components\dfs\src\</ObjectFileName>
+    <ClCompile Include="..\..\rt-thread\components\dfs\filesystems\devfs\devfs.c">
+      <ObjectFileName>$(IntDir)kernel\components\dfs\filesystems\devfs\</ObjectFileName>
     </ClCompile>
-    <ClCompile Include="..\..\rt-thread\components\dfs\src\dfs_fs.c">
-      <ObjectFileName>$(IntDir)kernel\components\dfs\src\</ObjectFileName>
+    <ClCompile Include="..\..\rt-thread\components\dfs\filesystems\elmfat\dfs_elm.c">
+      <ObjectFileName>$(IntDir)kernel\components\dfs\filesystems\elmfat\</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="..\..\rt-thread\components\dfs\filesystems\elmfat\ff.c">
+      <ObjectFileName>$(IntDir)kernel\components\dfs\filesystems\elmfat\</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="..\..\rt-thread\components\dfs\filesystems\elmfat\ffunicode.c">
+      <ObjectFileName>$(IntDir)kernel\components\dfs\filesystems\elmfat\</ObjectFileName>
     </ClCompile>
     <ClCompile Include="..\..\rt-thread\components\dfs\src\dfs.c">
       <ObjectFileName>$(IntDir)kernel\components\dfs\src\</ObjectFileName>
     </ClCompile>
     <ClCompile Include="..\..\rt-thread\components\dfs\src\dfs_file.c">
+      <ObjectFileName>$(IntDir)kernel\components\dfs\src\</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="..\..\rt-thread\components\dfs\src\dfs_fs.c">
+      <ObjectFileName>$(IntDir)kernel\components\dfs\src\</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="..\..\rt-thread\components\dfs\src\dfs_posix.c">
       <ObjectFileName>$(IntDir)kernel\components\dfs\src\</ObjectFileName>
     </ClCompile>
   </ItemGroup>
@@ -150,939 +182,92 @@
     <ClCompile Include="..\..\rt-thread\components\finsh\msh.c">
       <ObjectFileName>$(IntDir)kernel\components\finsh\</ObjectFileName>
     </ClCompile>
-    <ClCompile Include="..\..\rt-thread\components\finsh\msh_file.c">
+    <ClCompile Include="..\..\rt-thread\components\finsh\msh_parse.c">
       <ObjectFileName>$(IntDir)kernel\components\finsh\</ObjectFileName>
     </ClCompile>
     <ClCompile Include="..\..\rt-thread\components\finsh\cmd.c">
       <ObjectFileName>$(IntDir)kernel\components\finsh\</ObjectFileName>
     </ClCompile>
+    <ClCompile Include="..\..\rt-thread\components\finsh\msh_file.c">
+      <ObjectFileName>$(IntDir)kernel\components\finsh\</ObjectFileName>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="..\..\rt-thread\src\scheduler.c">
-      <ObjectFileName>$(IntDir)kernel\src\</ObjectFileName>
-    </ClCompile>
     <ClCompile Include="..\..\rt-thread\src\clock.c">
-      <ObjectFileName>$(IntDir)kernel\src\</ObjectFileName>
-    </ClCompile>
-    <ClCompile Include="..\..\rt-thread\src\mempool.c">
       <ObjectFileName>$(IntDir)kernel\src\</ObjectFileName>
     </ClCompile>
     <ClCompile Include="..\..\rt-thread\src\device.c">
       <ObjectFileName>$(IntDir)kernel\src\</ObjectFileName>
     </ClCompile>
-    <ClCompile Include="..\..\rt-thread\src\irq.c">
-      <ObjectFileName>$(IntDir)kernel\src\</ObjectFileName>
-    </ClCompile>
-    <ClCompile Include="..\..\rt-thread\src\timer.c">
-      <ObjectFileName>$(IntDir)kernel\src\</ObjectFileName>
-    </ClCompile>
-    <ClCompile Include="..\..\rt-thread\src\object.c">
-      <ObjectFileName>$(IntDir)kernel\src\</ObjectFileName>
-    </ClCompile>
     <ClCompile Include="..\..\rt-thread\src\idle.c">
-      <ObjectFileName>$(IntDir)kernel\src\</ObjectFileName>
-    </ClCompile>
-    <ClCompile Include="..\..\rt-thread\src\mem.c">
-      <ObjectFileName>$(IntDir)kernel\src\</ObjectFileName>
-    </ClCompile>
-    <ClCompile Include="..\..\rt-thread\src\kservice.c">
       <ObjectFileName>$(IntDir)kernel\src\</ObjectFileName>
     </ClCompile>
     <ClCompile Include="..\..\rt-thread\src\ipc.c">
       <ObjectFileName>$(IntDir)kernel\src\</ObjectFileName>
     </ClCompile>
+    <ClCompile Include="..\..\rt-thread\src\irq.c">
+      <ObjectFileName>$(IntDir)kernel\src\</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="..\..\rt-thread\src\kservice.c">
+      <ObjectFileName>$(IntDir)kernel\src\</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="..\..\rt-thread\src\mem.c">
+      <ObjectFileName>$(IntDir)kernel\src\</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="..\..\rt-thread\src\mempool.c">
+      <ObjectFileName>$(IntDir)kernel\src\</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="..\..\rt-thread\src\object.c">
+      <ObjectFileName>$(IntDir)kernel\src\</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="..\..\rt-thread\src\scheduler.c">
+      <ObjectFileName>$(IntDir)kernel\src\</ObjectFileName>
+    </ClCompile>
     <ClCompile Include="..\..\rt-thread\src\thread.c">
+      <ObjectFileName>$(IntDir)kernel\src\</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="..\..\rt-thread\src\timer.c">
       <ObjectFileName>$(IntDir)kernel\src\</ObjectFileName>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="packages\LVGL-latest\demos\music\lv_demo_music_list.c">
-      <ObjectFileName>$(IntDir)bsp\packages\lvgl-latest\demos\music\</ObjectFileName>
-    </ClCompile>
-    <ClCompile Include="packages\LVGL-latest\src\extra\widgets\colorwheel\lv_colorwheel.c">
-      <ObjectFileName>$(IntDir)bsp\packages\lvgl-latest\src\extra\widgets\colorwheel\</ObjectFileName>
-    </ClCompile>
-    <ClCompile Include="packages\LVGL-latest\demos\music\assets\img_lv_demo_music_slider_knob.c">
-      <ObjectFileName>$(IntDir)bsp\packages\lvgl-latest\demos\music\assets\</ObjectFileName>
-    </ClCompile>
-    <ClCompile Include="packages\LVGL-latest\demos\music\assets\img_lv_demo_music_btn_next_large.c">
-      <ObjectFileName>$(IntDir)bsp\packages\lvgl-latest\demos\music\assets\</ObjectFileName>
-    </ClCompile>
-    <ClCompile Include="packages\LVGL-latest\src\misc\lv_color.c">
-      <ObjectFileName>$(IntDir)bsp\packages\lvgl-latest\src\misc\</ObjectFileName>
-    </ClCompile>
-    <ClCompile Include="packages\LVGL-latest\src\core\lv_obj_draw.c">
-      <ObjectFileName>$(IntDir)bsp\packages\lvgl-latest\src\core\</ObjectFileName>
-    </ClCompile>
-    <ClCompile Include="packages\LVGL-latest\src\font\lv_font_montserrat_34.c">
-      <ObjectFileName>$(IntDir)bsp\packages\lvgl-latest\src\font\</ObjectFileName>
-    </ClCompile>
-    <ClCompile Include="packages\LVGL-latest\src\extra\others\fragment\lv_fragment.c">
-      <ObjectFileName>$(IntDir)bsp\packages\lvgl-latest\src\extra\others\fragment\</ObjectFileName>
-    </ClCompile>
-    <ClCompile Include="packages\LVGL-latest\src\extra\libs\ffmpeg\lv_ffmpeg.c">
-      <ObjectFileName>$(IntDir)bsp\packages\lvgl-latest\src\extra\libs\ffmpeg\</ObjectFileName>
-    </ClCompile>
-    <ClCompile Include="packages\LVGL-latest\demos\music\assets\img_lv_demo_music_cover_3_large.c">
-      <ObjectFileName>$(IntDir)bsp\packages\lvgl-latest\demos\music\assets\</ObjectFileName>
-    </ClCompile>
-    <ClCompile Include="packages\LVGL-latest\demos\music\lv_demo_music_main.c">
-      <ObjectFileName>$(IntDir)bsp\packages\lvgl-latest\demos\music\</ObjectFileName>
-    </ClCompile>
-    <ClCompile Include="packages\LVGL-latest\demos\music\lv_demo_music.c">
-      <ObjectFileName>$(IntDir)bsp\packages\lvgl-latest\demos\music\</ObjectFileName>
-    </ClCompile>
-    <ClCompile Include="packages\LVGL-latest\demos\music\assets\img_lv_demo_music_cover_2_large.c">
-      <ObjectFileName>$(IntDir)bsp\packages\lvgl-latest\demos\music\assets\</ObjectFileName>
-    </ClCompile>
-    <ClCompile Include="packages\LVGL-latest\src\extra\widgets\span\lv_span.c">
-      <ObjectFileName>$(IntDir)bsp\packages\lvgl-latest\src\extra\widgets\span\</ObjectFileName>
-    </ClCompile>
-    <ClCompile Include="packages\LVGL-latest\src\extra\layouts\flex\lv_flex.c">
-      <ObjectFileName>$(IntDir)bsp\packages\lvgl-latest\src\extra\layouts\flex\</ObjectFileName>
-    </ClCompile>
-    <ClCompile Include="packages\LVGL-latest\demos\benchmark\assets\img_benchmark_cogwheel_argb.c">
-      <ObjectFileName>$(IntDir)bsp\packages\lvgl-latest\demos\benchmark\assets\</ObjectFileName>
-    </ClCompile>
-    <ClCompile Include="packages\LVGL-latest\src\draw\lv_draw_mask.c">
-      <ObjectFileName>$(IntDir)bsp\packages\lvgl-latest\src\draw\</ObjectFileName>
-    </ClCompile>
-    <ClCompile Include="packages\LVGL-latest\src\hal\lv_hal_tick.c">
-      <ObjectFileName>$(IntDir)bsp\packages\lvgl-latest\src\hal\</ObjectFileName>
-    </ClCompile>
-    <ClCompile Include="packages\LVGL-latest\src\font\lv_font_montserrat_28_compressed.c">
-      <ObjectFileName>$(IntDir)bsp\packages\lvgl-latest\src\font\</ObjectFileName>
-    </ClCompile>
-    <ClCompile Include="packages\LVGL-latest\src\widgets\lv_table.c">
-      <ObjectFileName>$(IntDir)bsp\packages\lvgl-latest\src\widgets\</ObjectFileName>
-    </ClCompile>
-    <ClCompile Include="packages\LVGL-latest\demos\music\assets\img_lv_demo_music_btn_play.c">
-      <ObjectFileName>$(IntDir)bsp\packages\lvgl-latest\demos\music\assets\</ObjectFileName>
-    </ClCompile>
-    <ClCompile Include="packages\LVGL-latest\src\draw\lv_img_cache.c">
-      <ObjectFileName>$(IntDir)bsp\packages\lvgl-latest\src\draw\</ObjectFileName>
-    </ClCompile>
-    <ClCompile Include="packages\LVGL-latest\src\extra\widgets\keyboard\lv_keyboard.c">
-      <ObjectFileName>$(IntDir)bsp\packages\lvgl-latest\src\extra\widgets\keyboard\</ObjectFileName>
-    </ClCompile>
-    <ClCompile Include="packages\LVGL-latest\src\extra\others\snapshot\lv_snapshot.c">
-      <ObjectFileName>$(IntDir)bsp\packages\lvgl-latest\src\extra\others\snapshot\</ObjectFileName>
-    </ClCompile>
-    <ClCompile Include="packages\LVGL-latest\src\extra\widgets\meter\lv_meter.c">
-      <ObjectFileName>$(IntDir)bsp\packages\lvgl-latest\src\extra\widgets\meter\</ObjectFileName>
-    </ClCompile>
-    <ClCompile Include="packages\LVGL-latest\src\misc\lv_ll.c">
-      <ObjectFileName>$(IntDir)bsp\packages\lvgl-latest\src\misc\</ObjectFileName>
-    </ClCompile>
-    <ClCompile Include="packages\LVGL-latest\src\misc\lv_anim.c">
-      <ObjectFileName>$(IntDir)bsp\packages\lvgl-latest\src\misc\</ObjectFileName>
-    </ClCompile>
-    <ClCompile Include="packages\LVGL-latest\src\hal\lv_hal_disp.c">
-      <ObjectFileName>$(IntDir)bsp\packages\lvgl-latest\src\hal\</ObjectFileName>
-    </ClCompile>
-    <ClCompile Include="packages\LVGL-latest\src\widgets\lv_switch.c">
-      <ObjectFileName>$(IntDir)bsp\packages\lvgl-latest\src\widgets\</ObjectFileName>
-    </ClCompile>
-    <ClCompile Include="packages\LVGL-latest\src\draw\sw\lv_draw_sw_arc.c">
-      <ObjectFileName>$(IntDir)bsp\packages\lvgl-latest\src\draw\sw\</ObjectFileName>
-    </ClCompile>
-    <ClCompile Include="packages\LVGL-latest\src\extra\themes\default\lv_theme_default.c">
-      <ObjectFileName>$(IntDir)bsp\packages\lvgl-latest\src\extra\themes\default\</ObjectFileName>
-    </ClCompile>
-    <ClCompile Include="packages\LVGL-latest\demos\music\assets\img_lv_demo_music_btn_pause_large.c">
-      <ObjectFileName>$(IntDir)bsp\packages\lvgl-latest\demos\music\assets\</ObjectFileName>
-    </ClCompile>
-    <ClCompile Include="packages\LVGL-latest\src\draw\lv_img_buf.c">
-      <ObjectFileName>$(IntDir)bsp\packages\lvgl-latest\src\draw\</ObjectFileName>
-    </ClCompile>
-    <ClCompile Include="packages\LVGL-latest\src\core\lv_theme.c">
-      <ObjectFileName>$(IntDir)bsp\packages\lvgl-latest\src\core\</ObjectFileName>
-    </ClCompile>
-    <ClCompile Include="packages\LVGL-latest\src\font\lv_font_montserrat_22.c">
-      <ObjectFileName>$(IntDir)bsp\packages\lvgl-latest\src\font\</ObjectFileName>
-    </ClCompile>
-    <ClCompile Include="packages\LVGL-latest\demos\music\assets\img_lv_demo_music_btn_list_pause_large.c">
-      <ObjectFileName>$(IntDir)bsp\packages\lvgl-latest\demos\music\assets\</ObjectFileName>
-    </ClCompile>
-    <ClCompile Include="packages\LVGL-latest\demos\music\assets\img_lv_demo_music_btn_prev.c">
-      <ObjectFileName>$(IntDir)bsp\packages\lvgl-latest\demos\music\assets\</ObjectFileName>
-    </ClCompile>
-    <ClCompile Include="packages\LVGL-latest\src\draw\sw\lv_draw_sw_img.c">
-      <ObjectFileName>$(IntDir)bsp\packages\lvgl-latest\src\draw\sw\</ObjectFileName>
-    </ClCompile>
-    <ClCompile Include="packages\LVGL-latest\demos\music\assets\img_lv_demo_music_cover_1_large.c">
-      <ObjectFileName>$(IntDir)bsp\packages\lvgl-latest\demos\music\assets\</ObjectFileName>
-    </ClCompile>
-    <ClCompile Include="packages\LVGL-latest\demos\music\assets\img_lv_demo_music_btn_corner_large.c">
-      <ObjectFileName>$(IntDir)bsp\packages\lvgl-latest\demos\music\assets\</ObjectFileName>
-    </ClCompile>
-    <ClCompile Include="packages\LVGL-latest\src\misc\lv_log.c">
-      <ObjectFileName>$(IntDir)bsp\packages\lvgl-latest\src\misc\</ObjectFileName>
-    </ClCompile>
-    <ClCompile Include="packages\LVGL-latest\src\core\lv_obj.c">
-      <ObjectFileName>$(IntDir)bsp\packages\lvgl-latest\src\core\</ObjectFileName>
-    </ClCompile>
-    <ClCompile Include="packages\LVGL-latest\src\font\lv_font_montserrat_38.c">
-      <ObjectFileName>$(IntDir)bsp\packages\lvgl-latest\src\font\</ObjectFileName>
-    </ClCompile>
-    <ClCompile Include="packages\LVGL-latest\src\widgets\lv_img.c">
-      <ObjectFileName>$(IntDir)bsp\packages\lvgl-latest\src\widgets\</ObjectFileName>
-    </ClCompile>
-    <ClCompile Include="packages\LVGL-latest\src\misc\lv_printf.c">
-      <ObjectFileName>$(IntDir)bsp\packages\lvgl-latest\src\misc\</ObjectFileName>
-    </ClCompile>
-    <ClCompile Include="packages\LVGL-latest\src\font\lv_font_montserrat_46.c">
-      <ObjectFileName>$(IntDir)bsp\packages\lvgl-latest\src\font\</ObjectFileName>
-    </ClCompile>
-    <ClCompile Include="packages\LVGL-latest\demos\benchmark\assets\lv_font_bechmark_montserrat_16_compr_az.c.c">
-      <ObjectFileName>$(IntDir)bsp\packages\lvgl-latest\demos\benchmark\assets\</ObjectFileName>
-    </ClCompile>
-    <ClCompile Include="packages\LVGL-latest\src\widgets\lv_arc.c">
-      <ObjectFileName>$(IntDir)bsp\packages\lvgl-latest\src\widgets\</ObjectFileName>
-    </ClCompile>
-    <ClCompile Include="packages\LVGL-latest\src\draw\sw\lv_draw_sw_rect.c">
-      <ObjectFileName>$(IntDir)bsp\packages\lvgl-latest\src\draw\sw\</ObjectFileName>
-    </ClCompile>
-    <ClCompile Include="packages\LVGL-latest\src\extra\libs\fsdrv\lv_fs_fatfs.c">
-      <ObjectFileName>$(IntDir)bsp\packages\lvgl-latest\src\extra\libs\fsdrv\</ObjectFileName>
-    </ClCompile>
-    <ClCompile Include="packages\LVGL-latest\src\draw\stm32_dma2d\lv_gpu_stm32_dma2d.c">
-      <ObjectFileName>$(IntDir)bsp\packages\lvgl-latest\src\draw\stm32_dma2d\</ObjectFileName>
-    </ClCompile>
-    <ClCompile Include="packages\LVGL-latest\src\extra\libs\sjpg\lv_sjpg.c">
-      <ObjectFileName>$(IntDir)bsp\packages\lvgl-latest\src\extra\libs\sjpg\</ObjectFileName>
-    </ClCompile>
-    <ClCompile Include="packages\LVGL-latest\src\font\lv_font_montserrat_30.c">
-      <ObjectFileName>$(IntDir)bsp\packages\lvgl-latest\src\font\</ObjectFileName>
-    </ClCompile>
-    <ClCompile Include="packages\LVGL-latest\src\core\lv_obj_scroll.c">
-      <ObjectFileName>$(IntDir)bsp\packages\lvgl-latest\src\core\</ObjectFileName>
-    </ClCompile>
-    <ClCompile Include="packages\LVGL-latest\src\font\lv_font_montserrat_18.c">
-      <ObjectFileName>$(IntDir)bsp\packages\lvgl-latest\src\font\</ObjectFileName>
-    </ClCompile>
-    <ClCompile Include="packages\LVGL-latest\demos\stress\lv_demo_stress.c">
-      <ObjectFileName>$(IntDir)bsp\packages\lvgl-latest\demos\stress\</ObjectFileName>
-    </ClCompile>
-    <ClCompile Include="packages\LVGL-latest\demos\widgets\assets\img_clothes.c">
-      <ObjectFileName>$(IntDir)bsp\packages\lvgl-latest\demos\widgets\assets\</ObjectFileName>
-    </ClCompile>
-    <ClCompile Include="packages\LVGL-latest\src\draw\sw\lv_draw_sw_gradient.c">
-      <ObjectFileName>$(IntDir)bsp\packages\lvgl-latest\src\draw\sw\</ObjectFileName>
-    </ClCompile>
-    <ClCompile Include="packages\LVGL-latest\src\misc\lv_txt.c">
-      <ObjectFileName>$(IntDir)bsp\packages\lvgl-latest\src\misc\</ObjectFileName>
-    </ClCompile>
-    <ClCompile Include="packages\LVGL-latest\src\misc\lv_area.c">
-      <ObjectFileName>$(IntDir)bsp\packages\lvgl-latest\src\misc\</ObjectFileName>
-    </ClCompile>
-    <ClCompile Include="packages\LVGL-latest\src\core\lv_group.c">
-      <ObjectFileName>$(IntDir)bsp\packages\lvgl-latest\src\core\</ObjectFileName>
-    </ClCompile>
-    <ClCompile Include="packages\LVGL-latest\src\font\lv_font_montserrat_20.c">
-      <ObjectFileName>$(IntDir)bsp\packages\lvgl-latest\src\font\</ObjectFileName>
-    </ClCompile>
-    <ClCompile Include="packages\LVGL-latest\src\widgets\lv_bar.c">
-      <ObjectFileName>$(IntDir)bsp\packages\lvgl-latest\src\widgets\</ObjectFileName>
-    </ClCompile>
-    <ClCompile Include="packages\LVGL-latest\demos\music\assets\img_lv_demo_music_icon_1_large.c">
-      <ObjectFileName>$(IntDir)bsp\packages\lvgl-latest\demos\music\assets\</ObjectFileName>
-    </ClCompile>
-    <ClCompile Include="packages\LVGL-latest\demos\benchmark\lv_demo_benchmark.c">
-      <ObjectFileName>$(IntDir)bsp\packages\lvgl-latest\demos\benchmark\</ObjectFileName>
-    </ClCompile>
-    <ClCompile Include="packages\LVGL-latest\src\draw\sdl\lv_draw_sdl.c">
-      <ObjectFileName>$(IntDir)bsp\packages\lvgl-latest\src\draw\sdl\</ObjectFileName>
-    </ClCompile>
-    <ClCompile Include="packages\LVGL-latest\src\draw\nxp_vglite\lv_gpu_nxp_vglite.c">
-      <ObjectFileName>$(IntDir)bsp\packages\lvgl-latest\src\draw\nxp_vglite\</ObjectFileName>
-    </ClCompile>
-    <ClCompile Include="packages\LVGL-latest\src\draw\nxp_pxp\lv_gpu_nxp_pxp_osa.c">
-      <ObjectFileName>$(IntDir)bsp\packages\lvgl-latest\src\draw\nxp_pxp\</ObjectFileName>
-    </ClCompile>
-    <ClCompile Include="packages\LVGL-latest\src\draw\sdl\lv_draw_sdl_img.c">
-      <ObjectFileName>$(IntDir)bsp\packages\lvgl-latest\src\draw\sdl\</ObjectFileName>
-    </ClCompile>
-    <ClCompile Include="packages\LVGL-latest\src\misc\lv_style_gen.c">
-      <ObjectFileName>$(IntDir)bsp\packages\lvgl-latest\src\misc\</ObjectFileName>
-    </ClCompile>
-    <ClCompile Include="packages\LVGL-latest\src\draw\lv_draw_line.c">
-      <ObjectFileName>$(IntDir)bsp\packages\lvgl-latest\src\draw\</ObjectFileName>
-    </ClCompile>
-    <ClCompile Include="packages\LVGL-latest\src\core\lv_event.c">
-      <ObjectFileName>$(IntDir)bsp\packages\lvgl-latest\src\core\</ObjectFileName>
-    </ClCompile>
-    <ClCompile Include="packages\LVGL-latest\src\extra\lv_extra.c">
-      <ObjectFileName>$(IntDir)bsp\packages\lvgl-latest\src\extra\</ObjectFileName>
-    </ClCompile>
-    <ClCompile Include="packages\LVGL-latest\src\widgets\lv_textarea.c">
-      <ObjectFileName>$(IntDir)bsp\packages\lvgl-latest\src\widgets\</ObjectFileName>
-    </ClCompile>
-    <ClCompile Include="packages\LVGL-latest\demos\music\assets\img_lv_demo_music_cover_1.c">
-      <ObjectFileName>$(IntDir)bsp\packages\lvgl-latest\demos\music\assets\</ObjectFileName>
-    </ClCompile>
-    <ClCompile Include="packages\LVGL-latest\src\widgets\lv_checkbox.c">
-      <ObjectFileName>$(IntDir)bsp\packages\lvgl-latest\src\widgets\</ObjectFileName>
-    </ClCompile>
-    <ClCompile Include="packages\LVGL-latest\src\extra\widgets\spinner\lv_spinner.c">
-      <ObjectFileName>$(IntDir)bsp\packages\lvgl-latest\src\extra\widgets\spinner\</ObjectFileName>
-    </ClCompile>
-    <ClCompile Include="packages\LVGL-latest\src\draw\sw\lv_draw_sw_polygon.c">
-      <ObjectFileName>$(IntDir)bsp\packages\lvgl-latest\src\draw\sw\</ObjectFileName>
-    </ClCompile>
-    <ClCompile Include="packages\LVGL-latest\src\extra\widgets\calendar\lv_calendar_header_dropdown.c">
-      <ObjectFileName>$(IntDir)bsp\packages\lvgl-latest\src\extra\widgets\calendar\</ObjectFileName>
-    </ClCompile>
-    <ClCompile Include="packages\LVGL-latest\src\misc\lv_lru.c">
-      <ObjectFileName>$(IntDir)bsp\packages\lvgl-latest\src\misc\</ObjectFileName>
-    </ClCompile>
-    <ClCompile Include="packages\LVGL-latest\src\core\lv_indev.c">
-      <ObjectFileName>$(IntDir)bsp\packages\lvgl-latest\src\core\</ObjectFileName>
-    </ClCompile>
-    <ClCompile Include="packages\LVGL-latest\src\font\lv_font_montserrat_32.c">
-      <ObjectFileName>$(IntDir)bsp\packages\lvgl-latest\src\font\</ObjectFileName>
-    </ClCompile>
-    <ClCompile Include="packages\LVGL-latest\src\extra\libs\qrcode\lv_qrcode.c">
-      <ObjectFileName>$(IntDir)bsp\packages\lvgl-latest\src\extra\libs\qrcode\</ObjectFileName>
-    </ClCompile>
-    <ClCompile Include="packages\LVGL-latest\demos\music\assets\img_lv_demo_music_icon_4_large.c">
-      <ObjectFileName>$(IntDir)bsp\packages\lvgl-latest\demos\music\assets\</ObjectFileName>
-    </ClCompile>
-    <ClCompile Include="packages\LVGL-latest\demos\benchmark\assets\lv_font_bechmark_montserrat_12_compr_az.c.c">
-      <ObjectFileName>$(IntDir)bsp\packages\lvgl-latest\demos\benchmark\assets\</ObjectFileName>
-    </ClCompile>
-    <ClCompile Include="packages\LVGL-latest\src\draw\sdl\lv_draw_sdl_line.c">
-      <ObjectFileName>$(IntDir)bsp\packages\lvgl-latest\src\draw\sdl\</ObjectFileName>
-    </ClCompile>
-    <ClCompile Include="packages\LVGL-latest\src\extra\widgets\animimg\lv_animimg.c">
-      <ObjectFileName>$(IntDir)bsp\packages\lvgl-latest\src\extra\widgets\animimg\</ObjectFileName>
-    </ClCompile>
-    <ClCompile Include="packages\LVGL-latest\demos\stress\assets\lv_font_montserrat_16_compr_az.c">
-      <ObjectFileName>$(IntDir)bsp\packages\lvgl-latest\demos\stress\assets\</ObjectFileName>
-    </ClCompile>
-    <ClCompile Include="packages\LVGL-latest\demos\music\assets\img_lv_demo_music_cover_3.c">
-      <ObjectFileName>$(IntDir)bsp\packages\lvgl-latest\demos\music\assets\</ObjectFileName>
-    </ClCompile>
-    <ClCompile Include="packages\LVGL-latest\src\draw\lv_draw_triangle.c">
-      <ObjectFileName>$(IntDir)bsp\packages\lvgl-latest\src\draw\</ObjectFileName>
-    </ClCompile>
-    <ClCompile Include="packages\LVGL-latest\src\misc\lv_tlsf.c">
-      <ObjectFileName>$(IntDir)bsp\packages\lvgl-latest\src\misc\</ObjectFileName>
-    </ClCompile>
-    <ClCompile Include="packages\LVGL-latest\src\font\lv_font_dejavu_16_persian_hebrew.c">
-      <ObjectFileName>$(IntDir)bsp\packages\lvgl-latest\src\font\</ObjectFileName>
-    </ClCompile>
-    <ClCompile Include="packages\LVGL-latest\demos\music\assets\img_lv_demo_music_icon_3.c">
-      <ObjectFileName>$(IntDir)bsp\packages\lvgl-latest\demos\music\assets\</ObjectFileName>
-    </ClCompile>
-    <ClCompile Include="packages\LVGL-latest\demos\music\assets\img_lv_demo_music_list_border.c">
-      <ObjectFileName>$(IntDir)bsp\packages\lvgl-latest\demos\music\assets\</ObjectFileName>
-    </ClCompile>
-    <ClCompile Include="packages\LVGL-latest\src\extra\widgets\list\lv_list.c">
-      <ObjectFileName>$(IntDir)bsp\packages\lvgl-latest\src\extra\widgets\list\</ObjectFileName>
-    </ClCompile>
-    <ClCompile Include="packages\LVGL-latest\src\extra\themes\basic\lv_theme_basic.c">
-      <ObjectFileName>$(IntDir)bsp\packages\lvgl-latest\src\extra\themes\basic\</ObjectFileName>
-    </ClCompile>
-    <ClCompile Include="packages\LVGL-latest\src\misc\lv_utils.c">
-      <ObjectFileName>$(IntDir)bsp\packages\lvgl-latest\src\misc\</ObjectFileName>
-    </ClCompile>
-    <ClCompile Include="packages\LVGL-latest\src\misc\lv_timer.c">
-      <ObjectFileName>$(IntDir)bsp\packages\lvgl-latest\src\misc\</ObjectFileName>
-    </ClCompile>
-    <ClCompile Include="packages\LVGL-latest\src\misc\lv_math.c">
-      <ObjectFileName>$(IntDir)bsp\packages\lvgl-latest\src\misc\</ObjectFileName>
-    </ClCompile>
-    <ClCompile Include="packages\LVGL-latest\src\hal\lv_hal_indev.c">
-      <ObjectFileName>$(IntDir)bsp\packages\lvgl-latest\src\hal\</ObjectFileName>
-    </ClCompile>
-    <ClCompile Include="packages\LVGL-latest\src\widgets\lv_roller.c">
-      <ObjectFileName>$(IntDir)bsp\packages\lvgl-latest\src\widgets\</ObjectFileName>
-    </ClCompile>
-    <ClCompile Include="packages\LVGL-latest\demos\widgets\lv_demo_widgets.c">
-      <ObjectFileName>$(IntDir)bsp\packages\lvgl-latest\demos\widgets\</ObjectFileName>
-    </ClCompile>
-    <ClCompile Include="packages\LVGL-latest\demos\music\assets\img_lv_demo_music_list_border_large.c">
-      <ObjectFileName>$(IntDir)bsp\packages\lvgl-latest\demos\music\assets\</ObjectFileName>
-    </ClCompile>
-    <ClCompile Include="packages\LVGL-latest\src\extra\widgets\imgbtn\lv_imgbtn.c">
-      <ObjectFileName>$(IntDir)bsp\packages\lvgl-latest\src\extra\widgets\imgbtn\</ObjectFileName>
-    </ClCompile>
-    <ClCompile Include="packages\LVGL-latest\src\extra\libs\gif\gifdec.c">
-      <ObjectFileName>$(IntDir)bsp\packages\lvgl-latest\src\extra\libs\gif\</ObjectFileName>
-    </ClCompile>
-    <ClCompile Include="packages\LVGL-latest\src\draw\lv_draw_img.c">
-      <ObjectFileName>$(IntDir)bsp\packages\lvgl-latest\src\draw\</ObjectFileName>
-    </ClCompile>
-    <ClCompile Include="packages\LVGL-latest\src\misc\lv_gc.c">
-      <ObjectFileName>$(IntDir)bsp\packages\lvgl-latest\src\misc\</ObjectFileName>
-    </ClCompile>
-    <ClCompile Include="packages\LVGL-latest\src\font\lv_font_montserrat_12.c">
-      <ObjectFileName>$(IntDir)bsp\packages\lvgl-latest\src\font\</ObjectFileName>
-    </ClCompile>
-    <ClCompile Include="packages\LVGL-latest\demos\keypad_encoder\lv_demo_keypad_encoder.c">
-      <ObjectFileName>$(IntDir)bsp\packages\lvgl-latest\demos\keypad_encoder\</ObjectFileName>
-    </ClCompile>
-    <ClCompile Include="packages\LVGL-latest\src\draw\sw\lv_draw_sw.c">
-      <ObjectFileName>$(IntDir)bsp\packages\lvgl-latest\src\draw\sw\</ObjectFileName>
-    </ClCompile>
-    <ClCompile Include="packages\LVGL-latest\src\draw\lv_img_decoder.c">
-      <ObjectFileName>$(IntDir)bsp\packages\lvgl-latest\src\draw\</ObjectFileName>
-    </ClCompile>
-    <ClCompile Include="packages\LVGL-latest\src\misc\lv_bidi.c">
-      <ObjectFileName>$(IntDir)bsp\packages\lvgl-latest\src\misc\</ObjectFileName>
-    </ClCompile>
-    <ClCompile Include="packages\LVGL-latest\src\font\lv_font_montserrat_10.c">
-      <ObjectFileName>$(IntDir)bsp\packages\lvgl-latest\src\font\</ObjectFileName>
-    </ClCompile>
-    <ClCompile Include="packages\LVGL-latest\demos\stress\assets\lv_font_montserrat_12_compr_az.c">
-      <ObjectFileName>$(IntDir)bsp\packages\lvgl-latest\demos\stress\assets\</ObjectFileName>
-    </ClCompile>
-    <ClCompile Include="packages\LVGL-latest\demos\benchmark\assets\img_benchmark_cogwheel_alpha16.c">
-      <ObjectFileName>$(IntDir)bsp\packages\lvgl-latest\demos\benchmark\assets\</ObjectFileName>
-    </ClCompile>
-    <ClCompile Include="packages\LVGL-latest\demos\benchmark\assets\img_benchmark_cogwheel_indexed16.c">
-      <ObjectFileName>$(IntDir)bsp\packages\lvgl-latest\demos\benchmark\assets\</ObjectFileName>
-    </ClCompile>
-    <ClCompile Include="packages\LVGL-latest\src\draw\sdl\lv_draw_sdl_bg.c">
-      <ObjectFileName>$(IntDir)bsp\packages\lvgl-latest\src\draw\sdl\</ObjectFileName>
-    </ClCompile>
-    <ClCompile Include="packages\LVGL-latest\src\draw\sdl\lv_draw_sdl_texture_cache.c">
-      <ObjectFileName>$(IntDir)bsp\packages\lvgl-latest\src\draw\sdl\</ObjectFileName>
-    </ClCompile>
-    <ClCompile Include="packages\LVGL-latest\src\extra\widgets\menu\lv_menu.c">
-      <ObjectFileName>$(IntDir)bsp\packages\lvgl-latest\src\extra\widgets\menu\</ObjectFileName>
-    </ClCompile>
-    <ClCompile Include="packages\LVGL-latest\src\draw\sdl\lv_draw_sdl_stack_blur.c">
-      <ObjectFileName>$(IntDir)bsp\packages\lvgl-latest\src\draw\sdl\</ObjectFileName>
-    </ClCompile>
-    <ClCompile Include="packages\LVGL-latest\src\misc\lv_templ.c">
-      <ObjectFileName>$(IntDir)bsp\packages\lvgl-latest\src\misc\</ObjectFileName>
-    </ClCompile>
-    <ClCompile Include="packages\LVGL-latest\src\font\lv_font_montserrat_28.c">
-      <ObjectFileName>$(IntDir)bsp\packages\lvgl-latest\src\font\</ObjectFileName>
-    </ClCompile>
-    <ClCompile Include="packages\LVGL-latest\src\draw\sdl\lv_draw_sdl_mask.c">
-      <ObjectFileName>$(IntDir)bsp\packages\lvgl-latest\src\draw\sdl\</ObjectFileName>
-    </ClCompile>
-    <ClCompile Include="packages\LVGL-latest\src\draw\nxp_pxp\lv_gpu_nxp_pxp.c">
-      <ObjectFileName>$(IntDir)bsp\packages\lvgl-latest\src\draw\nxp_pxp\</ObjectFileName>
-    </ClCompile>
-    <ClCompile Include="packages\LVGL-latest\src\widgets\lv_line.c">
-      <ObjectFileName>$(IntDir)bsp\packages\lvgl-latest\src\widgets\</ObjectFileName>
-    </ClCompile>
-    <ClCompile Include="packages\LVGL-latest\src\extra\libs\png\lv_png.c">
-      <ObjectFileName>$(IntDir)bsp\packages\lvgl-latest\src\extra\libs\png\</ObjectFileName>
-    </ClCompile>
-    <ClCompile Include="packages\LVGL-latest\src\extra\libs\rlottie\lv_rlottie.c">
-      <ObjectFileName>$(IntDir)bsp\packages\lvgl-latest\src\extra\libs\rlottie\</ObjectFileName>
-    </ClCompile>
-    <ClCompile Include="packages\LVGL-latest\src\font\lv_font_montserrat_24.c">
-      <ObjectFileName>$(IntDir)bsp\packages\lvgl-latest\src\font\</ObjectFileName>
-    </ClCompile>
-    <ClCompile Include="packages\LVGL-latest\src\core\lv_indev_scroll.c">
-      <ObjectFileName>$(IntDir)bsp\packages\lvgl-latest\src\core\</ObjectFileName>
-    </ClCompile>
-    <ClCompile Include="packages\LVGL-latest\src\font\lv_font_unscii_8.c">
-      <ObjectFileName>$(IntDir)bsp\packages\lvgl-latest\src\font\</ObjectFileName>
-    </ClCompile>
-    <ClCompile Include="packages\LVGL-latest\demos\benchmark\assets\img_benchmark_cogwheel_rgb.c">
-      <ObjectFileName>$(IntDir)bsp\packages\lvgl-latest\demos\benchmark\assets\</ObjectFileName>
-    </ClCompile>
-    <ClCompile Include="packages\LVGL-latest\demos\music\assets\img_lv_demo_music_btn_loop.c">
-      <ObjectFileName>$(IntDir)bsp\packages\lvgl-latest\demos\music\assets\</ObjectFileName>
-    </ClCompile>
-    <ClCompile Include="packages\LVGL-latest\src\draw\sdl\lv_draw_sdl_rect.c">
-      <ObjectFileName>$(IntDir)bsp\packages\lvgl-latest\src\draw\sdl\</ObjectFileName>
-    </ClCompile>
-    <ClCompile Include="packages\LVGL-latest\demos\music\assets\img_lv_demo_music_icon_3_large.c">
-      <ObjectFileName>$(IntDir)bsp\packages\lvgl-latest\demos\music\assets\</ObjectFileName>
-    </ClCompile>
-    <ClCompile Include="packages\LVGL-latest\src\draw\lv_draw_arc.c">
-      <ObjectFileName>$(IntDir)bsp\packages\lvgl-latest\src\draw\</ObjectFileName>
-    </ClCompile>
-    <ClCompile Include="packages\LVGL-latest\src\core\lv_disp.c">
-      <ObjectFileName>$(IntDir)bsp\packages\lvgl-latest\src\core\</ObjectFileName>
-    </ClCompile>
-    <ClCompile Include="packages\LVGL-latest\src\font\lv_font_montserrat_14.c">
-      <ObjectFileName>$(IntDir)bsp\packages\lvgl-latest\src\font\</ObjectFileName>
-    </ClCompile>
-    <ClCompile Include="packages\LVGL-latest\demos\music\assets\img_lv_demo_music_wave_bottom.c">
-      <ObjectFileName>$(IntDir)bsp\packages\lvgl-latest\demos\music\assets\</ObjectFileName>
-    </ClCompile>
-    <ClCompile Include="packages\LVGL-latest\demos\music\assets\img_lv_demo_music_btn_list_pause.c">
-      <ObjectFileName>$(IntDir)bsp\packages\lvgl-latest\demos\music\assets\</ObjectFileName>
-    </ClCompile>
-    <ClCompile Include="packages\LVGL-latest\src\extra\widgets\spinbox\lv_spinbox.c">
-      <ObjectFileName>$(IntDir)bsp\packages\lvgl-latest\src\extra\widgets\spinbox\</ObjectFileName>
-    </ClCompile>
-    <ClCompile Include="packages\LVGL-latest\demos\music\assets\img_lv_demo_music_wave_bottom_large.c">
-      <ObjectFileName>$(IntDir)bsp\packages\lvgl-latest\demos\music\assets\</ObjectFileName>
-    </ClCompile>
-    <ClCompile Include="packages\LVGL-latest\src\draw\sw\lv_draw_sw_letter.c">
-      <ObjectFileName>$(IntDir)bsp\packages\lvgl-latest\src\draw\sw\</ObjectFileName>
-    </ClCompile>
-    <ClCompile Include="packages\LVGL-latest\src\extra\widgets\calendar\lv_calendar_header_arrow.c">
-      <ObjectFileName>$(IntDir)bsp\packages\lvgl-latest\src\extra\widgets\calendar\</ObjectFileName>
-    </ClCompile>
-    <ClCompile Include="packages\LVGL-latest\demos\music\assets\img_lv_demo_music_slider_knob_large.c">
-      <ObjectFileName>$(IntDir)bsp\packages\lvgl-latest\demos\music\assets\</ObjectFileName>
-    </ClCompile>
-    <ClCompile Include="packages\LVGL-latest\src\misc\lv_anim_timeline.c">
-      <ObjectFileName>$(IntDir)bsp\packages\lvgl-latest\src\misc\</ObjectFileName>
-    </ClCompile>
-    <ClCompile Include="packages\LVGL-latest\src\core\lv_obj_pos.c">
-      <ObjectFileName>$(IntDir)bsp\packages\lvgl-latest\src\core\</ObjectFileName>
-    </ClCompile>
-    <ClCompile Include="packages\LVGL-latest\src\font\lv_font_montserrat_40.c">
-      <ObjectFileName>$(IntDir)bsp\packages\lvgl-latest\src\font\</ObjectFileName>
-    </ClCompile>
-    <ClCompile Include="packages\LVGL-latest\src\widgets\lv_objx_templ.c">
-      <ObjectFileName>$(IntDir)bsp\packages\lvgl-latest\src\widgets\</ObjectFileName>
-    </ClCompile>
-    <ClCompile Include="packages\LVGL-latest\demos\benchmark\assets\lv_font_bechmark_montserrat_28_compr_az.c.c">
-      <ObjectFileName>$(IntDir)bsp\packages\lvgl-latest\demos\benchmark\assets\</ObjectFileName>
-    </ClCompile>
-    <ClCompile Include="packages\LVGL-latest\src\font\lv_font_montserrat_12_subpx.c">
-      <ObjectFileName>$(IntDir)bsp\packages\lvgl-latest\src\font\</ObjectFileName>
-    </ClCompile>
-    <ClCompile Include="packages\LVGL-latest\src\draw\sdl\lv_draw_sdl_label.c">
-      <ObjectFileName>$(IntDir)bsp\packages\lvgl-latest\src\draw\sdl\</ObjectFileName>
-    </ClCompile>
-    <ClCompile Include="packages\LVGL-latest\src\extra\widgets\msgbox\lv_msgbox.c">
-      <ObjectFileName>$(IntDir)bsp\packages\lvgl-latest\src\extra\widgets\msgbox\</ObjectFileName>
-    </ClCompile>
-    <ClCompile Include="packages\LVGL-latest\src\extra\libs\freetype\lv_freetype.c">
-      <ObjectFileName>$(IntDir)bsp\packages\lvgl-latest\src\extra\libs\freetype\</ObjectFileName>
-    </ClCompile>
-    <ClCompile Include="packages\LVGL-latest\src\draw\lv_draw_label.c">
-      <ObjectFileName>$(IntDir)bsp\packages\lvgl-latest\src\draw\</ObjectFileName>
-    </ClCompile>
-    <ClCompile Include="packages\LVGL-latest\src\extra\libs\png\lodepng.c">
-      <ObjectFileName>$(IntDir)bsp\packages\lvgl-latest\src\extra\libs\png\</ObjectFileName>
-    </ClCompile>
-    <ClCompile Include="packages\LVGL-latest\demos\music\assets\img_lv_demo_music_corner_left.c">
-      <ObjectFileName>$(IntDir)bsp\packages\lvgl-latest\demos\music\assets\</ObjectFileName>
-    </ClCompile>
-    <ClCompile Include="packages\LVGL-latest\demos\music\assets\img_lv_demo_music_icon_2.c">
-      <ObjectFileName>$(IntDir)bsp\packages\lvgl-latest\demos\music\assets\</ObjectFileName>
-    </ClCompile>
-    <ClCompile Include="packages\LVGL-latest\src\extra\widgets\led\lv_led.c">
-      <ObjectFileName>$(IntDir)bsp\packages\lvgl-latest\src\extra\widgets\led\</ObjectFileName>
-    </ClCompile>
-    <ClCompile Include="packages\LVGL-latest\src\draw\sw\lv_draw_sw_line.c">
-      <ObjectFileName>$(IntDir)bsp\packages\lvgl-latest\src\draw\sw\</ObjectFileName>
-    </ClCompile>
-    <ClCompile Include="packages\LVGL-latest\src\extra\widgets\calendar\lv_calendar.c">
-      <ObjectFileName>$(IntDir)bsp\packages\lvgl-latest\src\extra\widgets\calendar\</ObjectFileName>
-    </ClCompile>
-    <ClCompile Include="packages\LVGL-latest\src\font\lv_font.c">
-      <ObjectFileName>$(IntDir)bsp\packages\lvgl-latest\src\font\</ObjectFileName>
-    </ClCompile>
-    <ClCompile Include="packages\LVGL-latest\src\widgets\lv_btnmatrix.c">
-      <ObjectFileName>$(IntDir)bsp\packages\lvgl-latest\src\widgets\</ObjectFileName>
-    </ClCompile>
-    <ClCompile Include="packages\LVGL-latest\src\font\lv_font_loader.c">
-      <ObjectFileName>$(IntDir)bsp\packages\lvgl-latest\src\font\</ObjectFileName>
-    </ClCompile>
-    <ClCompile Include="packages\LVGL-latest\demos\music\assets\img_lv_demo_music_icon_1.c">
-      <ObjectFileName>$(IntDir)bsp\packages\lvgl-latest\demos\music\assets\</ObjectFileName>
-    </ClCompile>
-    <ClCompile Include="packages\LVGL-latest\demos\music\assets\img_lv_demo_music_wave_top.c">
-      <ObjectFileName>$(IntDir)bsp\packages\lvgl-latest\demos\music\assets\</ObjectFileName>
-    </ClCompile>
-    <ClCompile Include="packages\LVGL-latest\demos\music\assets\img_lv_demo_music_icon_4.c">
-      <ObjectFileName>$(IntDir)bsp\packages\lvgl-latest\demos\music\assets\</ObjectFileName>
-    </ClCompile>
-    <ClCompile Include="packages\LVGL-latest\demos\music\assets\img_lv_demo_music_corner_right.c">
-      <ObjectFileName>$(IntDir)bsp\packages\lvgl-latest\demos\music\assets\</ObjectFileName>
-    </ClCompile>
-    <ClCompile Include="packages\LVGL-latest\src\extra\widgets\chart\lv_chart.c">
-      <ObjectFileName>$(IntDir)bsp\packages\lvgl-latest\src\extra\widgets\chart\</ObjectFileName>
-    </ClCompile>
-    <ClCompile Include="packages\LVGL-latest\demos\music\assets\img_lv_demo_music_btn_rnd_large.c">
-      <ObjectFileName>$(IntDir)bsp\packages\lvgl-latest\demos\music\assets\</ObjectFileName>
-    </ClCompile>
-    <ClCompile Include="packages\LVGL-latest\src\misc\lv_fs.c">
-      <ObjectFileName>$(IntDir)bsp\packages\lvgl-latest\src\misc\</ObjectFileName>
-    </ClCompile>
-    <ClCompile Include="packages\LVGL-latest\src\font\lv_font_fmt_txt.c">
-      <ObjectFileName>$(IntDir)bsp\packages\lvgl-latest\src\font\</ObjectFileName>
-    </ClCompile>
-    <ClCompile Include="packages\LVGL-latest\src\extra\libs\fsdrv\lv_fs_posix.c">
-      <ObjectFileName>$(IntDir)bsp\packages\lvgl-latest\src\extra\libs\fsdrv\</ObjectFileName>
-    </ClCompile>
-    <ClCompile Include="packages\LVGL-latest\src\extra\others\monkey\lv_monkey.c">
-      <ObjectFileName>$(IntDir)bsp\packages\lvgl-latest\src\extra\others\monkey\</ObjectFileName>
-    </ClCompile>
-    <ClCompile Include="packages\LVGL-latest\src\font\lv_font_simsun_16_cjk.c">
-      <ObjectFileName>$(IntDir)bsp\packages\lvgl-latest\src\font\</ObjectFileName>
-    </ClCompile>
-    <ClCompile Include="packages\LVGL-latest\demos\benchmark\assets\img_benchmark_cogwheel_chroma_keyed.c">
-      <ObjectFileName>$(IntDir)bsp\packages\lvgl-latest\demos\benchmark\assets\</ObjectFileName>
-    </ClCompile>
-    <ClCompile Include="packages\LVGL-latest\src\widgets\lv_slider.c">
-      <ObjectFileName>$(IntDir)bsp\packages\lvgl-latest\src\widgets\</ObjectFileName>
-    </ClCompile>
-    <ClCompile Include="packages\LVGL-latest\src\extra\widgets\win\lv_win.c">
-      <ObjectFileName>$(IntDir)bsp\packages\lvgl-latest\src\extra\widgets\win\</ObjectFileName>
-    </ClCompile>
-    <ClCompile Include="packages\LVGL-latest\demos\music\assets\img_lv_demo_music_btn_pause.c">
-      <ObjectFileName>$(IntDir)bsp\packages\lvgl-latest\demos\music\assets\</ObjectFileName>
-    </ClCompile>
-    <ClCompile Include="packages\LVGL-latest\src\extra\layouts\grid\lv_grid.c">
-      <ObjectFileName>$(IntDir)bsp\packages\lvgl-latest\src\extra\layouts\grid\</ObjectFileName>
-    </ClCompile>
-    <ClCompile Include="packages\LVGL-latest\src\widgets\lv_label.c">
-      <ObjectFileName>$(IntDir)bsp\packages\lvgl-latest\src\widgets\</ObjectFileName>
-    </ClCompile>
-    <ClCompile Include="packages\LVGL-latest\src\core\lv_obj_style.c">
-      <ObjectFileName>$(IntDir)bsp\packages\lvgl-latest\src\core\</ObjectFileName>
-    </ClCompile>
-    <ClCompile Include="packages\LVGL-latest\src\font\lv_font_montserrat_26.c">
-      <ObjectFileName>$(IntDir)bsp\packages\lvgl-latest\src\font\</ObjectFileName>
-    </ClCompile>
-    <ClCompile Include="packages\LVGL-latest\demos\widgets\assets\img_demo_widgets_avatar.c">
-      <ObjectFileName>$(IntDir)bsp\packages\lvgl-latest\demos\widgets\assets\</ObjectFileName>
-    </ClCompile>
-    <ClCompile Include="packages\LVGL-latest\src\draw\sdl\lv_draw_sdl_polygon.c">
-      <ObjectFileName>$(IntDir)bsp\packages\lvgl-latest\src\draw\sdl\</ObjectFileName>
-    </ClCompile>
-    <ClCompile Include="packages\LVGL-latest\demos\music\assets\img_lv_demo_music_btn_loop_large.c">
-      <ObjectFileName>$(IntDir)bsp\packages\lvgl-latest\demos\music\assets\</ObjectFileName>
-    </ClCompile>
-    <ClCompile Include="packages\LVGL-latest\demos\widgets\assets\img_lvgl_logo.c">
-      <ObjectFileName>$(IntDir)bsp\packages\lvgl-latest\demos\widgets\assets\</ObjectFileName>
-    </ClCompile>
-    <ClCompile Include="packages\LVGL-latest\src\misc\lv_txt_ap.c">
-      <ObjectFileName>$(IntDir)bsp\packages\lvgl-latest\src\misc\</ObjectFileName>
-    </ClCompile>
-    <ClCompile Include="packages\LVGL-latest\demos\music\assets\img_lv_demo_music_wave_top_large.c">
-      <ObjectFileName>$(IntDir)bsp\packages\lvgl-latest\demos\music\assets\</ObjectFileName>
-    </ClCompile>
-    <ClCompile Include="packages\LVGL-latest\src\font\lv_font_montserrat_16.c">
-      <ObjectFileName>$(IntDir)bsp\packages\lvgl-latest\src\font\</ObjectFileName>
-    </ClCompile>
-    <ClCompile Include="packages\LVGL-latest\src\extra\others\fragment\lv_fragment_manager.c">
-      <ObjectFileName>$(IntDir)bsp\packages\lvgl-latest\src\extra\others\fragment\</ObjectFileName>
-    </ClCompile>
-    <ClCompile Include="packages\LVGL-latest\src\extra\libs\fsdrv\lv_fs_stdio.c">
-      <ObjectFileName>$(IntDir)bsp\packages\lvgl-latest\src\extra\libs\fsdrv\</ObjectFileName>
-    </ClCompile>
-    <ClCompile Include="packages\LVGL-latest\demos\music\assets\img_lv_demo_music_cover_2.c">
-      <ObjectFileName>$(IntDir)bsp\packages\lvgl-latest\demos\music\assets\</ObjectFileName>
-    </ClCompile>
-    <ClCompile Include="packages\LVGL-latest\demos\music\assets\img_lv_demo_music_btn_rnd.c">
-      <ObjectFileName>$(IntDir)bsp\packages\lvgl-latest\demos\music\assets\</ObjectFileName>
-    </ClCompile>
-    <ClCompile Include="packages\LVGL-latest\src\extra\widgets\tabview\lv_tabview.c">
-      <ObjectFileName>$(IntDir)bsp\packages\lvgl-latest\src\extra\widgets\tabview\</ObjectFileName>
-    </ClCompile>
-    <ClCompile Include="packages\LVGL-latest\src\draw\sw\lv_draw_sw_blend.c">
-      <ObjectFileName>$(IntDir)bsp\packages\lvgl-latest\src\draw\sw\</ObjectFileName>
-    </ClCompile>
-    <ClCompile Include="packages\LVGL-latest\demos\music\assets\img_lv_demo_music_logo.c">
-      <ObjectFileName>$(IntDir)bsp\packages\lvgl-latest\demos\music\assets\</ObjectFileName>
-    </ClCompile>
-    <ClCompile Include="packages\LVGL-latest\src\misc\lv_async.c">
-      <ObjectFileName>$(IntDir)bsp\packages\lvgl-latest\src\misc\</ObjectFileName>
-    </ClCompile>
-    <ClCompile Include="packages\LVGL-latest\src\draw\lv_draw.c">
-      <ObjectFileName>$(IntDir)bsp\packages\lvgl-latest\src\draw\</ObjectFileName>
-    </ClCompile>
-    <ClCompile Include="packages\LVGL-latest\src\core\lv_obj_tree.c">
-      <ObjectFileName>$(IntDir)bsp\packages\lvgl-latest\src\core\</ObjectFileName>
-    </ClCompile>
-    <ClCompile Include="packages\LVGL-latest\src\extra\libs\gif\lv_gif.c">
-      <ObjectFileName>$(IntDir)bsp\packages\lvgl-latest\src\extra\libs\gif\</ObjectFileName>
-    </ClCompile>
-    <ClCompile Include="packages\LVGL-latest\src\extra\others\gridnav\lv_gridnav.c">
-      <ObjectFileName>$(IntDir)bsp\packages\lvgl-latest\src\extra\others\gridnav\</ObjectFileName>
-    </ClCompile>
-    <ClCompile Include="packages\LVGL-latest\src\widgets\lv_btn.c">
-      <ObjectFileName>$(IntDir)bsp\packages\lvgl-latest\src\widgets\</ObjectFileName>
-    </ClCompile>
-    <ClCompile Include="packages\LVGL-latest\demos\music\assets\img_lv_demo_music_btn_list_play_large.c">
-      <ObjectFileName>$(IntDir)bsp\packages\lvgl-latest\demos\music\assets\</ObjectFileName>
-    </ClCompile>
-    <ClCompile Include="packages\LVGL-latest\demos\music\assets\img_lv_demo_music_corner_right_large.c">
-      <ObjectFileName>$(IntDir)bsp\packages\lvgl-latest\demos\music\assets\</ObjectFileName>
-    </ClCompile>
-    <ClCompile Include="packages\LVGL-latest\src\extra\libs\qrcode\qrcodegen.c">
-      <ObjectFileName>$(IntDir)bsp\packages\lvgl-latest\src\extra\libs\qrcode\</ObjectFileName>
-    </ClCompile>
-    <ClCompile Include="packages\LVGL-latest\src\misc\lv_mem.c">
-      <ObjectFileName>$(IntDir)bsp\packages\lvgl-latest\src\misc\</ObjectFileName>
-    </ClCompile>
-    <ClCompile Include="packages\LVGL-latest\src\core\lv_obj_class.c">
-      <ObjectFileName>$(IntDir)bsp\packages\lvgl-latest\src\core\</ObjectFileName>
-    </ClCompile>
-    <ClCompile Include="packages\LVGL-latest\src\font\lv_font_montserrat_48.c">
-      <ObjectFileName>$(IntDir)bsp\packages\lvgl-latest\src\font\</ObjectFileName>
-    </ClCompile>
-    <ClCompile Include="packages\LVGL-latest\src\widgets\lv_dropdown.c">
-      <ObjectFileName>$(IntDir)bsp\packages\lvgl-latest\src\widgets\</ObjectFileName>
-    </ClCompile>
-    <ClCompile Include="packages\LVGL-latest\src\extra\libs\bmp\lv_bmp.c">
-      <ObjectFileName>$(IntDir)bsp\packages\lvgl-latest\src\extra\libs\bmp\</ObjectFileName>
-    </ClCompile>
-    <ClCompile Include="packages\LVGL-latest\demos\music\assets\img_lv_demo_music_btn_list_play.c">
-      <ObjectFileName>$(IntDir)bsp\packages\lvgl-latest\demos\music\assets\</ObjectFileName>
-    </ClCompile>
-    <ClCompile Include="packages\LVGL-latest\src\draw\sdl\lv_draw_sdl_utils.c">
-      <ObjectFileName>$(IntDir)bsp\packages\lvgl-latest\src\draw\sdl\</ObjectFileName>
-    </ClCompile>
-    <ClCompile Include="packages\LVGL-latest\src\extra\widgets\tileview\lv_tileview.c">
-      <ObjectFileName>$(IntDir)bsp\packages\lvgl-latest\src\extra\widgets\tileview\</ObjectFileName>
-    </ClCompile>
-    <ClCompile Include="packages\LVGL-latest\src\extra\themes\mono\lv_theme_mono.c">
-      <ObjectFileName>$(IntDir)bsp\packages\lvgl-latest\src\extra\themes\mono\</ObjectFileName>
-    </ClCompile>
-    <ClCompile Include="packages\LVGL-latest\demos\music\assets\img_lv_demo_music_btn_prev_large.c">
-      <ObjectFileName>$(IntDir)bsp\packages\lvgl-latest\demos\music\assets\</ObjectFileName>
-    </ClCompile>
-    <ClCompile Include="packages\LVGL-latest\src\draw\lv_draw_rect.c">
-      <ObjectFileName>$(IntDir)bsp\packages\lvgl-latest\src\draw\</ObjectFileName>
-    </ClCompile>
-    <ClCompile Include="packages\LVGL-latest\src\core\lv_obj_style_gen.c">
-      <ObjectFileName>$(IntDir)bsp\packages\lvgl-latest\src\core\</ObjectFileName>
-    </ClCompile>
-    <ClCompile Include="packages\LVGL-latest\src\font\lv_font_montserrat_44.c">
-      <ObjectFileName>$(IntDir)bsp\packages\lvgl-latest\src\font\</ObjectFileName>
-    </ClCompile>
-    <ClCompile Include="packages\LVGL-latest\demos\stress\assets\lv_font_montserrat_28_compr_az.c">
-      <ObjectFileName>$(IntDir)bsp\packages\lvgl-latest\demos\stress\assets\</ObjectFileName>
-    </ClCompile>
-    <ClCompile Include="packages\LVGL-latest\demos\music\assets\img_lv_demo_music_btn_next.c">
-      <ObjectFileName>$(IntDir)bsp\packages\lvgl-latest\demos\music\assets\</ObjectFileName>
-    </ClCompile>
-    <ClCompile Include="packages\LVGL-latest\src\draw\sdl\lv_draw_sdl_arc.c">
-      <ObjectFileName>$(IntDir)bsp\packages\lvgl-latest\src\draw\sdl\</ObjectFileName>
-    </ClCompile>
-    <ClCompile Include="packages\LVGL-latest\demos\music\assets\img_lv_demo_music_corner_left_large.c">
-      <ObjectFileName>$(IntDir)bsp\packages\lvgl-latest\demos\music\assets\</ObjectFileName>
-    </ClCompile>
-    <ClCompile Include="packages\LVGL-latest\src\draw\sdl\lv_draw_sdl_composite.c">
-      <ObjectFileName>$(IntDir)bsp\packages\lvgl-latest\src\draw\sdl\</ObjectFileName>
-    </ClCompile>
-    <ClCompile Include="packages\LVGL-latest\src\misc\lv_style.c">
-      <ObjectFileName>$(IntDir)bsp\packages\lvgl-latest\src\misc\</ObjectFileName>
-    </ClCompile>
-    <ClCompile Include="packages\LVGL-latest\src\core\lv_refr.c">
-      <ObjectFileName>$(IntDir)bsp\packages\lvgl-latest\src\core\</ObjectFileName>
-    </ClCompile>
-    <ClCompile Include="packages\LVGL-latest\src\font\lv_font_montserrat_42.c">
-      <ObjectFileName>$(IntDir)bsp\packages\lvgl-latest\src\font\</ObjectFileName>
-    </ClCompile>
-    <ClCompile Include="packages\LVGL-latest\src\widgets\lv_canvas.c">
-      <ObjectFileName>$(IntDir)bsp\packages\lvgl-latest\src\widgets\</ObjectFileName>
-    </ClCompile>
-    <ClCompile Include="packages\LVGL-latest\src\extra\libs\sjpg\tjpgd.c">
-      <ObjectFileName>$(IntDir)bsp\packages\lvgl-latest\src\extra\libs\sjpg\</ObjectFileName>
-    </ClCompile>
-    <ClCompile Include="packages\LVGL-latest\demos\music\assets\img_lv_demo_music_icon_2_large.c">
-      <ObjectFileName>$(IntDir)bsp\packages\lvgl-latest\demos\music\assets\</ObjectFileName>
-    </ClCompile>
-    <ClCompile Include="packages\LVGL-latest\demos\music\assets\img_lv_demo_music_btn_play_large.c">
-      <ObjectFileName>$(IntDir)bsp\packages\lvgl-latest\demos\music\assets\</ObjectFileName>
-    </ClCompile>
-    <ClCompile Include="packages\LVGL-latest\src\font\lv_font_unscii_16.c">
-      <ObjectFileName>$(IntDir)bsp\packages\lvgl-latest\src\font\</ObjectFileName>
-    </ClCompile>
-    <ClCompile Include="packages\LVGL-latest\src\draw\sw\lv_draw_sw_dither.c">
-      <ObjectFileName>$(IntDir)bsp\packages\lvgl-latest\src\draw\sw\</ObjectFileName>
-    </ClCompile>
-    <ClCompile Include="packages\LVGL-latest\src\extra\libs\fsdrv\lv_fs_win32.c">
-      <ObjectFileName>$(IntDir)bsp\packages\lvgl-latest\src\extra\libs\fsdrv\</ObjectFileName>
-    </ClCompile>
-    <ClCompile Include="packages\LVGL-latest\src\font\lv_font_montserrat_8.c">
-      <ObjectFileName>$(IntDir)bsp\packages\lvgl-latest\src\font\</ObjectFileName>
-    </ClCompile>
-    <ClCompile Include="packages\LVGL-latest\src\font\lv_font_montserrat_36.c">
-      <ObjectFileName>$(IntDir)bsp\packages\lvgl-latest\src\font\</ObjectFileName>
+    <ClCompile Include="..\..\rt-thread\components\libc\posix\io\poll\poll.c">
+      <ObjectFileName>$(IntDir)kernel\components\libc\posix\io\poll\</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="..\..\rt-thread\components\libc\posix\io\poll\select.c">
+      <ObjectFileName>$(IntDir)kernel\components\libc\posix\io\poll\</ObjectFileName>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="packages\LVGL-latest\env_support\rt-thread\lv_rt_thread_port.c">
-      <ObjectFileName>$(IntDir)bsp\packages\lvgl-latest\env_support\rt-thread\</ObjectFileName>
+    <ClCompile Include="..\..\rt-thread\components\net\netdev\src\netdev.c">
+      <ObjectFileName>$(IntDir)kernel\components\net\netdev\src\</ObjectFileName>
     </ClCompile>
-    <ClCompile Include="applications\lvgl\lv_port_indev.c">
-      <ObjectFileName>$(IntDir)bsp\applications\lvgl\</ObjectFileName>
+    <ClCompile Include="..\..\rt-thread\components\net\netdev\src\netdev_ipaddr.c">
+      <ObjectFileName>$(IntDir)kernel\components\net\netdev\src\</ObjectFileName>
     </ClCompile>
-    <ClCompile Include="applications\lvgl\lv_port_disp.c">
-      <ObjectFileName>$(IntDir)bsp\applications\lvgl\</ObjectFileName>
+    <ClCompile Include="..\..\rt-thread\components\net\sal\dfs_net\dfs_net.c">
+      <ObjectFileName>$(IntDir)kernel\components\net\sal\dfs_net\</ObjectFileName>
     </ClCompile>
-    <ClCompile Include="applications\lvgl\lv_demo.c">
-      <ObjectFileName>$(IntDir)bsp\applications\lvgl\</ObjectFileName>
+    <ClCompile Include="..\..\rt-thread\components\net\sal\socket\net_netdb.c">
+      <ObjectFileName>$(IntDir)kernel\components\net\sal\socket\</ObjectFileName>
     </ClCompile>
-    <ClCompile Include="applications\lvgl\win32drv.c">
-      <ObjectFileName>$(IntDir)bsp\applications\lvgl\</ObjectFileName>
+    <ClCompile Include="..\..\rt-thread\components\net\sal\socket\net_sockets.c">
+      <ObjectFileName>$(IntDir)kernel\components\net\sal\socket\</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="..\..\rt-thread\components\net\sal\src\sal_socket.c">
+      <ObjectFileName>$(IntDir)kernel\components\net\sal\src\</ObjectFileName>
     </ClCompile>
   </ItemGroup>
-  <ItemGroup />
   <ItemGroup>
-    <ClInclude Include="applications\lvgl\lv_conf.h" />
-    <ClInclude Include="applications\lvgl\lv_port_disp.h" />
-    <ClInclude Include="applications\lvgl\lv_port_indev.h" />
-    <ClInclude Include="applications\lvgl\win32drv.h" />
     <ClInclude Include="drivers\board.h" />
     <ClInclude Include="drivers\uart_console.h" />
-    <ClInclude Include="packages\LVGL-latest\demos\benchmark\lv_demo_benchmark.h" />
-    <ClInclude Include="packages\LVGL-latest\demos\keypad_encoder\lv_demo_keypad_encoder.h" />
-    <ClInclude Include="packages\LVGL-latest\demos\lv_demos.h" />
-    <ClInclude Include="packages\LVGL-latest\demos\music\assets\spectrum_1.h" />
-    <ClInclude Include="packages\LVGL-latest\demos\music\assets\spectrum_2.h" />
-    <ClInclude Include="packages\LVGL-latest\demos\music\assets\spectrum_3.h" />
-    <ClInclude Include="packages\LVGL-latest\demos\music\lv_demo_music.h" />
-    <ClInclude Include="packages\LVGL-latest\demos\music\lv_demo_music_list.h" />
-    <ClInclude Include="packages\LVGL-latest\demos\music\lv_demo_music_main.h" />
-    <ClInclude Include="packages\LVGL-latest\demos\stress\lv_demo_stress.h" />
-    <ClInclude Include="packages\LVGL-latest\demos\widgets\lv_demo_widgets.h" />
-    <ClInclude Include="packages\LVGL-latest\env_support\rt-thread\lv_rt_thread_conf.h" />
-    <ClInclude Include="packages\LVGL-latest\lvgl.h" />
-    <ClInclude Include="packages\LVGL-latest\src\core\lv_disp.h" />
-    <ClInclude Include="packages\LVGL-latest\src\core\lv_event.h" />
-    <ClInclude Include="packages\LVGL-latest\src\core\lv_group.h" />
-    <ClInclude Include="packages\LVGL-latest\src\core\lv_indev.h" />
-    <ClInclude Include="packages\LVGL-latest\src\core\lv_indev_scroll.h" />
-    <ClInclude Include="packages\LVGL-latest\src\core\lv_obj.h" />
-    <ClInclude Include="packages\LVGL-latest\src\core\lv_obj_class.h" />
-    <ClInclude Include="packages\LVGL-latest\src\core\lv_obj_draw.h" />
-    <ClInclude Include="packages\LVGL-latest\src\core\lv_obj_pos.h" />
-    <ClInclude Include="packages\LVGL-latest\src\core\lv_obj_scroll.h" />
-    <ClInclude Include="packages\LVGL-latest\src\core\lv_obj_style.h" />
-    <ClInclude Include="packages\LVGL-latest\src\core\lv_obj_style_gen.h" />
-    <ClInclude Include="packages\LVGL-latest\src\core\lv_obj_tree.h" />
-    <ClInclude Include="packages\LVGL-latest\src\core\lv_refr.h" />
-    <ClInclude Include="packages\LVGL-latest\src\core\lv_theme.h" />
-    <ClInclude Include="packages\LVGL-latest\src\draw\lv_draw.h" />
-    <ClInclude Include="packages\LVGL-latest\src\draw\lv_draw_arc.h" />
-    <ClInclude Include="packages\LVGL-latest\src\draw\lv_draw_img.h" />
-    <ClInclude Include="packages\LVGL-latest\src\draw\lv_draw_label.h" />
-    <ClInclude Include="packages\LVGL-latest\src\draw\lv_draw_line.h" />
-    <ClInclude Include="packages\LVGL-latest\src\draw\lv_draw_mask.h" />
-    <ClInclude Include="packages\LVGL-latest\src\draw\lv_draw_rect.h" />
-    <ClInclude Include="packages\LVGL-latest\src\draw\lv_draw_triangle.h" />
-    <ClInclude Include="packages\LVGL-latest\src\draw\lv_img_buf.h" />
-    <ClInclude Include="packages\LVGL-latest\src\draw\lv_img_cache.h" />
-    <ClInclude Include="packages\LVGL-latest\src\draw\lv_img_decoder.h" />
-    <ClInclude Include="packages\LVGL-latest\src\draw\nxp_pxp\lv_gpu_nxp_pxp.h" />
-    <ClInclude Include="packages\LVGL-latest\src\draw\nxp_pxp\lv_gpu_nxp_pxp_osa.h" />
-    <ClInclude Include="packages\LVGL-latest\src\draw\nxp_vglite\lv_gpu_nxp_vglite.h" />
-    <ClInclude Include="packages\LVGL-latest\src\draw\sdl\lv_draw_sdl.h" />
-    <ClInclude Include="packages\LVGL-latest\src\draw\sdl\lv_draw_sdl_composite.h" />
-    <ClInclude Include="packages\LVGL-latest\src\draw\sdl\lv_draw_sdl_img.h" />
-    <ClInclude Include="packages\LVGL-latest\src\draw\sdl\lv_draw_sdl_mask.h" />
-    <ClInclude Include="packages\LVGL-latest\src\draw\sdl\lv_draw_sdl_priv.h" />
-    <ClInclude Include="packages\LVGL-latest\src\draw\sdl\lv_draw_sdl_rect.h" />
-    <ClInclude Include="packages\LVGL-latest\src\draw\sdl\lv_draw_sdl_stack_blur.h" />
-    <ClInclude Include="packages\LVGL-latest\src\draw\sdl\lv_draw_sdl_texture_cache.h" />
-    <ClInclude Include="packages\LVGL-latest\src\draw\sdl\lv_draw_sdl_utils.h" />
-    <ClInclude Include="packages\LVGL-latest\src\draw\stm32_dma2d\lv_gpu_stm32_dma2d.h" />
-    <ClInclude Include="packages\LVGL-latest\src\draw\sw\lv_draw_sw.h" />
-    <ClInclude Include="packages\LVGL-latest\src\draw\sw\lv_draw_sw_blend.h" />
-    <ClInclude Include="packages\LVGL-latest\src\draw\sw\lv_draw_sw_dither.h" />
-    <ClInclude Include="packages\LVGL-latest\src\draw\sw\lv_draw_sw_gradient.h" />
-    <ClInclude Include="packages\LVGL-latest\src\extra\layouts\flex\lv_flex.h" />
-    <ClInclude Include="packages\LVGL-latest\src\extra\layouts\grid\lv_grid.h" />
-    <ClInclude Include="packages\LVGL-latest\src\extra\layouts\lv_layouts.h" />
-    <ClInclude Include="packages\LVGL-latest\src\extra\libs\bmp\lv_bmp.h" />
-    <ClInclude Include="packages\LVGL-latest\src\extra\libs\ffmpeg\lv_ffmpeg.h" />
-    <ClInclude Include="packages\LVGL-latest\src\extra\libs\freetype\lv_freetype.h" />
-    <ClInclude Include="packages\LVGL-latest\src\extra\libs\fsdrv\lv_fsdrv.h" />
-    <ClInclude Include="packages\LVGL-latest\src\extra\libs\gif\gifdec.h" />
-    <ClInclude Include="packages\LVGL-latest\src\extra\libs\gif\lv_gif.h" />
-    <ClInclude Include="packages\LVGL-latest\src\extra\libs\lv_libs.h" />
-    <ClInclude Include="packages\LVGL-latest\src\extra\libs\png\lodepng.h" />
-    <ClInclude Include="packages\LVGL-latest\src\extra\libs\png\lv_png.h" />
-    <ClInclude Include="packages\LVGL-latest\src\extra\libs\qrcode\lv_qrcode.h" />
-    <ClInclude Include="packages\LVGL-latest\src\extra\libs\qrcode\qrcodegen.h" />
-    <ClInclude Include="packages\LVGL-latest\src\extra\libs\rlottie\lv_rlottie.h" />
-    <ClInclude Include="packages\LVGL-latest\src\extra\libs\sjpg\lv_sjpg.h" />
-    <ClInclude Include="packages\LVGL-latest\src\extra\libs\sjpg\tjpgd.h" />
-    <ClInclude Include="packages\LVGL-latest\src\extra\libs\sjpg\tjpgdcnf.h" />
-    <ClInclude Include="packages\LVGL-latest\src\extra\lv_extra.h" />
-    <ClInclude Include="packages\LVGL-latest\src\extra\others\fragment\lv_fragment.h" />
-    <ClInclude Include="packages\LVGL-latest\src\extra\others\gridnav\lv_gridnav.h" />
-    <ClInclude Include="packages\LVGL-latest\src\extra\others\lv_others.h" />
-    <ClInclude Include="packages\LVGL-latest\src\extra\others\monkey\lv_monkey.h" />
-    <ClInclude Include="packages\LVGL-latest\src\extra\others\snapshot\lv_snapshot.h" />
-    <ClInclude Include="packages\LVGL-latest\src\extra\themes\basic\lv_theme_basic.h" />
-    <ClInclude Include="packages\LVGL-latest\src\extra\themes\default\lv_theme_default.h" />
-    <ClInclude Include="packages\LVGL-latest\src\extra\themes\lv_themes.h" />
-    <ClInclude Include="packages\LVGL-latest\src\extra\themes\mono\lv_theme_mono.h" />
-    <ClInclude Include="packages\LVGL-latest\src\extra\widgets\animimg\lv_animimg.h" />
-    <ClInclude Include="packages\LVGL-latest\src\extra\widgets\calendar\lv_calendar.h" />
-    <ClInclude Include="packages\LVGL-latest\src\extra\widgets\calendar\lv_calendar_header_arrow.h" />
-    <ClInclude Include="packages\LVGL-latest\src\extra\widgets\calendar\lv_calendar_header_dropdown.h" />
-    <ClInclude Include="packages\LVGL-latest\src\extra\widgets\chart\lv_chart.h" />
-    <ClInclude Include="packages\LVGL-latest\src\extra\widgets\colorwheel\lv_colorwheel.h" />
-    <ClInclude Include="packages\LVGL-latest\src\extra\widgets\imgbtn\lv_imgbtn.h" />
-    <ClInclude Include="packages\LVGL-latest\src\extra\widgets\keyboard\lv_keyboard.h" />
-    <ClInclude Include="packages\LVGL-latest\src\extra\widgets\led\lv_led.h" />
-    <ClInclude Include="packages\LVGL-latest\src\extra\widgets\list\lv_list.h" />
-    <ClInclude Include="packages\LVGL-latest\src\extra\widgets\lv_widgets.h" />
-    <ClInclude Include="packages\LVGL-latest\src\extra\widgets\menu\lv_menu.h" />
-    <ClInclude Include="packages\LVGL-latest\src\extra\widgets\meter\lv_meter.h" />
-    <ClInclude Include="packages\LVGL-latest\src\extra\widgets\msgbox\lv_msgbox.h" />
-    <ClInclude Include="packages\LVGL-latest\src\extra\widgets\span\lv_span.h" />
-    <ClInclude Include="packages\LVGL-latest\src\extra\widgets\spinbox\lv_spinbox.h" />
-    <ClInclude Include="packages\LVGL-latest\src\extra\widgets\spinner\lv_spinner.h" />
-    <ClInclude Include="packages\LVGL-latest\src\extra\widgets\tabview\lv_tabview.h" />
-    <ClInclude Include="packages\LVGL-latest\src\extra\widgets\tileview\lv_tileview.h" />
-    <ClInclude Include="packages\LVGL-latest\src\extra\widgets\win\lv_win.h" />
-    <ClInclude Include="packages\LVGL-latest\src\font\lv_font.h" />
-    <ClInclude Include="packages\LVGL-latest\src\font\lv_font_fmt_txt.h" />
-    <ClInclude Include="packages\LVGL-latest\src\font\lv_font_loader.h" />
-    <ClInclude Include="packages\LVGL-latest\src\font\lv_symbol_def.h" />
-    <ClInclude Include="packages\LVGL-latest\src\hal\lv_hal.h" />
-    <ClInclude Include="packages\LVGL-latest\src\hal\lv_hal_disp.h" />
-    <ClInclude Include="packages\LVGL-latest\src\hal\lv_hal_indev.h" />
-    <ClInclude Include="packages\LVGL-latest\src\hal\lv_hal_tick.h" />
-    <ClInclude Include="packages\LVGL-latest\src\lv_api_map.h" />
-    <ClInclude Include="packages\LVGL-latest\src\lv_conf_internal.h" />
-    <ClInclude Include="packages\LVGL-latest\src\lv_conf_kconfig.h" />
-    <ClInclude Include="packages\LVGL-latest\src\lvgl.h" />
-    <ClInclude Include="packages\LVGL-latest\src\misc\lv_anim.h" />
-    <ClInclude Include="packages\LVGL-latest\src\misc\lv_anim_timeline.h" />
-    <ClInclude Include="packages\LVGL-latest\src\misc\lv_area.h" />
-    <ClInclude Include="packages\LVGL-latest\src\misc\lv_assert.h" />
-    <ClInclude Include="packages\LVGL-latest\src\misc\lv_async.h" />
-    <ClInclude Include="packages\LVGL-latest\src\misc\lv_bidi.h" />
-    <ClInclude Include="packages\LVGL-latest\src\misc\lv_color.h" />
-    <ClInclude Include="packages\LVGL-latest\src\misc\lv_fs.h" />
-    <ClInclude Include="packages\LVGL-latest\src\misc\lv_gc.h" />
-    <ClInclude Include="packages\LVGL-latest\src\misc\lv_ll.h" />
-    <ClInclude Include="packages\LVGL-latest\src\misc\lv_log.h" />
-    <ClInclude Include="packages\LVGL-latest\src\misc\lv_lru.h" />
-    <ClInclude Include="packages\LVGL-latest\src\misc\lv_math.h" />
-    <ClInclude Include="packages\LVGL-latest\src\misc\lv_mem.h" />
-    <ClInclude Include="packages\LVGL-latest\src\misc\lv_printf.h" />
-    <ClInclude Include="packages\LVGL-latest\src\misc\lv_style.h" />
-    <ClInclude Include="packages\LVGL-latest\src\misc\lv_style_gen.h" />
-    <ClInclude Include="packages\LVGL-latest\src\misc\lv_timer.h" />
-    <ClInclude Include="packages\LVGL-latest\src\misc\lv_tlsf.h" />
-    <ClInclude Include="packages\LVGL-latest\src\misc\lv_txt.h" />
-    <ClInclude Include="packages\LVGL-latest\src\misc\lv_txt_ap.h" />
-    <ClInclude Include="packages\LVGL-latest\src\misc\lv_types.h" />
-    <ClInclude Include="packages\LVGL-latest\src\misc\lv_utils.h" />
-    <ClInclude Include="packages\LVGL-latest\src\widgets\lv_arc.h" />
-    <ClInclude Include="packages\LVGL-latest\src\widgets\lv_bar.h" />
-    <ClInclude Include="packages\LVGL-latest\src\widgets\lv_btn.h" />
-    <ClInclude Include="packages\LVGL-latest\src\widgets\lv_btnmatrix.h" />
-    <ClInclude Include="packages\LVGL-latest\src\widgets\lv_canvas.h" />
-    <ClInclude Include="packages\LVGL-latest\src\widgets\lv_checkbox.h" />
-    <ClInclude Include="packages\LVGL-latest\src\widgets\lv_dropdown.h" />
-    <ClInclude Include="packages\LVGL-latest\src\widgets\lv_img.h" />
-    <ClInclude Include="packages\LVGL-latest\src\widgets\lv_label.h" />
-    <ClInclude Include="packages\LVGL-latest\src\widgets\lv_line.h" />
-    <ClInclude Include="packages\LVGL-latest\src\widgets\lv_roller.h" />
-    <ClInclude Include="packages\LVGL-latest\src\widgets\lv_slider.h" />
-    <ClInclude Include="packages\LVGL-latest\src\widgets\lv_switch.h" />
-    <ClInclude Include="packages\LVGL-latest\src\widgets\lv_table.h" />
-    <ClInclude Include="packages\LVGL-latest\src\widgets\lv_textarea.h" />
+    <ClInclude Include="drivers\winsock\rtt_winsock.h" />
     <ClInclude Include="rtconfig.h" />
     <ClInclude Include="rtconfig_project.h" />
+    <ClInclude Include="..\..\rt-thread\components\dfs\filesystems\devfs\devfs.h" />
+    <ClInclude Include="..\..\rt-thread\components\dfs\filesystems\elmfat\diskio.h" />
+    <ClInclude Include="..\..\rt-thread\components\dfs\filesystems\elmfat\ff.h" />
+    <ClInclude Include="..\..\rt-thread\components\dfs\filesystems\elmfat\ffconf.h" />
     <ClInclude Include="..\..\rt-thread\components\dfs\include\dfs.h" />
     <ClInclude Include="..\..\rt-thread\components\dfs\include\dfs_file.h" />
     <ClInclude Include="..\..\rt-thread\components\dfs\include\dfs_fs.h" />
@@ -1120,6 +305,7 @@
     <ClInclude Include="..\..\rt-thread\components\drivers\include\drivers\serial.h" />
     <ClInclude Include="..\..\rt-thread\components\drivers\include\drivers\serial_v2.h" />
     <ClInclude Include="..\..\rt-thread\components\drivers\include\drivers\spi.h" />
+    <ClInclude Include="..\..\rt-thread\components\drivers\include\drivers\touch.h" />
     <ClInclude Include="..\..\rt-thread\components\drivers\include\drivers\usb_common.h" />
     <ClInclude Include="..\..\rt-thread\components\drivers\include\drivers\usb_device.h" />
     <ClInclude Include="..\..\rt-thread\components\drivers\include\drivers\usb_host.h" />
@@ -1137,20 +323,35 @@
     <ClInclude Include="..\..\rt-thread\components\finsh\finsh.h" />
     <ClInclude Include="..\..\rt-thread\components\finsh\msh.h" />
     <ClInclude Include="..\..\rt-thread\components\finsh\shell.h" />
-    <ClInclude Include="..\..\rt-thread\components\libc\compilers\common\dirent.h" />
-    <ClInclude Include="..\..\rt-thread\components\libc\compilers\common\extension\fcntl.h" />
+    <ClInclude Include="..\..\rt-thread\components\libc\compilers\common\extension\fcntl\msvc\fcntl.h" />
     <ClInclude Include="..\..\rt-thread\components\libc\compilers\common\extension\sys\errno.h" />
     <ClInclude Include="..\..\rt-thread\components\libc\compilers\common\extension\sys\stat.h" />
     <ClInclude Include="..\..\rt-thread\components\libc\compilers\common\extension\sys\types.h" />
-    <ClInclude Include="..\..\rt-thread\components\libc\compilers\common\extension\sys\unistd.h" />
-    <ClInclude Include="..\..\rt-thread\components\libc\compilers\common\extension\unistd.h" />
-    <ClInclude Include="..\..\rt-thread\components\libc\compilers\common\sys\ioctl.h" />
-    <ClInclude Include="..\..\rt-thread\components\libc\compilers\common\sys\signal.h" />
-    <ClInclude Include="..\..\rt-thread\components\libc\compilers\common\sys\statfs.h" />
-    <ClInclude Include="..\..\rt-thread\components\libc\compilers\common\sys\time.h" />
+    <ClInclude Include="..\..\rt-thread\components\libc\compilers\common\include\dirent.h" />
+    <ClInclude Include="..\..\rt-thread\components\libc\compilers\common\include\posix\ctype.h" />
+    <ClInclude Include="..\..\rt-thread\components\libc\compilers\common\include\posix\stdio.h" />
+    <ClInclude Include="..\..\rt-thread\components\libc\compilers\common\include\posix\string.h" />
+    <ClInclude Include="..\..\rt-thread\components\libc\compilers\common\include\posix\wchar.h" />
+    <ClInclude Include="..\..\rt-thread\components\libc\compilers\common\include\sys\ioctl.h" />
+    <ClInclude Include="..\..\rt-thread\components\libc\compilers\common\include\sys\select.h" />
+    <ClInclude Include="..\..\rt-thread\components\libc\compilers\common\include\sys\signal.h" />
+    <ClInclude Include="..\..\rt-thread\components\libc\compilers\common\include\sys\statfs.h" />
+    <ClInclude Include="..\..\rt-thread\components\libc\compilers\common\include\sys\time.h" />
+    <ClInclude Include="..\..\rt-thread\components\libc\compilers\common\include\sys\unistd.h" />
+    <ClInclude Include="..\..\rt-thread\components\libc\compilers\common\include\unistd.h" />
     <ClInclude Include="..\..\rt-thread\components\libc\posix\io\poll\poll.h" />
     <ClInclude Include="..\..\rt-thread\components\libc\posix\io\stdio\libc.h" />
     <ClInclude Include="..\..\rt-thread\components\libc\posix\ipc\semaphore.h" />
+    <ClInclude Include="..\..\rt-thread\components\net\netdev\include\arpa\inet.h" />
+    <ClInclude Include="..\..\rt-thread\components\net\netdev\include\netdev.h" />
+    <ClInclude Include="..\..\rt-thread\components\net\netdev\include\netdev_ipaddr.h" />
+    <ClInclude Include="..\..\rt-thread\components\net\sal\include\dfs_net\dfs_net.h" />
+    <ClInclude Include="..\..\rt-thread\components\net\sal\include\sal_low_lvl.h" />
+    <ClInclude Include="..\..\rt-thread\components\net\sal\include\sal_netdb.h" />
+    <ClInclude Include="..\..\rt-thread\components\net\sal\include\sal_socket.h" />
+    <ClInclude Include="..\..\rt-thread\components\net\sal\include\sal_tls.h" />
+    <ClInclude Include="..\..\rt-thread\components\net\sal\include\socket\netdb.h" />
+    <ClInclude Include="..\..\rt-thread\components\net\sal\include\socket\sys_socket\sys\socket.h" />
     <ClInclude Include="..\..\rt-thread\include\rtdbg.h" />
     <ClInclude Include="..\..\rt-thread\include\rtdebug.h" />
     <ClInclude Include="..\..\rt-thread\include\rtdef.h" />
