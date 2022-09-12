@@ -1,29 +1,13 @@
 #ifndef __HW_CONFIG_H
 #define __HW_CONFIG_H
 
-#define LED_GPIO_RCC               LL_AHB4_GRP1_PERIPH_GPIOI
-#define LED_GREEN_PORT             GPIOI
-#define LED_GREEN_PIN              LL_GPIO_PIN_12
-#define LED_YELLOW_PORT            GPIOI
-#define LED_YELLOW_PIN             LL_GPIO_PIN_13
-#define LED_RED_PORT               GPIOI
-#define LED_RED_PIN                LL_GPIO_PIN_14
-#define LED_BLUE_PORT              GPIOI
-#define LED_BLUE_PIN               LL_GPIO_PIN_15
-
-#define KEY_GPIO_RCC               (LL_AHB4_GRP1_PERIPH_GPIOC | LL_AHB4_GRP1_PERIPH_GPIOK)
-#define KEY_OK_PORT                GPIOK
-#define KEY_OK_PIN                 LL_GPIO_PIN_2
-#define KEY_DOWN_PORT              GPIOK
-#define KEY_DOWN_PIN               LL_GPIO_PIN_3
-#define KEY_LEFT_PORT              GPIOK
-#define KEY_LEFT_PIN               LL_GPIO_PIN_4
-#define KEY_RIGHT_PORT             GPIOK
-#define KEY_RIGHT_PIN              LL_GPIO_PIN_5
-#define KEY_UP_PORT                GPIOK
-#define KEY_UP_PIN                 LL_GPIO_PIN_6
-#define KEY_HOME_PORT              GPIOC
-#define KEY_HOME_PIN               LL_GPIO_PIN_13
+#define LED_GPIO_RCC               (LL_AHB4_GRP1_PERIPH_GPIOB | LL_AHB4_GRP1_PERIPH_GPIOA)
+#define LED_RED_PORT               GPIOB
+#define LED_RED_PIN                LL_GPIO_PIN_0
+#define LED_GREEN_PORT             GPIOB
+#define LED_GREEN_PIN              LL_GPIO_PIN_1
+#define LED_BLUE_PORT              GPIOA
+#define LED_BLUE_PIN               LL_GPIO_PIN_3
 
 #define UART1_PORT_RCC             LL_AHB4_GRP1_PERIPH_GPIOA
 #define UART1_TX_PORT              GPIOA
@@ -184,14 +168,14 @@
 #define UART8_DMA_RX_CLEAR_FLAG()  UART8_DMA->HIFCR = DMA_HIFCR_CTCIF7|DMA_HIFCR_CTEIF7
 #define UART8_DMA_TX_CLEAR_FLAG()  UART8_DMA->HIFCR = DMA_HIFCR_CTCIF6|DMA_HIFCR_CTEIF6
 
- /** QUADSPI GPIO
- PB6     ------> QUADSPI_BK1_NCS 
- PB2     ------> QUADSPI_CLK
- PD11    ------> QUADSPI_BK1_IO0
- PD12    ------> QUADSPI_BK1_IO1
- PE2     ------> QUADSPI_BK1_IO2
- PD13    ------> QUADSPI_BK1_IO3
- */
+/** QUADSPI GPIO
+PB6     ------> QUADSPI_BK1_NCS
+PB2     ------> QUADSPI_CLK
+PD11    ------> QUADSPI_BK1_IO0
+PD12    ------> QUADSPI_BK1_IO1
+PE2     ------> QUADSPI_BK1_IO2
+PD13    ------> QUADSPI_BK1_IO3
+*/
 #define QSPI_GPIO_RCC              (LL_AHB4_GRP1_PERIPH_GPIOB | LL_AHB4_GRP1_PERIPH_GPIOD |LL_AHB4_GRP1_PERIPH_GPIOE)
 #define QSPI_CS_PORT               GPIOB
 #define QSPI_CS_PIN                LL_GPIO_PIN_6
@@ -213,7 +197,7 @@
 #define QSPI_BK1_IO3_AF            LL_GPIO_AF_9
 
 /** ETH GPIO Configuration
-PG11    ------> ETH_TX_EN
+PB11    ------> ETH_TX_EN
 PG13    ------> ETH_TXD0
 PG12    ------> ETH_TXD1
 PC1     ------> ETH_MDC
@@ -223,8 +207,8 @@ PA7     ------> ETH_CRS_DV
 PC4     ------> ETH_RXD0
 PC5     ------> ETH_RXD1
 */
-#define ETH_GPIO_RCC              (LL_AHB4_GRP1_PERIPH_GPIOA  | LL_AHB4_GRP1_PERIPH_GPIOC | LL_AHB4_GRP1_PERIPH_GPIOG)
-#define ETH_TX_EN_PORT            GPIOG
+#define ETH_GPIO_RCC              (LL_AHB4_GRP1_PERIPH_GPIOA | LL_AHB4_GRP1_PERIPH_GPIOB | LL_AHB4_GRP1_PERIPH_GPIOC | LL_AHB4_GRP1_PERIPH_GPIOG)
+#define ETH_TX_EN_PORT            GPIOB
 #define ETH_TX_EN_PIN             LL_GPIO_PIN_11
 #define ETH_TX_EN_AF              LL_GPIO_AF_11
 #define ETH_TXD0_PORT             GPIOG
@@ -252,36 +236,134 @@ PC5     ------> ETH_RXD1
 #define ETH_RXD1_PIN              LL_GPIO_PIN_5
 #define ETH_RXD1_AF               LL_GPIO_AF_11
 
- /** LTDC GPIO
- PI14    ------> LTDC_CLK
- PI12    ------> LTDC_HSYNC
- PI13    ------> LTDC_VSYNC
- PK7     ------> LTDC_DE
- PD13    ------> LCD_BL
- */
-/**
-  * @brief LCD special pins
-  */
-/* LCD reset pin */
-#define LCD_RESET_PIN                    GPIO_PIN_3
-#define LCD_RESET_PULL                   GPIO_NOPULL
-#define LCD_RESET_GPIO_PORT              GPIOG
-#define LCD_RESET_GPIO_CLK_ENABLE()      __HAL_RCC_GPIOG_CLK_ENABLE()
-#define LCD_RESET_GPIO_CLK_DISABLE()     __HAL_RCC_GPIOG_CLK_DISABLE()
+/** LTDC GPIO
+PI15    ------> LTDC_R0
+PJ0     ------> LTDC_R1
+PJ1     ------> LTDC_R2
+PJ2     ------> LTDC_R3
+PJ3     ------> LTDC_R4
+PJ4     ------> LTDC_R5
+PJ5     ------> LTDC_R6
+PJ6     ------> LTDC_R7
+PJ7     ------> LTDC_G0
+PJ8     ------> LTDC_G1
+PJ9     ------> LTDC_G2
+PJ10    ------> LTDC_G3
+PJ11    ------> LTDC_G4
+PK0     ------> LTDC_G5
+PK1     ------> LTDC_G6
+PK2     ------> LTDC_G7
+PJ12    ------> LTDC_B0
+PJ13    ------> LTDC_B1
+PJ14    ------> LTDC_B2
+PJ15    ------> LTDC_B3
+PK3     ------> LTDC_B4
+PK4     ------> LTDC_B5
+PK5     ------> LTDC_B6
+PK6     ------> LTDC_B7
+PI14    ------> LTDC_CLK
+PI12    ------> LTDC_HSYNC
+PI13    ------> LTDC_VSYNC
+PK7     ------> LTDC_DE
+PD13    ------> LCD_BL
+*/
+#define LTDC_GPIO_RCC              (LL_AHB4_GRP1_PERIPH_GPIOD | LL_AHB4_GRP1_PERIPH_GPIOI | LL_AHB4_GRP1_PERIPH_GPIOJ | LL_AHB4_GRP1_PERIPH_GPIOK)
+#define LTDC_R0_PORT                GPIOI
+#define LTDC_R0_PIN                 LL_GPIO_PIN_15
+#define LTDC_R0_AF                  GPIO_AF14_LTDC
+#define LTDC_R1_PORT                GPIOJ
+#define LTDC_R1_PIN                 LL_GPIO_PIN_0
+#define LTDC_R1_AF                  GPIO_AF14_LTDC
+#define LTDC_R2_PORT                GPIOJ
+#define LTDC_R2_PIN                 LL_GPIO_PIN_1
+#define LTDC_R2_AF                  GPIO_AF14_LTDC
+#define LTDC_R3_PORT                GPIOJ
+#define LTDC_R3_PIN                 LL_GPIO_PIN_2
+#define LTDC_R3_AF                  GPIO_AF14_LTDC
+#define LTDC_R4_PORT                GPIOJ
+#define LTDC_R4_PIN                 LL_GPIO_PIN_3
+#define LTDC_R4_AF                  GPIO_AF14_LTDC
+#define LTDC_R5_PORT                GPIOJ
+#define LTDC_R5_PIN                 LL_GPIO_PIN_4
+#define LTDC_R5_AF                  GPIO_AF14_LTDC
+#define LTDC_R6_PORT                GPIOJ
+#define LTDC_R6_PIN                 LL_GPIO_PIN_5
+#define LTDC_R6_AF                  GPIO_AF14_LTDC
+#define LTDC_R7_PORT                GPIOJ
+#define LTDC_R7_PIN                 LL_GPIO_PIN_6
+#define LTDC_R7_AF                  GPIO_AF14_LTDC
+//绿色数据线
+#define LTDC_G0_PORT                GPIOJ
+#define LTDC_G0_PIN                 LL_GPIO_PIN_7
+#define LTDC_G0_AF                  GPIO_AF14_LTDC
+#define LTDC_G1_PORT                GPIOJ
+#define LTDC_G1_PIN                 LL_GPIO_PIN_8
+#define LTDC_G1_AF                  GPIO_AF14_LTDC
+#define LTDC_G2_PORT                GPIOJ
+#define LTDC_G2_PIN                 LL_GPIO_PIN_9
+#define LTDC_G2_AF                  GPIO_AF14_LTDC
+#define LTDC_G3_PORT                GPIOJ
+#define LTDC_G3_PIN                 LL_GPIO_PIN_10
+#define LTDC_G3_AF                  GPIO_AF14_LTDC
+#define LTDC_G4_PORT                GPIOJ
+#define LTDC_G4_PIN                 LL_GPIO_PIN_11
+#define LTDC_G4_AF                  GPIO_AF14_LTDC
+#define LTDC_G5_PORT                GPIOK
+#define LTDC_G5_PIN                 LL_GPIO_PIN_0
+#define LTDC_G5_AF                  GPIO_AF14_LTDC
+#define LTDC_G6_PORT                GPIOK
+#define LTDC_G6_PIN                 LL_GPIO_PIN_1
+#define LTDC_G6_AF                  GPIO_AF14_LTDC
+#define LTDC_G7_PORT                GPIOK
+#define LTDC_G7_PIN                 LL_GPIO_PIN_2
+#define LTDC_G7_AF                  GPIO_AF14_LTDC
+//蓝色数据线
+#define LTDC_B0_PORT                GPIOJ
+#define LTDC_B0_PIN                 LL_GPIO_PIN_12
+#define LTDC_B0_AF                  GPIO_AF14_LTDC
+#define LTDC_B1_PORT                GPIOJ
+#define LTDC_B1_PIN                 LL_GPIO_PIN_13
+#define LTDC_B1_AF                  GPIO_AF14_LTDC
+#define LTDC_B2_PORT                GPIOJ
+#define LTDC_B2_PIN                 LL_GPIO_PIN_14
+#define LTDC_B2_AF                  GPIO_AF14_LTDC
+#define LTDC_B3_PORT                GPIOJ
+#define LTDC_B3_PIN                 LL_GPIO_PIN_15
+#define LTDC_B3_AF                  GPIO_AF14_LTDC
+#define LTDC_B4_PORT                GPIOK
+#define LTDC_B4_PIN                 LL_GPIO_PIN_3
+#define LTDC_B4_AF                  GPIO_AF14_LTDC
+#define LTDC_B5_PORT                GPIOK
+#define LTDC_B5_PIN                 LL_GPIO_PIN_4
+#define LTDC_B5_AF                  GPIO_AF14_LTDC
+#define LTDC_B6_PORT                GPIOK
+#define LTDC_B6_PIN                 LL_GPIO_PIN_5
+#define LTDC_B6_AF                  GPIO_AF14_LTDC
+#define LTDC_B7_PORT                GPIOK
+#define LTDC_B7_PIN                 LL_GPIO_PIN_6
+#define LTDC_B7_AF                  GPIO_AF14_LTDC
+//控制信号线
+/*像素时钟CLK*/
+#define LTDC_CLK_PORT               GPIOI
+#define LTDC_CLK_PIN                LL_GPIO_PIN_14
+#define LTDC_CLK_AF                 GPIO_AF14_LTDC
+/*水平同步信号HSYNC*/
+#define LTDC_HSYNC_PORT             GPIOI
+#define LTDC_HSYNC_PIN              LL_GPIO_PIN_12
+#define LTDC_HSYNC_AF               GPIO_AF14_LTDC
+/*垂直同步信号VSYNC*/
+#define LTDC_VSYNC_PORT             GPIOI
+#define LTDC_VSYNC_PIN              LL_GPIO_PIN_13
+#define LTDC_VSYNC_AF               GPIO_AF14_LTDC
+/*数据使能信号DE*/
+#define LTDC_DE_PORT                GPIOK
+#define LTDC_DE_PIN                 LL_GPIO_PIN_7
+#define LTDC_DE_AF                  GPIO_AF14_LTDC
+/*液晶屏背光信号，高电平使能*/
+#define LTDC_BL_PORT                GPIOD
+#define LTDC_BL_PIN                 LL_GPIO_PIN_13
 
-/* LCD tearing effect pin */
-#define LCD_TE_PIN                       GPIO_PIN_2
-#define LCD_TE_GPIO_PORT                 GPIOJ
-#define LCD_TE_GPIO_CLK_ENABLE()         __HAL_RCC_GPIOJ_CLK_ENABLE()
-#define LCD_TE_GPIO_CLK_DISABLE()        __HAL_RCC_GPIOJ_CLK_DISABLE()
-
-/* Back-light control pin */
-#define LCD_BL_CTRL_PIN                  GPIO_PIN_12
-#define LCD_BL_CTRL_GPIO_PORT            GPIOJ
-#define LCD_BL_CTRL_GPIO_CLK_ENABLE()    __HAL_RCC_GPIOJ_CLK_ENABLE()
-#define LCD_BL_CTRL_GPIO_CLK_DISABLE()   __HAL_RCC_GPIOJ_CLK_DISABLE()
-
-#define FMC_GPIO_RCC                (LL_AHB4_GRP1_PERIPH_GPIOD | LL_AHB4_GRP1_PERIPH_GPIOE | LL_AHB4_GRP1_PERIPH_GPIOF | LL_AHB4_GRP1_PERIPH_GPIOG | LL_AHB4_GRP1_PERIPH_GPIOH | LL_AHB4_GRP1_PERIPH_GPIOI)  
+#define FMC_GPIO_RCC                (LL_AHB4_GRP1_PERIPH_GPIOD | LL_AHB4_GRP1_PERIPH_GPIOE | LL_AHB4_GRP1_PERIPH_GPIOF | LL_AHB4_GRP1_PERIPH_GPIOG | LL_AHB4_GRP1_PERIPH_GPIOH | LL_AHB4_GRP1_PERIPH_GPIOI)
 #define FMC_A0_PORT                 GPIOF
 #define FMC_A0_PIN                  LL_GPIO_PIN_0
 #define FMC_A1_PORT                 GPIOF
@@ -373,15 +455,15 @@ PC5     ------> ETH_RXD1
 #define FMC_D30_PIN                 LL_GPIO_PIN_9
 #define FMC_D31_PORT                GPIOI
 #define FMC_D31_PIN                 LL_GPIO_PIN_10
-/*控制信号线*/  
+/*控制信号线*/
 #define FMC_CS_PORT                 GPIOH
 #define FMC_CS_PIN                  LL_GPIO_PIN_6
 #define FMC_BA0_PORT                GPIOG
 #define FMC_BA0_PIN                 LL_GPIO_PIN_4
 #define FMC_BA1_PORT                GPIOG
 #define FMC_BA1_PIN                 LL_GPIO_PIN_5
-#define FMC_WE_PORT                 GPIOH
-#define FMC_WE_PIN                  LL_GPIO_PIN_5
+#define FMC_WE_PORT                 GPIOC
+#define FMC_WE_PIN                  LL_GPIO_PIN_0
 #define FMC_RAS_PORT                GPIOF
 #define FMC_RAS_PIN                 LL_GPIO_PIN_11
 #define FMC_CAS_PORT                GPIOG
@@ -390,15 +472,16 @@ PC5     ------> ETH_RXD1
 #define FMC_CLK_PIN                 LL_GPIO_PIN_8
 #define FMC_CKE_PORT                GPIOH
 #define FMC_CKE_PIN                 LL_GPIO_PIN_7
-/*DQM0 DQM1 DQM2 DQM3*/
-#define FMC_DQM0_PORT               GPIOE
-#define FMC_DQM0_PIN                LL_GPIO_PIN_0
-#define FMC_DQM1_PORT               GPIOE
-#define FMC_DQM1_PIN                LL_GPIO_PIN_1
-#define FMC_DQM2_PORT              GPIOI
-#define FMC_DQM2_PIN               LL_GPIO_PIN_4
-#define FMC_DQM3_PORT              GPIOI
-#define FMC_DQM3_PIN               LL_GPIO_PIN_5
+/*UDQM LDQM*/
+#define FMC_UDQM_PORT               GPIOE
+#define FMC_UDQM_PIN                LL_GPIO_PIN_1
+#define FMC_LDQM_PORT               GPIOE
+#define FMC_LDQM_PIN                LL_GPIO_PIN_0
+/*UDQM2 LDQM2*/
+#define FMC_UDQM2_PORT              GPIOI
+#define FMC_UDQM2_PIN               LL_GPIO_PIN_5
+#define FMC_LDQM2_PORT              GPIOI
+#define FMC_LDQM2_PIN               LL_GPIO_PIN_4
 
 /**
 *  SDMMC1 GPIO Configuration
@@ -457,12 +540,5 @@ PD7                 ------> SDMMC2_CMD
 #define SDMMC2_CMD_PORT            GPIOD
 #define SDMMC2_CMD_PIN             LL_GPIO_PIN_7
 #define SDMMC2_CMD_AF              LL_GPIO_AF_11
-
-/**
-  * @brief SD-detect signal
-  */
-#define SD_DETECT_GPIO_RCC         (LL_AHB4_GRP1_PERIPH_GPIOI)
-#define SD_DETECT_PORT             GPIOI
-#define SD_DETECT_PIN              LL_GPIO_PIN_8
 
 #endif
