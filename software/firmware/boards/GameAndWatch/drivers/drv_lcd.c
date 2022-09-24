@@ -14,12 +14,12 @@
 
 #ifdef BSP_USING_LCD
 
-#if GW_LCD_MODE_LUT8
-uint8_t framebuffer1[GW_LCD_WIDTH * GW_LCD_HEIGHT];
-uint8_t framebuffer2[GW_LCD_WIDTH * GW_LCD_HEIGHT];
+#if BSP_LCD_MODE_LUT8
+uint8_t framebuffer1[BSP_LCD_WIDTH * BSP_LCD_HEIGHT];
+uint8_t framebuffer2[BSP_LCD_WIDTH * BSP_LCD_HEIGHT];
 #else
-uint16_t framebuffer1[GW_LCD_WIDTH * GW_LCD_HEIGHT];
-uint16_t framebuffer2[GW_LCD_WIDTH * GW_LCD_HEIGHT];
+uint16_t framebuffer1[BSP_LCD_WIDTH * BSP_LCD_HEIGHT];
+uint16_t framebuffer2[BSP_LCD_WIDTH * BSP_LCD_HEIGHT];
 #endif // GW_LCD_MODE_LUT8
 
 uint16_t *fb1 = framebuffer1;
@@ -58,10 +58,10 @@ void lcd_backlight_on()
   lcd_backlight_set(255);
 }
 
-static void gw_set_power_1V8(uint32_t p) {
+static void lcd_set_power_1V8(uint32_t p) {
   HAL_GPIO_WritePin(GPIOD, GPIO_PIN_1, p == 0 ? GPIO_PIN_SET : GPIO_PIN_RESET);
 }
-static void gw_set_power_3V3(uint32_t p) {
+static void lcd_set_power_3V3(uint32_t p) {
   HAL_GPIO_WritePin(GPIOD, GPIO_PIN_4, p == 1 ? GPIO_PIN_SET : GPIO_PIN_RESET);
 }
 static void gw_lcd_set_chipselect(uint32_t p) {
@@ -83,8 +83,8 @@ static void gw_lcd_spi_tx(SPI_HandleTypeDef *spi, uint8_t *pData) {
 
 void lcd_deinit(SPI_HandleTypeDef *spi) {
   // Power off
-  gw_set_power_1V8(0);
-  gw_set_power_3V3(0);
+  lcd_set_power_1V8(0);
+  lcd_set_power_3V3(0);
 }
 
 void lcd_init(SPI_HandleTypeDef *spi, LTDC_HandleTypeDef *ltdc) {
@@ -96,8 +96,8 @@ void lcd_init(SPI_HandleTypeDef *spi, LTDC_HandleTypeDef *ltdc) {
 
   // Wake up !
   // Enable 1.8V &3V3 power supply
-  gw_set_power_3V3(1);
-  gw_set_power_1V8(1);
+  lcd_set_power_3V3(1);
+  lcd_set_power_1V8(1);
   HAL_Delay(20);
   wdog_refresh();
 

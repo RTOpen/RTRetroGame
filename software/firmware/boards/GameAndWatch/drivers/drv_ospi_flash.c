@@ -83,7 +83,8 @@ int OSPI_FLASH_Init(void)
 
     if (HAL_OSPI_Init(&OSPIHandle) != HAL_OK)
     {
-        Error_Handler();
+        LOG_E("OSPI Init ERROR");
+        RT_ASSERT(0);
     }
 
     /* Configure the memory in octal mode ------------------------------------- */
@@ -113,7 +114,8 @@ int OSPI_FLASH_Init(void)
 
     if (HAL_OSPI_Command_IT(&OSPIHandle, &sCommand) != HAL_OK)
     {
-        Error_Handler();
+        LOG_E("OSPI Command ERROR");
+        RT_ASSERT(0);
     }
 
     /* Configure automatic polling mode to wait for end of erase ------ */
@@ -130,7 +132,8 @@ int OSPI_FLASH_Init(void)
 
     if (HAL_OSPI_Command(&OSPIHandle, &sCommand, HAL_OSPI_TIMEOUT_DEFAULT_VALUE) != HAL_OK)
     {
-        Error_Handler();
+        LOG_E("OSPI Command ERROR");
+        RT_ASSERT(0);
     }
 
     sCommand.OperationType = HAL_OSPI_OPTYPE_READ_CFG;
@@ -139,7 +142,8 @@ int OSPI_FLASH_Init(void)
 
     if (HAL_OSPI_Command(&OSPIHandle, &sCommand, HAL_OSPI_TIMEOUT_DEFAULT_VALUE) != HAL_OK)
     {
-        Error_Handler();
+        LOG_E("OSPI Command ERROR");
+        RT_ASSERT(0);
     }
 
     sMemMappedCfg.TimeOutActivation = HAL_OSPI_TIMEOUT_COUNTER_ENABLE;
@@ -147,7 +151,8 @@ int OSPI_FLASH_Init(void)
 
     if (HAL_OSPI_MemoryMapped(&OSPIHandle, &sMemMappedCfg) != HAL_OK)
     {
-        Error_Handler();
+        LOG_E("OSPI MemoryMapped ERROR");
+        RT_ASSERT(0);
     }
 
     return RT_EOK;
@@ -180,7 +185,8 @@ static void OSPI_WriteEnable(OSPI_HandleTypeDef *hospi)
 
     if (HAL_OSPI_Command(hospi, &sCommand, HAL_OSPI_TIMEOUT_DEFAULT_VALUE) != HAL_OK)
     {
-        Error_Handler();
+        LOG_E("OSPI Command ERROR");
+        RT_ASSERT(0);
     }
 
     /* Configure automatic polling mode to wait for write enabling ---- */
@@ -198,12 +204,14 @@ static void OSPI_WriteEnable(OSPI_HandleTypeDef *hospi)
     {
         if (HAL_OSPI_Command(hospi, &sCommand, HAL_OSPI_TIMEOUT_DEFAULT_VALUE) != HAL_OK)
         {
-            Error_Handler();
+            LOG_E("OSPI Command ERROR");
+            RT_ASSERT(0);
         }
 
         if (HAL_OSPI_Receive(hospi, reg, HAL_OSPI_TIMEOUT_DEFAULT_VALUE) != HAL_OK)
         {
-            Error_Handler();
+            LOG_E("OSPI Receive ERROR");
+            RT_ASSERT(0);
         }
     }
     while ((reg[0] & WRITE_ENABLE_MASK_VALUE) != WRITE_ENABLE_MATCH_VALUE);
@@ -242,12 +250,14 @@ static void OSPI_AutoPollingMemReady(OSPI_HandleTypeDef *hospi)
     {
         if (HAL_OSPI_Command(hospi, &sCommand, HAL_OSPI_TIMEOUT_DEFAULT_VALUE) != HAL_OK)
         {
-            Error_Handler();
+            LOG_E("OSPI Command ERROR");
+            RT_ASSERT(0);
         }
 
         if (HAL_OSPI_Receive(hospi, reg, HAL_OSPI_TIMEOUT_DEFAULT_VALUE) != HAL_OK)
         {
-            Error_Handler();
+            LOG_E("OSPI Receive ERROR");
+            RT_ASSERT(0);
         }
     }
     while ((reg[0] & MEMORY_READY_MASK_VALUE) != MEMORY_READY_MATCH_VALUE);
@@ -280,7 +290,8 @@ static void OSPI_OctalModeCfg(OSPI_HandleTypeDef *hospi)
 
     if (HAL_OSPI_Command(hospi, &sCommand, HAL_OSPI_TIMEOUT_DEFAULT_VALUE) != HAL_OK)
     {
-        Error_Handler();
+        LOG_E("OSPI Command ERROR");
+        RT_ASSERT(0);
     }
 
     /* Configure automatic polling mode to wait for write enabling ---- */
@@ -291,7 +302,8 @@ static void OSPI_OctalModeCfg(OSPI_HandleTypeDef *hospi)
 
     if (HAL_OSPI_Command(hospi, &sCommand, HAL_OSPI_TIMEOUT_DEFAULT_VALUE) != HAL_OK)
     {
-        Error_Handler();
+        LOG_E("OSPI Command ERROR");
+        RT_ASSERT(0);
     }
 
     sConfig.Match         = WRITE_ENABLE_MATCH_VALUE;
@@ -302,7 +314,8 @@ static void OSPI_OctalModeCfg(OSPI_HandleTypeDef *hospi)
 
     if (HAL_OSPI_AutoPolling(hospi, &sConfig, HAL_OSPI_TIMEOUT_DEFAULT_VALUE) != HAL_OK)
     {
-        Error_Handler();
+        LOG_E("OSPI AutoPolling ERROR");
+        RT_ASSERT(0);
     }
 
     /* Write Configuration register 2 (with new dummy cycles) --------- */
@@ -314,14 +327,16 @@ static void OSPI_OctalModeCfg(OSPI_HandleTypeDef *hospi)
 
     if (HAL_OSPI_Command(hospi, &sCommand, HAL_OSPI_TIMEOUT_DEFAULT_VALUE) != HAL_OK)
     {
-        Error_Handler();
+        LOG_E("OSPI Command ERROR");
+        RT_ASSERT(0);
     }
 
     reg = CR2_DUMMY_CYCLES_66MHZ;
 
     if (HAL_OSPI_Transmit(hospi, &reg, HAL_OSPI_TIMEOUT_DEFAULT_VALUE) != HAL_OK)
     {
-        Error_Handler();
+        LOG_E("OSPI Transmit ERROR");
+        RT_ASSERT(0);
     }
 
     /* Wait that the memory is ready ---------------------------------- */
@@ -330,7 +345,8 @@ static void OSPI_OctalModeCfg(OSPI_HandleTypeDef *hospi)
 
     if (HAL_OSPI_Command(hospi, &sCommand, HAL_OSPI_TIMEOUT_DEFAULT_VALUE) != HAL_OK)
     {
-        Error_Handler();
+        LOG_E("OSPI Command ERROR");
+        RT_ASSERT(0);
     }
 
     sConfig.Match = MEMORY_READY_MATCH_VALUE;
@@ -338,7 +354,8 @@ static void OSPI_OctalModeCfg(OSPI_HandleTypeDef *hospi)
 
     if (HAL_OSPI_AutoPolling(hospi, &sConfig, HAL_OSPI_TIMEOUT_DEFAULT_VALUE) != HAL_OK)
     {
-        Error_Handler();
+        LOG_E("OSPI AutoPolling ERROR");
+        RT_ASSERT(0);
     }
 
     /* Enable write operations ---------------------------------------- */
@@ -347,7 +364,8 @@ static void OSPI_OctalModeCfg(OSPI_HandleTypeDef *hospi)
 
     if (HAL_OSPI_Command(hospi, &sCommand, HAL_OSPI_TIMEOUT_DEFAULT_VALUE) != HAL_OK)
     {
-        Error_Handler();
+        LOG_E("OSPI Command ERROR");
+        RT_ASSERT(0);
     }
 
     /* Configure automatic polling mode to wait for write enabling ---- */
@@ -356,7 +374,8 @@ static void OSPI_OctalModeCfg(OSPI_HandleTypeDef *hospi)
 
     if (HAL_OSPI_Command(hospi, &sCommand, HAL_OSPI_TIMEOUT_DEFAULT_VALUE) != HAL_OK)
     {
-        Error_Handler();
+        LOG_E("OSPI Command ERROR");
+        RT_ASSERT(0);
     }
 
     sConfig.Match = WRITE_ENABLE_MATCH_VALUE;
@@ -364,7 +383,8 @@ static void OSPI_OctalModeCfg(OSPI_HandleTypeDef *hospi)
 
     if (HAL_OSPI_AutoPolling(hospi, &sConfig, HAL_OSPI_TIMEOUT_DEFAULT_VALUE) != HAL_OK)
     {
-        Error_Handler();
+        LOG_E("OSPI AutoPolling ERROR");
+        RT_ASSERT(0);
     }
 
     /* Write Configuration register 2 (with octal mode) --------------- */
@@ -374,14 +394,16 @@ static void OSPI_OctalModeCfg(OSPI_HandleTypeDef *hospi)
 
     if (HAL_OSPI_Command(hospi, &sCommand, HAL_OSPI_TIMEOUT_DEFAULT_VALUE) != HAL_OK)
     {
-        Error_Handler();
+        LOG_E("OSPI Command ERROR");
+        RT_ASSERT(0);
     }
 
     reg = CR2_STR_OPI_ENABLE;
 
     if (HAL_OSPI_Transmit(hospi, &reg, HAL_OSPI_TIMEOUT_DEFAULT_VALUE) != HAL_OK)
     {
-        Error_Handler();
+        LOG_E("OSPI Transmit ERROR");
+        RT_ASSERT(0);
     }
 
     /* Wait that the configuration is effective and check that memory is ready */
@@ -470,7 +492,8 @@ void flash_erase(uint32_t address)
 
     if (HAL_OSPI_Command_IT(&OSPIHandle, &sCommand) != HAL_OK)
     {
-        Error_Handler();
+        LOG_E("OSPI Command ERROR");
+        RT_ASSERT(0);
     }
 }
 

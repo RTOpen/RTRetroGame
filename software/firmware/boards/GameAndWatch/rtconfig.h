@@ -107,12 +107,6 @@
 #define RT_USING_PIN
 #define RT_USING_ADC
 #define RT_USING_RTC
-#define RT_USING_SDIO
-#define RT_SDIO_STACK_SIZE 512
-#define RT_SDIO_THREAD_PRIORITY 15
-#define RT_MMCSD_STACK_SIZE 1024
-#define RT_MMCSD_THREAD_PREORITY 22
-#define RT_MMCSD_MAX_PARTITION 16
 #define RT_USING_SPI
 #define RT_USING_WDT
 #define RT_USING_AUDIO
@@ -231,8 +225,6 @@
 #define BSP_USING_GPIO
 #define BSP_USING_UART
 #define BSP_USING_UART1
-#define BSP_USING_SDIO
-#define BSP_USING_SDIO1
 #define BSP_USING_FMC
 #define BSP_USING_LTDC
 #define BSP_USING_SPI
@@ -242,6 +234,7 @@
 #define BSP_USING_WDT
 #define BSP_USING_CRC
 #define BSP_USING_UDID
+#define BSP_USING_OSPI_FLASH
 
 /* Board extended module Drivers */
 
