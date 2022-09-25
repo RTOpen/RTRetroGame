@@ -30,8 +30,8 @@ if rtconfig.CROSS_TOOL == 'msvc':
     ]
 
 # remove no need file.
-if GetDepend('PKG_USING_GUIENGINE') == True:
-    src += ['sdl_fb.c']
+if GetDepend('BSP_USING_LCD') == True:
+    src += ['drv_lcd.c']
 else:
     LIBS.append('SDL2')
     if sys.platform == 'win32':
@@ -39,21 +39,10 @@ else:
         CPPPATH.append(os.path.abspath(os.path.join(cwd, '../SDL2/include')))
 
 
-if GetDepend('RT_USING_DFS') == True:
-    if GetDepend('RT_USING_DFS_ELMFAT') == True:
-        src += ['sd_sim.c']
-
-    if GetDepend('RT_USING_MTD_NAND') == True:
-        src += ['nanddrv_file.c']
-
-    if GetDepend('RT_USING_MTD_NOR') == True:
-        src += ['sst25vfxx_mtd_sim.c']
-
     if sys.platform == "win32":
         if  GetDepend('RT_USING_DFS_WINSHAREDIR') == True:
             src += ['dfs_win32.c']
-        if  GetDepend('RT_USING_MODULE') == True:
-            src += ['module_win32.c']
+            src += ['sim_win32.c']
 
 if GetDepend('BSP_USING_RTC') == True:
     src += ['drv_rtc.c']

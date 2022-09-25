@@ -11,32 +11,14 @@
 #include <rtthread.h>
 #include <rtdevice.h>
 #include <board.h>
-#include "drv_led.h"
 
 
 int main(void)
 {
-    uint32_t loop = 0;
 
     while (1)
     {
-			if((loop%2)==0)
-			{
-      led_toggle(LED_GREEN);
-			}
-			if((loop%4)==0)
-			{
-      led_toggle(LED_YELLOW);
-			}
-			if((loop%8)==0)
-			{
-      led_toggle(LED_RED);
-			}
-			if((loop%16)==0)
-			{
-      led_toggle(LED_BLUE);
-			}
-			loop++;
-			rt_thread_mdelay(100);
+
+	    rt_thread_mdelay(100);
     }
 }
