@@ -71,12 +71,11 @@ static void gw_lcd_set_reset(uint32_t p) {
   HAL_GPIO_WritePin(GPIOD, GPIO_PIN_8, p == 0 ? GPIO_PIN_SET : GPIO_PIN_RESET);
 }
 
-static void gw_lcd_spi_tx(SPI_HandleTypeDef *spi, uint8_t *pData) {
+static void lcd_spi_tx(SPI_HandleTypeDef *spi, uint8_t *pData) {
   gw_lcd_set_chipselect(1);
   HAL_Delay(2);
   HAL_SPI_Transmit(spi, pData, 2, 100);
   HAL_Delay(2);
-  wdog_refresh();
   gw_lcd_set_chipselect(0);
   HAL_Delay(2);
 }
@@ -86,46 +85,135 @@ void lcd_deinit(SPI_HandleTypeDef *spi) {
   lcd_set_power_1V8(0);
   lcd_set_power_3V3(0);
 }
+static void GPIO_Configure(void)
+{
+    GPIO_InitTypeDef GPIO_InitStruct = {0};
+  if(hltdc->Instance==LTDC)
+  {
+  /* USER CODE BEGIN LTDC_MspInit 0 */
 
+  /* USER CODE END LTDC_MspInit 0 */
+    /* Peripheral clock enable */
+    __HAL_RCC_LTDC_CLK_ENABLE();
+
+    GPIO_InitStruct.Pin = GPIO_PIN_0;
+    GPIO_InitStruct.Mode = GPIO_MODE_AF_PP;
+    GPIO_InitStruct.Pull = GPIO_NOPULL;
+    GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
+    GPIO_InitStruct.Alternate = GPIO_AF11_LTDC;
+    HAL_GPIO_Init(GPIOC, &GPIO_InitStruct);
+
+    GPIO_InitStruct.Pin = GPIO_PIN_7|GPIO_PIN_8|GPIO_PIN_9|GPIO_PIN_11;
+    GPIO_InitStruct.Mode = GPIO_MODE_AF_PP;
+    GPIO_InitStruct.Pull = GPIO_NOPULL;
+    GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
+    GPIO_InitStruct.Alternate = GPIO_AF14_LTDC;
+    HAL_GPIO_Init(GPIOA, &GPIO_InitStruct);
+
+    GPIO_InitStruct.Pin = GPIO_PIN_0;
+    GPIO_InitStruct.Mode = GPIO_MODE_AF_PP;
+    GPIO_InitStruct.Pull = GPIO_NOPULL;
+    GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
+    GPIO_InitStruct.Alternate = GPIO_AF9_LTDC;
+    HAL_GPIO_Init(GPIOB, &GPIO_InitStruct);
+
+    GPIO_InitStruct.Pin = GPIO_PIN_13|GPIO_PIN_15;
+    GPIO_InitStruct.Mode = GPIO_MODE_AF_PP;
+    GPIO_InitStruct.Pull = GPIO_NOPULL;
+    GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
+    GPIO_InitStruct.Alternate = GPIO_AF14_LTDC;
+    HAL_GPIO_Init(GPIOE, &GPIO_InitStruct);
+
+    GPIO_InitStruct.Pin = GPIO_PIN_10|GPIO_PIN_11|GPIO_PIN_14|GPIO_PIN_8;
+    GPIO_InitStruct.Mode = GPIO_MODE_AF_PP;
+    GPIO_InitStruct.Pull = GPIO_NOPULL;
+    GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
+    GPIO_InitStruct.Alternate = GPIO_AF14_LTDC;
+    HAL_GPIO_Init(GPIOB, &GPIO_InitStruct);
+
+    GPIO_InitStruct.Pin = GPIO_PIN_10|GPIO_PIN_3|GPIO_PIN_6;
+    GPIO_InitStruct.Mode = GPIO_MODE_AF_PP;
+    GPIO_InitStruct.Pull = GPIO_NOPULL;
+    GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
+    GPIO_InitStruct.Alternate = GPIO_AF14_LTDC;
+    HAL_GPIO_Init(GPIOD, &GPIO_InitStruct);
+
+    GPIO_InitStruct.Pin = GPIO_PIN_6|GPIO_PIN_7|GPIO_PIN_10;
+    GPIO_InitStruct.Mode = GPIO_MODE_AF_PP;
+    GPIO_InitStruct.Pull = GPIO_NOPULL;
+    GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
+    GPIO_InitStruct.Alternate = GPIO_AF14_LTDC;
+    HAL_GPIO_Init(GPIOC, &GPIO_InitStruct);
+
+    GPIO_InitStruct.Pin = GPIO_PIN_9;
+    GPIO_InitStruct.Mode = GPIO_MODE_AF_PP;
+    GPIO_InitStruct.Pull = GPIO_NOPULL;
+    GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
+    GPIO_InitStruct.Alternate = GPIO_AF10_LTDC;
+    HAL_GPIO_Init(GPIOC, &GPIO_InitStruct);
+
+    GPIO_InitStruct.Pin = GPIO_PIN_10;
+    GPIO_InitStruct.Mode = GPIO_MODE_AF_PP;
+    GPIO_InitStruct.Pull = GPIO_NOPULL;
+    GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
+    GPIO_InitStruct.Alternate = GPIO_AF12_LTDC;
+    HAL_GPIO_Init(GPIOA, &GPIO_InitStruct);
+
+    GPIO_InitStruct.Pin = GPIO_PIN_2;
+    GPIO_InitStruct.Mode = GPIO_MODE_AF_PP;
+    GPIO_InitStruct.Pull = GPIO_NOPULL;
+    GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
+    GPIO_InitStruct.Alternate = GPIO_AF9_LTDC;
+    HAL_GPIO_Init(GPIOD, &GPIO_InitStruct);
+
+    GPIO_InitStruct.Pin = GPIO_PIN_5;
+    GPIO_InitStruct.Mode = GPIO_MODE_AF_PP;
+    GPIO_InitStruct.Pull = GPIO_NOPULL;
+    GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
+    GPIO_InitStruct.Alternate = GPIO_AF11_LTDC;
+    HAL_GPIO_Init(GPIOB, &GPIO_InitStruct);
+
+    /* LTDC interrupt Init */
+    HAL_NVIC_SetPriority(LTDC_IRQn, 0, 0);
+    HAL_NVIC_EnableIRQ(LTDC_IRQn);
+
+}
 void lcd_init(SPI_HandleTypeDef *spi, LTDC_HandleTypeDef *ltdc) {
   // Disable LCD Chip select
   gw_lcd_set_chipselect(0);
 
   // LCD reset
-  gw_lcd_set_reset(1);
+  lcd_set_reset(1);
 
   // Wake up !
   // Enable 1.8V &3V3 power supply
   lcd_set_power_3V3(1);
   lcd_set_power_1V8(1);
   HAL_Delay(20);
-  wdog_refresh();
 
   // Lets go, bootup sequence.
   /* reset sequence */
-  gw_lcd_set_reset(0);
+  lcd_set_reset(0);
   HAL_Delay(1);
-  gw_lcd_set_reset(1);
+  lcd_set_reset(1);
   HAL_Delay(15);
-  gw_lcd_set_reset(0);
+  lcd_set_reset(0);
   HAL_Delay(1);
-  wdog_refresh();
 
-  gw_lcd_spi_tx(spi, (uint8_t *)"\x08\x80");
-  gw_lcd_spi_tx(spi, (uint8_t *)"\x6E\x80");
-  gw_lcd_spi_tx(spi, (uint8_t *)"\x80\x80");
+  lcd_spi_tx(spi, (uint8_t *)"\x08\x80");
+  lcd_spi_tx(spi, (uint8_t *)"\x6E\x80");
+  lcd_spi_tx(spi, (uint8_t *)"\x80\x80");
 
   // change x00 one of those lines to flip the screen :)
-  gw_lcd_spi_tx(spi, (uint8_t *)"\x68\x00");
-  gw_lcd_spi_tx(spi, (uint8_t *)"\xd0\x00");
-  gw_lcd_spi_tx(spi, (uint8_t *)"\x1b\x00");
-  gw_lcd_spi_tx(spi, (uint8_t *)"\xe0\x00");
+  lcd_spi_tx(spi, (uint8_t *)"\x68\x00");
+  lcd_spi_tx(spi, (uint8_t *)"\xd0\x00");
+  lcd_spi_tx(spi, (uint8_t *)"\x1b\x00");
+  lcd_spi_tx(spi, (uint8_t *)"\xe0\x00");
 
-  gw_lcd_spi_tx(spi, (uint8_t *)"\x6a\x80");
-  gw_lcd_spi_tx(spi, (uint8_t *)"\x80\x00");
-  gw_lcd_spi_tx(spi, (uint8_t *)"\x14\x80");
+  lcd_spi_tx(spi, (uint8_t *)"\x6a\x80");
+  lcd_spi_tx(spi, (uint8_t *)"\x80\x00");
+  lcd_spi_tx(spi, (uint8_t *)"\x14\x80");
 
-  wdog_refresh();
 
   HAL_LTDC_SetAddress(ltdc,(uint32_t) &fb1, 0);
 
