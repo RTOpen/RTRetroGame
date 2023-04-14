@@ -18,16 +18,13 @@
 #ifdef RT_USING_DFS
 #include <dfs_fs.h>
 
+char ROOT_PATH[512] = "..\\..\\rootfs";
+
 static int mnt_init(void)
 {
 #ifdef RT_USING_DFS_WINSHAREDIR
-    extern int dfs_win32_init(void);
-    extern rt_err_t rt_win_sharedir_init(const char *name);
 
-    dfs_win32_init();
-    rt_win_sharedir_init("wshare");
-
-    if (dfs_mount("wshare", "/", "wdir", 0, 0) == 0)
+    if (dfs_mount(RT_NULL, "/", "semihost", 0, ROOT_PATH) == 0)
     {
         LOG_I("[wshare] File System on root ('wshare') initialized!");
     }
@@ -35,33 +32,7 @@ static int mnt_init(void)
     {
         LOG_E("[wshare] File System on root ('wshare') initialization failed!");
     }
-
-    if (dfs_mount("sd0", "/sd", "elm", 0, 0) == 0)
-#else
-    if (dfs_mount("sd0", "/", "elm", 0, 0) == 0)
-#endif /* RT_USING_DFS_WINSHAREDIR */
-    {
-        LOG_I("[sd0] File System on SD ('sd0') initialized!");
-    }
-    else
-    {
-        LOG_W("[sd0] File System on SD ('sd0') initialization failed!");
-        LOG_W("[sd0] Try to format and re-mount...");
-        if (dfs_mkfs("elm", "sd0") == 0)
-        {
-        #ifdef RT_USING_DFS_WINSHAREDIR
-            if (dfs_mount("sd0", "/sd", "elm", 0, 0) == 0)
-        #else
-            if (dfs_mount("sd0", "/", "elm", 0, 0) == 0)
-        #endif /* RT_USING_DFS_WINSHAREDIR */
-            {
-                LOG_I("[sd0] File System on SD ('sd0') initialized!");
-                return 0;
-            }
-        }
-
-        LOG_E("[sd0] File System on SD ('sd0') initialization failed!");
-    }
+#endif
     return 0;
 }
 INIT_ENV_EXPORT(mnt_init);

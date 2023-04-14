@@ -59,13 +59,13 @@
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>
   <ItemGroup>
-    <ClCompile Include="applications\application.c">
+    <ClCompile Include="applications\mnt.c">
       <ObjectFileName>$(IntDir)bsp\applications\</ObjectFileName>
     </ClCompile>
     <ClCompile Include="applications\platform.c">
       <ObjectFileName>$(IntDir)bsp\applications\</ObjectFileName>
     </ClCompile>
-    <ClCompile Include="applications\mnt.c">
+    <ClCompile Include="applications\application.c">
       <ObjectFileName>$(IntDir)bsp\applications\</ObjectFileName>
     </ClCompile>
   </ItemGroup>
@@ -136,11 +136,11 @@
     <ClCompile Include="drivers\uart_console.c">
       <ObjectFileName>$(IntDir)bsp\drivers\</ObjectFileName>
     </ClCompile>
+    <ClCompile Include="drivers\sim_win32.c">
+      <ObjectFileName>$(IntDir)bsp\drivers\</ObjectFileName>
+    </ClCompile>
     <ClCompile Include="drivers\winsock\sal_winsock.c">
       <ObjectFileName>$(IntDir)bsp\drivers\winsock\</ObjectFileName>
-    </ClCompile>
-    <ClCompile Include="drivers\sd_sim.c">
-      <ObjectFileName>$(IntDir)bsp\drivers\</ObjectFileName>
     </ClCompile>
     <ClCompile Include="drivers\drv_rtc.c">
       <ObjectFileName>$(IntDir)bsp\drivers\</ObjectFileName>
@@ -260,6 +260,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="drivers\board.h" />
+    <ClInclude Include="drivers\sim.h" />
     <ClInclude Include="drivers\uart_console.h" />
     <ClInclude Include="drivers\winsock\rtt_winsock.h" />
     <ClInclude Include="rtconfig.h" />

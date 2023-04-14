@@ -234,6 +234,7 @@
 #define BSP_USING_WDT
 #define BSP_USING_CRC
 #define BSP_USING_UDID
+#define BSP_USING_OSPI
 #define BSP_USING_OSPI_FLASH
 
 /* Board extended module Drivers */

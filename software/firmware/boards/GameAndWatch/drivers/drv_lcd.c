@@ -64,19 +64,19 @@ static void lcd_set_power_1V8(uint32_t p) {
 static void lcd_set_power_3V3(uint32_t p) {
   HAL_GPIO_WritePin(GPIOD, GPIO_PIN_4, p == 1 ? GPIO_PIN_SET : GPIO_PIN_RESET);
 }
-static void gw_lcd_set_chipselect(uint32_t p) {
+static void lcd_set_chipselect(uint32_t p) {
   HAL_GPIO_WritePin(GPIOB, GPIO_PIN_12, p == 0 ? GPIO_PIN_SET : GPIO_PIN_RESET);
 }
-static void gw_lcd_set_reset(uint32_t p) {
+static void lcd_set_reset(uint32_t p) {
   HAL_GPIO_WritePin(GPIOD, GPIO_PIN_8, p == 0 ? GPIO_PIN_SET : GPIO_PIN_RESET);
 }
 
 static void lcd_spi_tx(SPI_HandleTypeDef *spi, uint8_t *pData) {
-  gw_lcd_set_chipselect(1);
+  lcd_set_chipselect(1);
   HAL_Delay(2);
   HAL_SPI_Transmit(spi, pData, 2, 100);
   HAL_Delay(2);
-  gw_lcd_set_chipselect(0);
+  lcd_set_chipselect(0);
   HAL_Delay(2);
 }
 
@@ -88,7 +88,7 @@ void lcd_deinit(SPI_HandleTypeDef *spi) {
 static void GPIO_Configure(void)
 {
     GPIO_InitTypeDef GPIO_InitStruct = {0};
-  if(hltdc->Instance==LTDC)
+  if(hltdc.Instance==LTDC)
   {
   /* USER CODE BEGIN LTDC_MspInit 0 */
 
@@ -176,11 +176,12 @@ static void GPIO_Configure(void)
     /* LTDC interrupt Init */
     HAL_NVIC_SetPriority(LTDC_IRQn, 0, 0);
     HAL_NVIC_EnableIRQ(LTDC_IRQn);
+  }
 
 }
 void lcd_init(SPI_HandleTypeDef *spi, LTDC_HandleTypeDef *ltdc) {
   // Disable LCD Chip select
-  gw_lcd_set_chipselect(0);
+  lcd_set_chipselect(0);
 
   // LCD reset
   lcd_set_reset(1);

@@ -7,7 +7,7 @@
     </ProjectConfiguration>
   </ItemGroup>
   <PropertyGroup Label="Globals">
-    <ProjectName>vs</ProjectName>
+    <ProjectName>simulator</ProjectName>
     <ProjectGuid>{4A6BF1B1-C645-4BAD-A9B7-7B6E3DB67B2C}</ProjectGuid>
     <RootNamespace>vs2008</RootNamespace>
     <Keyword>Win32Proj</Keyword>
@@ -15,7 +15,7 @@
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
-    <PlatformToolset>v110</PlatformToolset>
+    <PlatformToolset>v142</PlatformToolset>
     <CharacterSet>NotSet</CharacterSet>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
