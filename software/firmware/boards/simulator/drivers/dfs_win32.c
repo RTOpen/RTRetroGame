@@ -65,7 +65,7 @@ struct winfs_root
 struct winfs_directory
 {
     struct winfs_object parent;
-    struct dfs_fd* dfs_object;
+    struct dfs_file* dfs_object;
     struct __file_stat_t
     {
         sim_file_stat_t stat;
@@ -79,7 +79,7 @@ struct winfs_regular
 {
     struct winfs_object parent;
     sim_file_t file;
-    struct dfs_fd* dfs_object;
+    struct dfs_file* dfs_object;
 };
 
 struct winfs_errcode_map
@@ -320,7 +320,7 @@ static rt_bool_t sim_dir_walk_func(sim_char_t const* path, sim_file_stat_t* st, 
     return RT_TRUE;
 }
 
-static int dfs_winfs_open_dir(struct dfs_fd* file)
+static int dfs_winfs_open_dir(struct dfs_file* file)
 {
     struct winfs_root* root;
     struct winfs_directory* dir;
@@ -331,9 +331,9 @@ static int dfs_winfs_open_dir(struct dfs_fd* file)
     RT_ASSERT(file->fs->data != RT_NULL);
     RT_ASSERT(file->path != RT_NULL);
 
-    root = file->fs->data;
+    root = file->vnode->fs->data;
     /* make full path */
-    winpath_dirdup(strncpy(file_path, root->parent.path, root->parent.path_len + 1), file->path);
+    winpath_dirdup(strncpy(file_path, root->parent.path, root->parent.path_len + 1), file->vnode->path);
     /* create a dir*/
     if (file->flags & O_CREAT)
     {
@@ -374,7 +374,7 @@ static void dfs_winfs_file_destroy(struct winfs_object* object)
     free(regular);
 }
 
-static int dfs_winfs_open_file(struct dfs_fd* file)
+static int dfs_winfs_open_file(struct dfs_file* file)
 {
     struct winfs_root* root;
     struct winfs_regular* regular;
@@ -387,7 +387,8 @@ static int dfs_winfs_open_file(struct dfs_fd* file)
     RT_ASSERT(file->fs->data != RT_NULL);
     RT_ASSERT(file->path != RT_NULL);
 
-    root = file->fs->data;
+    struct dfs_filesystem* fs = file->vnode->fs;
+    root = fs->data;
     oflag = file->flags;
 
     mode = SIM_FILE_O_RDONLY;
@@ -403,7 +404,7 @@ static int dfs_winfs_open_file(struct dfs_fd* file)
     /* Creates a new file. The function fails if the file is already existing. */
     if (oflag & O_EXCL) mode |= SIM_FILE_O_EXCL;
     /* make full path */
-    winpath_dirdup(strncpy(file_path, root->parent.path, sizeof(file_path)), file->path);
+    winpath_dirdup(strncpy(file_path, root->parent.path, sizeof(file_path)), file->vnode->path);
     regular = (struct winfs_regular*)dfs_winfs_object_init(
         malloc(sizeof(struct winfs_regular)),
         sizeof(struct winfs_regular),
@@ -420,10 +421,10 @@ static int dfs_winfs_open_file(struct dfs_fd* file)
     /* save this pointer, it will be used when calling read(), write(),
      * flush(), seek(), and will be free when calling close()*/
     file->pos = 0;
-    file->size = (size_t)sim_file_seek(&regular->file, 0, SIM_FILE_SEEK_END);
+    file->vnode->size = (size_t)sim_file_seek(&regular->file, 0, SIM_FILE_SEEK_END);
     if (oflag & O_APPEND)
     {
-        file->pos = file->size;
+        file->pos = file->vnode->size;
     }
     else
     {
@@ -433,7 +434,7 @@ static int dfs_winfs_open_file(struct dfs_fd* file)
     return 0;
 }
 
-static int dfs_winfs_open(struct dfs_fd* file)
+static int dfs_winfs_open(struct dfs_file* file)
 {
     if (file->flags & O_DIRECTORY)   /* operations about dir */
     {
@@ -445,7 +446,7 @@ static int dfs_winfs_open(struct dfs_fd* file)
     }
 }
 
-static int dfs_winfs_close(struct dfs_fd* file)
+static int dfs_winfs_close(struct dfs_file* file)
 {
     RT_ASSERT(file != RT_NULL);
 
@@ -453,12 +454,12 @@ static int dfs_winfs_close(struct dfs_fd* file)
     return 0;
 }
 
-static int dfs_winfs_ioctl(struct dfs_fd* file, int cmd, void* args)
+static int dfs_winfs_ioctl(struct dfs_file* file, int cmd, void* args)
 {
     return -ENOSYS;
 }
 
-static int dfs_winfs_read(struct dfs_fd* file, void* buf, size_t len)
+static int dfs_winfs_read(struct dfs_file* file, void* buf, size_t len)
 {
     struct winfs_regular* regular;
     sim_int64_t char_read;
@@ -475,13 +476,13 @@ static int dfs_winfs_read(struct dfs_fd* file, void* buf, size_t len)
     /* update size */
     if (sim_file_stat(regular->parent.path, &stat) != RT_EOK)
         return win32_result_to_dfs(GetLastError());
-    file->size = stat.size;
+    file->vnode->size = stat.size;
     /* update position */
     file->pos = (off_t)sim_file_seek(&regular->file, 0, SIM_FILE_SEEK_CUR);
     return (int)char_read;
 }
 
-static int dfs_winfs_write(struct dfs_fd* file, const void* buf, size_t len)
+static int dfs_winfs_write(struct dfs_file* file, const void* buf, size_t len)
 {
     struct winfs_regular* regular;
     sim_int64_t char_write;
@@ -498,13 +499,13 @@ static int dfs_winfs_write(struct dfs_fd* file, const void* buf, size_t len)
     /* update size */
     if (sim_file_stat(regular->parent.path, &stat) != RT_EOK)
         return win32_result_to_dfs(GetLastError());
-    file->size = stat.size;
+    file->vnode->size = stat.size;
     /* update position */
     file->pos = (off_t)sim_file_seek(&regular->file, 0, SIM_FILE_SEEK_CUR);
     return (int)char_write;
 }
 
-static int dfs_winfs_flush(struct dfs_fd* file)
+static int dfs_winfs_flush(struct dfs_file* file)
 {
     struct winfs_regular* regular;
 
@@ -517,13 +518,13 @@ static int dfs_winfs_flush(struct dfs_fd* file)
     return 0;
 }
 
-static int dfs_winfs_seek(struct dfs_fd* file,
+static int dfs_winfs_seek(struct dfs_file* file,
     rt_off_t offset)
 {
     sim_int64_t res;
 
     /* set offset as current offset */
-    if (file->type == FT_REGULAR)
+    if (file->vnode->size == FT_REGULAR)
     {
         struct winfs_regular* regular;
 
@@ -538,7 +539,7 @@ static int dfs_winfs_seek(struct dfs_fd* file,
         else
             return win32_result_to_dfs(GetLastError());
     }
-    else if (file->type == FT_DIRECTORY)
+    else if (file->vnode->size == FT_DIRECTORY)
     {
         struct winfs_directory* dir;
 
@@ -565,7 +566,7 @@ static int dfs_winfs_seek(struct dfs_fd* file,
 }
 
 /* return the size of struct dirent*/
-static int dfs_winfs_getdents(struct dfs_fd* file, struct dirent* dirp, rt_uint32_t count)
+static int dfs_winfs_getdents(struct dfs_file* file, struct dirent* dirp, rt_uint32_t count)
 {
     struct winfs_directory* dir;
 

@@ -7,7 +7,7 @@
     </ProjectConfiguration>
   </ItemGroup>
   <PropertyGroup Label="Globals">
-    <ProjectName>vs</ProjectName>
+    <ProjectName>simulator</ProjectName>
     <ProjectGuid>{4A6BF1B1-C645-4BAD-A9B7-7B6E3DB67B2C}</ProjectGuid>
     <RootNamespace>vs2008</RootNamespace>
     <Keyword>Win32Proj</Keyword>
@@ -22,7 +22,7 @@
   <ImportGroup Label="ExtensionSettings">
   </ImportGroup>
   <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="PropertySheets">
-    <Import Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" />
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup>
@@ -36,7 +36,7 @@
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
       <Optimization>Disabled</Optimization>
-      <AdditionalIncludeDirectories>.;..\..\rt-thread\components\dfs\filesystems\devfs;..\..\rt-thread\components\dfs\filesystems\elmfat;..\..\rt-thread\components\dfs\include;..\..\rt-thread\components\drivers\include;..\..\rt-thread\components\finsh;..\..\rt-thread\components\libc\compilers\common\extension;..\..\rt-thread\components\libc\compilers\common\extension\fcntl\msvc;..\..\rt-thread\components\libc\compilers\common\include;..\..\rt-thread\components\libc\posix\io\poll;..\..\rt-thread\components\libc\posix\io\stdio;..\..\rt-thread\components\libc\posix\ipc;..\..\rt-thread\components\net\netdev\include;..\..\rt-thread\components\net\sal\include;..\..\rt-thread\components\net\sal\include\dfs_net;..\..\rt-thread\components\net\sal\include\socket;..\..\rt-thread\components\net\sal\include\socket\sys_socket;..\..\rt-thread\include;..\..\rt-thread\libcpu\sim\win32;SDL2\include;applications;drivers;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>.;..\..\rt-thread\components\dfs\dfs_v1\filesystems\devfs;..\..\rt-thread\components\dfs\dfs_v1\filesystems\elmfat;..\..\rt-thread\components\dfs\dfs_v1\include;..\..\rt-thread\components\drivers\include;..\..\rt-thread\components\finsh;..\..\rt-thread\components\libc\compilers\common\extension;..\..\rt-thread\components\libc\compilers\common\extension\fcntl\msvc;..\..\rt-thread\components\libc\compilers\common\include;..\..\rt-thread\components\libc\posix\io\epoll;..\..\rt-thread\components\libc\posix\io\eventfd;..\..\rt-thread\components\libc\posix\io\poll;..\..\rt-thread\components\libc\posix\ipc;..\..\rt-thread\components\net\netdev\include;..\..\rt-thread\components\net\sal\include;..\..\rt-thread\components\net\sal\include\dfs_net;..\..\rt-thread\components\net\sal\include\socket;..\..\rt-thread\components\net\sal\include\socket\sys_socket;..\..\rt-thread\include;SDL2\include;applications;drivers;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>RT_USING_LIBC;_CRT_DECLARE_NONSTDC_NAMES=0;_CRT_ERRNO_DEFINED;_CRT_NO_TIME_T;_CRT_SECURE_NO_WARNINGS;NORESOURCE;WIN32_LEAN_AND_MEAN;__RTTHREAD__;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
       <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
@@ -62,18 +62,15 @@
     <ClCompile Include="applications\mnt.c">
       <ObjectFileName>$(IntDir)bsp\applications\</ObjectFileName>
     </ClCompile>
-    <ClCompile Include="applications\platform.c">
+    <ClCompile Include="applications\application.c">
       <ObjectFileName>$(IntDir)bsp\applications\</ObjectFileName>
     </ClCompile>
-    <ClCompile Include="applications\application.c">
+    <ClCompile Include="applications\platform.c">
       <ObjectFileName>$(IntDir)bsp\applications\</ObjectFileName>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\..\rt-thread\components\libc\compilers\common\cctype.c">
-      <ObjectFileName>$(IntDir)kernel\components\libc\compilers\common\</ObjectFileName>
-    </ClCompile>
-    <ClCompile Include="..\..\rt-thread\components\libc\compilers\common\cstdio.c">
       <ObjectFileName>$(IntDir)kernel\components\libc\compilers\common\</ObjectFileName>
     </ClCompile>
     <ClCompile Include="..\..\rt-thread\components\libc\compilers\common\cstdlib.c">
@@ -85,20 +82,21 @@
     <ClCompile Include="..\..\rt-thread\components\libc\compilers\common\ctime.c">
       <ObjectFileName>$(IntDir)kernel\components\libc\compilers\common\</ObjectFileName>
     </ClCompile>
+    <ClCompile Include="..\..\rt-thread\components\libc\compilers\common\cunistd.c">
+      <ObjectFileName>$(IntDir)kernel\components\libc\compilers\common\</ObjectFileName>
+    </ClCompile>
     <ClCompile Include="..\..\rt-thread\components\libc\compilers\common\cwchar.c">
       <ObjectFileName>$(IntDir)kernel\components\libc\compilers\common\</ObjectFileName>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="..\..\rt-thread\libcpu\sim\win32\cpu_port.c">
-      <ObjectFileName>$(IntDir)kernel\libcpu\sim\win32\</ObjectFileName>
+    <ClCompile Include="..\..\rt-thread\components\drivers\core\device.c">
+      <ObjectFileName>$(IntDir)kernel\components\drivers\core\</ObjectFileName>
     </ClCompile>
-    <ClCompile Include="..\..\rt-thread\libcpu\sim\win32\startup.c">
-      <ObjectFileName>$(IntDir)kernel\libcpu\sim\win32\</ObjectFileName>
-    </ClCompile>
-  </ItemGroup>
-  <ItemGroup>
     <ClCompile Include="..\..\rt-thread\components\drivers\ipc\completion.c">
+      <ObjectFileName>$(IntDir)kernel\components\drivers\ipc\</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="..\..\rt-thread\components\drivers\ipc\condvar.c">
       <ObjectFileName>$(IntDir)kernel\components\drivers\ipc\</ObjectFileName>
     </ClCompile>
     <ClCompile Include="..\..\rt-thread\components\drivers\ipc\dataqueue.c">
@@ -122,81 +120,78 @@
     <ClCompile Include="..\..\rt-thread\components\drivers\rtc\rtc.c">
       <ObjectFileName>$(IntDir)kernel\components\drivers\rtc\</ObjectFileName>
     </ClCompile>
-    <ClCompile Include="..\..\rt-thread\components\drivers\serial\serial.c">
+    <ClCompile Include="..\..\rt-thread\components\drivers\serial\dev_serial.c">
       <ObjectFileName>$(IntDir)kernel\components\drivers\serial\</ObjectFileName>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="drivers\drv_rtc.c">
+      <ObjectFileName>$(IntDir)bsp\drivers\</ObjectFileName>
+    </ClCompile>
     <ClCompile Include="drivers\winsock\drv_win_eth.c">
       <ObjectFileName>$(IntDir)bsp\drivers\winsock\</ObjectFileName>
     </ClCompile>
     <ClCompile Include="drivers\dfs_win32.c">
       <ObjectFileName>$(IntDir)bsp\drivers\</ObjectFileName>
     </ClCompile>
-    <ClCompile Include="drivers\uart_console.c">
+    <ClCompile Include="drivers\winsock\sal_winsock.c">
+      <ObjectFileName>$(IntDir)bsp\drivers\winsock\</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="drivers\board.c">
       <ObjectFileName>$(IntDir)bsp\drivers\</ObjectFileName>
     </ClCompile>
     <ClCompile Include="drivers\sim_win32.c">
       <ObjectFileName>$(IntDir)bsp\drivers\</ObjectFileName>
     </ClCompile>
-    <ClCompile Include="drivers\winsock\sal_winsock.c">
-      <ObjectFileName>$(IntDir)bsp\drivers\winsock\</ObjectFileName>
-    </ClCompile>
-    <ClCompile Include="drivers\drv_rtc.c">
-      <ObjectFileName>$(IntDir)bsp\drivers\</ObjectFileName>
-    </ClCompile>
-    <ClCompile Include="drivers\board.c">
+    <ClCompile Include="drivers\uart_console.c">
       <ObjectFileName>$(IntDir)bsp\drivers\</ObjectFileName>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="..\..\rt-thread\components\dfs\filesystems\devfs\devfs.c">
-      <ObjectFileName>$(IntDir)kernel\components\dfs\filesystems\devfs\</ObjectFileName>
+    <ClCompile Include="..\..\rt-thread\components\dfs\dfs_v1\filesystems\devfs\devfs.c">
+      <ObjectFileName>$(IntDir)kernel\components\dfs\dfs_v1\filesystems\devfs\</ObjectFileName>
     </ClCompile>
-    <ClCompile Include="..\..\rt-thread\components\dfs\filesystems\elmfat\dfs_elm.c">
-      <ObjectFileName>$(IntDir)kernel\components\dfs\filesystems\elmfat\</ObjectFileName>
+    <ClCompile Include="..\..\rt-thread\components\dfs\dfs_v1\filesystems\elmfat\dfs_elm.c">
+      <ObjectFileName>$(IntDir)kernel\components\dfs\dfs_v1\filesystems\elmfat\</ObjectFileName>
     </ClCompile>
-    <ClCompile Include="..\..\rt-thread\components\dfs\filesystems\elmfat\ff.c">
-      <ObjectFileName>$(IntDir)kernel\components\dfs\filesystems\elmfat\</ObjectFileName>
+    <ClCompile Include="..\..\rt-thread\components\dfs\dfs_v1\filesystems\elmfat\ff.c">
+      <ObjectFileName>$(IntDir)kernel\components\dfs\dfs_v1\filesystems\elmfat\</ObjectFileName>
     </ClCompile>
-    <ClCompile Include="..\..\rt-thread\components\dfs\filesystems\elmfat\ffunicode.c">
-      <ObjectFileName>$(IntDir)kernel\components\dfs\filesystems\elmfat\</ObjectFileName>
+    <ClCompile Include="..\..\rt-thread\components\dfs\dfs_v1\filesystems\elmfat\ffunicode.c">
+      <ObjectFileName>$(IntDir)kernel\components\dfs\dfs_v1\filesystems\elmfat\</ObjectFileName>
     </ClCompile>
-    <ClCompile Include="..\..\rt-thread\components\dfs\src\dfs.c">
-      <ObjectFileName>$(IntDir)kernel\components\dfs\src\</ObjectFileName>
+    <ClCompile Include="..\..\rt-thread\components\dfs\dfs_v1\src\dfs.c">
+      <ObjectFileName>$(IntDir)kernel\components\dfs\dfs_v1\src\</ObjectFileName>
     </ClCompile>
-    <ClCompile Include="..\..\rt-thread\components\dfs\src\dfs_file.c">
-      <ObjectFileName>$(IntDir)kernel\components\dfs\src\</ObjectFileName>
+    <ClCompile Include="..\..\rt-thread\components\dfs\dfs_v1\src\dfs_file.c">
+      <ObjectFileName>$(IntDir)kernel\components\dfs\dfs_v1\src\</ObjectFileName>
     </ClCompile>
-    <ClCompile Include="..\..\rt-thread\components\dfs\src\dfs_fs.c">
-      <ObjectFileName>$(IntDir)kernel\components\dfs\src\</ObjectFileName>
+    <ClCompile Include="..\..\rt-thread\components\dfs\dfs_v1\src\dfs_fs.c">
+      <ObjectFileName>$(IntDir)kernel\components\dfs\dfs_v1\src\</ObjectFileName>
     </ClCompile>
-    <ClCompile Include="..\..\rt-thread\components\dfs\src\dfs_posix.c">
-      <ObjectFileName>$(IntDir)kernel\components\dfs\src\</ObjectFileName>
+    <ClCompile Include="..\..\rt-thread\components\dfs\dfs_v1\src\dfs_posix.c">
+      <ObjectFileName>$(IntDir)kernel\components\dfs\dfs_v1\src\</ObjectFileName>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="..\..\rt-thread\components\finsh\msh_parse.c">
+      <ObjectFileName>$(IntDir)kernel\components\finsh\</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="..\..\rt-thread\components\finsh\msh_file.c">
+      <ObjectFileName>$(IntDir)kernel\components\finsh\</ObjectFileName>
+    </ClCompile>
     <ClCompile Include="..\..\rt-thread\components\finsh\shell.c">
       <ObjectFileName>$(IntDir)kernel\components\finsh\</ObjectFileName>
     </ClCompile>
     <ClCompile Include="..\..\rt-thread\components\finsh\msh.c">
       <ObjectFileName>$(IntDir)kernel\components\finsh\</ObjectFileName>
     </ClCompile>
-    <ClCompile Include="..\..\rt-thread\components\finsh\msh_parse.c">
-      <ObjectFileName>$(IntDir)kernel\components\finsh\</ObjectFileName>
-    </ClCompile>
     <ClCompile Include="..\..\rt-thread\components\finsh\cmd.c">
-      <ObjectFileName>$(IntDir)kernel\components\finsh\</ObjectFileName>
-    </ClCompile>
-    <ClCompile Include="..\..\rt-thread\components\finsh\msh_file.c">
       <ObjectFileName>$(IntDir)kernel\components\finsh\</ObjectFileName>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\..\rt-thread\src\clock.c">
-      <ObjectFileName>$(IntDir)kernel\src\</ObjectFileName>
-    </ClCompile>
-    <ClCompile Include="..\..\rt-thread\src\device.c">
       <ObjectFileName>$(IntDir)kernel\src\</ObjectFileName>
     </ClCompile>
     <ClCompile Include="..\..\rt-thread\src\idle.c">
@@ -207,6 +202,12 @@
     </ClCompile>
     <ClCompile Include="..\..\rt-thread\src\irq.c">
       <ObjectFileName>$(IntDir)kernel\src\</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="..\..\rt-thread\src\klibc\kstdio.c">
+      <ObjectFileName>$(IntDir)kernel\src\klibc\</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="..\..\rt-thread\src\klibc\kstring.c">
+      <ObjectFileName>$(IntDir)kernel\src\klibc\</ObjectFileName>
     </ClCompile>
     <ClCompile Include="..\..\rt-thread\src\kservice.c">
       <ObjectFileName>$(IntDir)kernel\src\</ObjectFileName>
@@ -220,7 +221,10 @@
     <ClCompile Include="..\..\rt-thread\src\object.c">
       <ObjectFileName>$(IntDir)kernel\src\</ObjectFileName>
     </ClCompile>
-    <ClCompile Include="..\..\rt-thread\src\scheduler.c">
+    <ClCompile Include="..\..\rt-thread\src\scheduler_comm.c">
+      <ObjectFileName>$(IntDir)kernel\src\</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="..\..\rt-thread\src\scheduler_up.c">
       <ObjectFileName>$(IntDir)kernel\src\</ObjectFileName>
     </ClCompile>
     <ClCompile Include="..\..\rt-thread\src\thread.c">
@@ -265,37 +269,61 @@
     <ClInclude Include="drivers\winsock\rtt_winsock.h" />
     <ClInclude Include="rtconfig.h" />
     <ClInclude Include="rtconfig_project.h" />
-    <ClInclude Include="..\..\rt-thread\components\dfs\filesystems\devfs\devfs.h" />
-    <ClInclude Include="..\..\rt-thread\components\dfs\filesystems\elmfat\diskio.h" />
-    <ClInclude Include="..\..\rt-thread\components\dfs\filesystems\elmfat\ff.h" />
-    <ClInclude Include="..\..\rt-thread\components\dfs\filesystems\elmfat\ffconf.h" />
-    <ClInclude Include="..\..\rt-thread\components\dfs\include\dfs.h" />
-    <ClInclude Include="..\..\rt-thread\components\dfs\include\dfs_file.h" />
-    <ClInclude Include="..\..\rt-thread\components\dfs\include\dfs_fs.h" />
-    <ClInclude Include="..\..\rt-thread\components\dfs\include\dfs_private.h" />
+    <ClInclude Include="..\..\rt-thread\components\dfs\dfs_v1\filesystems\devfs\devfs.h" />
+    <ClInclude Include="..\..\rt-thread\components\dfs\dfs_v1\filesystems\elmfat\diskio.h" />
+    <ClInclude Include="..\..\rt-thread\components\dfs\dfs_v1\filesystems\elmfat\ff.h" />
+    <ClInclude Include="..\..\rt-thread\components\dfs\dfs_v1\filesystems\elmfat\ffconf.h" />
+    <ClInclude Include="..\..\rt-thread\components\dfs\dfs_v1\include\dfs.h" />
+    <ClInclude Include="..\..\rt-thread\components\dfs\dfs_v1\include\dfs_file.h" />
+    <ClInclude Include="..\..\rt-thread\components\dfs\dfs_v1\include\dfs_fs.h" />
+    <ClInclude Include="..\..\rt-thread\components\dfs\dfs_v1\include\dfs_private.h" />
     <ClInclude Include="..\..\rt-thread\components\drivers\include\drivers\adc.h" />
     <ClInclude Include="..\..\rt-thread\components\drivers\include\drivers\alarm.h" />
     <ClInclude Include="..\..\rt-thread\components\drivers\include\drivers\audio.h" />
+    <ClInclude Include="..\..\rt-thread\components\drivers\include\drivers\byteorder.h" />
     <ClInclude Include="..\..\rt-thread\components\drivers\include\drivers\can.h" />
+    <ClInclude Include="..\..\rt-thread\components\drivers\include\drivers\classes\block.h" />
+    <ClInclude Include="..\..\rt-thread\components\drivers\include\drivers\classes\char.h" />
+    <ClInclude Include="..\..\rt-thread\components\drivers\include\drivers\classes\graphic.h" />
+    <ClInclude Include="..\..\rt-thread\components\drivers\include\drivers\classes\mtd.h" />
+    <ClInclude Include="..\..\rt-thread\components\drivers\include\drivers\classes\net.h" />
+    <ClInclude Include="..\..\rt-thread\components\drivers\include\drivers\clk.h" />
+    <ClInclude Include="..\..\rt-thread\components\drivers\include\drivers\core\bus.h" />
+    <ClInclude Include="..\..\rt-thread\components\drivers\include\drivers\core\dm.h" />
+    <ClInclude Include="..\..\rt-thread\components\drivers\include\drivers\core\driver.h" />
     <ClInclude Include="..\..\rt-thread\components\drivers\include\drivers\cputime.h" />
+    <ClInclude Include="..\..\rt-thread\components\drivers\include\drivers\cputimer.h" />
     <ClInclude Include="..\..\rt-thread\components\drivers\include\drivers\crypto.h" />
     <ClInclude Include="..\..\rt-thread\components\drivers\include\drivers\dac.h" />
+    <ClInclude Include="..\..\rt-thread\components\drivers\include\drivers\dev_serial.h" />
+    <ClInclude Include="..\..\rt-thread\components\drivers\include\drivers\dev_serial_v2.h" />
     <ClInclude Include="..\..\rt-thread\components\drivers\include\drivers\hwtimer.h" />
     <ClInclude Include="..\..\rt-thread\components\drivers\include\drivers\i2c-bit-ops.h" />
     <ClInclude Include="..\..\rt-thread\components\drivers\include\drivers\i2c.h" />
     <ClInclude Include="..\..\rt-thread\components\drivers\include\drivers\i2c_dev.h" />
+    <ClInclude Include="..\..\rt-thread\components\drivers\include\drivers\i2c_dm.h" />
+    <ClInclude Include="..\..\rt-thread\components\drivers\include\drivers\lcd.h" />
     <ClInclude Include="..\..\rt-thread\components\drivers\include\drivers\lptimer.h" />
+    <ClInclude Include="..\..\rt-thread\components\drivers\include\drivers\misc.h" />
     <ClInclude Include="..\..\rt-thread\components\drivers\include\drivers\mmcsd_card.h" />
     <ClInclude Include="..\..\rt-thread\components\drivers\include\drivers\mmcsd_cmd.h" />
     <ClInclude Include="..\..\rt-thread\components\drivers\include\drivers\mmcsd_core.h" />
     <ClInclude Include="..\..\rt-thread\components\drivers\include\drivers\mmcsd_host.h" />
     <ClInclude Include="..\..\rt-thread\components\drivers\include\drivers\mtd_nand.h" />
     <ClInclude Include="..\..\rt-thread\components\drivers\include\drivers\mtd_nor.h" />
+    <ClInclude Include="..\..\rt-thread\components\drivers\include\drivers\ofw.h" />
+    <ClInclude Include="..\..\rt-thread\components\drivers\include\drivers\ofw_fdt.h" />
+    <ClInclude Include="..\..\rt-thread\components\drivers\include\drivers\ofw_io.h" />
+    <ClInclude Include="..\..\rt-thread\components\drivers\include\drivers\ofw_irq.h" />
+    <ClInclude Include="..\..\rt-thread\components\drivers\include\drivers\ofw_raw.h" />
     <ClInclude Include="..\..\rt-thread\components\drivers\include\drivers\phy.h" />
     <ClInclude Include="..\..\rt-thread\components\drivers\include\drivers\phy_mdio.h" />
+    <ClInclude Include="..\..\rt-thread\components\drivers\include\drivers\pic.h" />
     <ClInclude Include="..\..\rt-thread\components\drivers\include\drivers\pin.h" />
+    <ClInclude Include="..\..\rt-thread\components\drivers\include\drivers\platform.h" />
     <ClInclude Include="..\..\rt-thread\components\drivers\include\drivers\pm.h" />
     <ClInclude Include="..\..\rt-thread\components\drivers\include\drivers\pulse_encoder.h" />
+    <ClInclude Include="..\..\rt-thread\components\drivers\include\drivers\rt_dev_bus.h" />
     <ClInclude Include="..\..\rt-thread\components\drivers\include\drivers\rt_drv_pwm.h" />
     <ClInclude Include="..\..\rt-thread\components\drivers\include\drivers\rt_inputcapture.h" />
     <ClInclude Include="..\..\rt-thread\components\drivers\include\drivers\rtc.h" />
@@ -303,8 +331,7 @@
     <ClInclude Include="..\..\rt-thread\components\drivers\include\drivers\sdio.h" />
     <ClInclude Include="..\..\rt-thread\components\drivers\include\drivers\sdio_func_ids.h" />
     <ClInclude Include="..\..\rt-thread\components\drivers\include\drivers\sensor.h" />
-    <ClInclude Include="..\..\rt-thread\components\drivers\include\drivers\serial.h" />
-    <ClInclude Include="..\..\rt-thread\components\drivers\include\drivers\serial_v2.h" />
+    <ClInclude Include="..\..\rt-thread\components\drivers\include\drivers\sensor_v2.h" />
     <ClInclude Include="..\..\rt-thread\components\drivers\include\drivers\spi.h" />
     <ClInclude Include="..\..\rt-thread\components\drivers\include\drivers\touch.h" />
     <ClInclude Include="..\..\rt-thread\components\drivers\include\drivers\usb_common.h" />
@@ -313,6 +340,7 @@
     <ClInclude Include="..\..\rt-thread\components\drivers\include\drivers\watchdog.h" />
     <ClInclude Include="..\..\rt-thread\components\drivers\include\drivers\wlan.h" />
     <ClInclude Include="..\..\rt-thread\components\drivers\include\ipc\completion.h" />
+    <ClInclude Include="..\..\rt-thread\components\drivers\include\ipc\condvar.h" />
     <ClInclude Include="..\..\rt-thread\components\drivers\include\ipc\dataqueue.h" />
     <ClInclude Include="..\..\rt-thread\components\drivers\include\ipc\pipe.h" />
     <ClInclude Include="..\..\rt-thread\components\drivers\include\ipc\poll.h" />
@@ -330,7 +358,7 @@
     <ClInclude Include="..\..\rt-thread\components\libc\compilers\common\extension\sys\types.h" />
     <ClInclude Include="..\..\rt-thread\components\libc\compilers\common\include\dirent.h" />
     <ClInclude Include="..\..\rt-thread\components\libc\compilers\common\include\posix\ctype.h" />
-    <ClInclude Include="..\..\rt-thread\components\libc\compilers\common\include\posix\stdio.h" />
+    <ClInclude Include="..\..\rt-thread\components\libc\compilers\common\include\posix\stdlib.h" />
     <ClInclude Include="..\..\rt-thread\components\libc\compilers\common\include\posix\string.h" />
     <ClInclude Include="..\..\rt-thread\components\libc\compilers\common\include\posix\wchar.h" />
     <ClInclude Include="..\..\rt-thread\components\libc\compilers\common\include\sys\ioctl.h" />
@@ -341,7 +369,6 @@
     <ClInclude Include="..\..\rt-thread\components\libc\compilers\common\include\sys\unistd.h" />
     <ClInclude Include="..\..\rt-thread\components\libc\compilers\common\include\unistd.h" />
     <ClInclude Include="..\..\rt-thread\components\libc\posix\io\poll\poll.h" />
-    <ClInclude Include="..\..\rt-thread\components\libc\posix\io\stdio\libc.h" />
     <ClInclude Include="..\..\rt-thread\components\libc\posix\ipc\semaphore.h" />
     <ClInclude Include="..\..\rt-thread\components\net\netdev\include\arpa\inet.h" />
     <ClInclude Include="..\..\rt-thread\components\net\netdev\include\netdev.h" />
@@ -353,13 +380,16 @@
     <ClInclude Include="..\..\rt-thread\components\net\sal\include\sal_tls.h" />
     <ClInclude Include="..\..\rt-thread\components\net\sal\include\socket\netdb.h" />
     <ClInclude Include="..\..\rt-thread\components\net\sal\include\socket\sys_socket\sys\socket.h" />
+    <ClInclude Include="..\..\rt-thread\include\rtatomic.h" />
+    <ClInclude Include="..\..\rt-thread\include\rtcompiler.h" />
     <ClInclude Include="..\..\rt-thread\include\rtdbg.h" />
-    <ClInclude Include="..\..\rt-thread\include\rtdebug.h" />
     <ClInclude Include="..\..\rt-thread\include\rtdef.h" />
     <ClInclude Include="..\..\rt-thread\include\rthw.h" />
+    <ClInclude Include="..\..\rt-thread\include\rtklibc.h" />
     <ClInclude Include="..\..\rt-thread\include\rtm.h" />
+    <ClInclude Include="..\..\rt-thread\include\rtsched.h" />
     <ClInclude Include="..\..\rt-thread\include\rtservice.h" />
     <ClInclude Include="..\..\rt-thread\include\rtthread.h" />
-    <ClInclude Include="..\..\rt-thread\libcpu\sim\win32\cpu_port.h" />
+    <ClInclude Include="..\..\rt-thread\include\rttypes.h" />
   </ItemGroup>
 </Project>
