@@ -128,5 +128,12 @@ if GetDepend('RT_USING_MODULE'):
 else:
     program = env.Program(TARGET, objs)
 
+bsp_vdir = 'build'
+
+# include packages
+objs.extend(SConscript(os.path.join('../../', 'packages', 'SConscript'), variant_dir = bsp_vdir + '/packages', duplicate = 0))
+# include ui
+# objs.extend(SConscript(os.path.join('../../', 'ui', 'SConscript'), variant_dir = bsp_vdir + '/ui', duplicate = 0))
+
 # end building
 EndBuilding(TARGET, program)
