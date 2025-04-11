@@ -36,7 +36,7 @@
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
       <Optimization>Disabled</Optimization>
-      <AdditionalIncludeDirectories>.;..\..\packages\lvgl-8.4.0\env_support\rt-thread;..\..\packages\lvgl-8.4.0\src;..\..\packages\lvgl-8.4.0\src\core;..\..\packages\lvgl-8.4.0\src\draw;..\..\packages\lvgl-8.4.0\src\draw\arm2d;..\..\packages\lvgl-8.4.0\src\draw\nxp\pxp;..\..\packages\lvgl-8.4.0\src\draw\nxp\vglite;..\..\packages\lvgl-8.4.0\src\draw\renesas;..\..\packages\lvgl-8.4.0\src\draw\sdl;..\..\packages\lvgl-8.4.0\src\draw\stm32_dma2d;..\..\packages\lvgl-8.4.0\src\draw\sw;..\..\packages\lvgl-8.4.0\src\draw\swm341_dma2d;..\..\packages\lvgl-8.4.0\src\extra;..\..\packages\lvgl-8.4.0\src\extra\layouts;..\..\packages\lvgl-8.4.0\src\extra\layouts\flex;..\..\packages\lvgl-8.4.0\src\extra\layouts\grid;..\..\packages\lvgl-8.4.0\src\extra\libs;..\..\packages\lvgl-8.4.0\src\extra\libs\bmp;..\..\packages\lvgl-8.4.0\src\extra\libs\ffmpeg;..\..\packages\lvgl-8.4.0\src\extra\libs\freetype;..\..\packages\lvgl-8.4.0\src\extra\libs\fsdrv;..\..\packages\lvgl-8.4.0\src\extra\libs\gif;..\..\packages\lvgl-8.4.0\src\extra\libs\png;..\..\packages\lvgl-8.4.0\src\extra\libs\qrcode;..\..\packages\lvgl-8.4.0\src\extra\libs\rlottie;..\..\packages\lvgl-8.4.0\src\extra\libs\sjpg;..\..\packages\lvgl-8.4.0\src\extra\libs\tiny_ttf;..\..\packages\lvgl-8.4.0\src\extra\others;..\..\packages\lvgl-8.4.0\src\extra\others\fragment;..\..\packages\lvgl-8.4.0\src\extra\others\gridnav;..\..\packages\lvgl-8.4.0\src\extra\others\ime;..\..\packages\lvgl-8.4.0\src\extra\others\imgfont;..\..\packages\lvgl-8.4.0\src\extra\others\monkey;..\..\packages\lvgl-8.4.0\src\extra\others\msg;..\..\packages\lvgl-8.4.0\src\extra\others\snapshot;..\..\packages\lvgl-8.4.0\src\extra\themes;..\..\packages\lvgl-8.4.0\src\extra\themes\basic;..\..\packages\lvgl-8.4.0\src\extra\themes\default;..\..\packages\lvgl-8.4.0\src\extra\themes\mono;..\..\packages\lvgl-8.4.0\src\extra\widgets;..\..\packages\lvgl-8.4.0\src\extra\widgets\animimg;..\..\packages\lvgl-8.4.0\src\extra\widgets\calendar;..\..\packages\lvgl-8.4.0\src\extra\widgets\chart;..\..\packages\lvgl-8.4.0\src\extra\widgets\colorwheel;..\..\packages\lvgl-8.4.0\src\extra\widgets\imgbtn;..\..\packages\lvgl-8.4.0\src\extra\widgets\keyboard;..\..\packages\lvgl-8.4.0\src\extra\widgets\led;..\..\packages\lvgl-8.4.0\src\extra\widgets\list;..\..\packages\lvgl-8.4.0\src\extra\widgets\menu;..\..\packages\lvgl-8.4.0\src\extra\widgets\meter;..\..\packages\lvgl-8.4.0\src\extra\widgets\msgbox;..\..\packages\lvgl-8.4.0\src\extra\widgets\span;..\..\packages\lvgl-8.4.0\src\extra\widgets\spinbox;..\..\packages\lvgl-8.4.0\src\extra\widgets\spinner;..\..\packages\lvgl-8.4.0\src\extra\widgets\tabview;..\..\packages\lvgl-8.4.0\src\extra\widgets\tileview;..\..\packages\lvgl-8.4.0\src\extra\widgets\win;..\..\packages\lvgl-8.4.0\src\font;..\..\packages\lvgl-8.4.0\src\hal;..\..\packages\lvgl-8.4.0\src\misc;..\..\packages\lvgl-8.4.0\src\widgets;..\..\rt-thread\components\dfs\dfs_v1\filesystems\devfs;..\..\rt-thread\components\dfs\dfs_v1\filesystems\elmfat;..\..\rt-thread\components\dfs\dfs_v1\include;..\..\rt-thread\components\drivers\include;..\..\rt-thread\components\drivers\phy;..\..\rt-thread\components\drivers\smp_call;..\..\rt-thread\components\finsh;..\..\rt-thread\components\libc\compilers\common\extension;..\..\rt-thread\components\libc\compilers\common\extension\fcntl\msvc;..\..\rt-thread\components\libc\compilers\common\include;..\..\rt-thread\components\libc\posix\io\epoll;..\..\rt-thread\components\libc\posix\io\eventfd;..\..\rt-thread\components\libc\posix\io\poll;..\..\rt-thread\components\libc\posix\ipc;..\..\rt-thread\components\net\netdev\include;..\..\rt-thread\components\net\sal\include;..\..\rt-thread\components\net\sal\include\dfs_net;..\..\rt-thread\components\net\sal\include\socket;..\..\rt-thread\components\net\sal\include\socket\sys_socket;..\..\rt-thread\include;..\..\rt-thread\libcpu\sim\win32;..\..\ui;..\..\ui\calculator;..\..\ui\filemanager;..\..\ui\launcher;..\..\ui\splash;SDL2\include;applications;drivers;lvgl;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>.;..\..\packages\lvgl-8.4.0\env_support\rt-thread;..\..\packages\lvgl-8.4.0\src;..\..\packages\lvgl-8.4.0\src\core;..\..\packages\lvgl-8.4.0\src\draw;..\..\packages\lvgl-8.4.0\src\draw\arm2d;..\..\packages\lvgl-8.4.0\src\draw\nxp\pxp;..\..\packages\lvgl-8.4.0\src\draw\nxp\vglite;..\..\packages\lvgl-8.4.0\src\draw\renesas;..\..\packages\lvgl-8.4.0\src\draw\sdl;..\..\packages\lvgl-8.4.0\src\draw\stm32_dma2d;..\..\packages\lvgl-8.4.0\src\draw\sw;..\..\packages\lvgl-8.4.0\src\draw\swm341_dma2d;..\..\packages\lvgl-8.4.0\src\extra;..\..\packages\lvgl-8.4.0\src\extra\layouts;..\..\packages\lvgl-8.4.0\src\extra\layouts\flex;..\..\packages\lvgl-8.4.0\src\extra\layouts\grid;..\..\packages\lvgl-8.4.0\src\extra\libs;..\..\packages\lvgl-8.4.0\src\extra\libs\bmp;..\..\packages\lvgl-8.4.0\src\extra\libs\ffmpeg;..\..\packages\lvgl-8.4.0\src\extra\libs\freetype;..\..\packages\lvgl-8.4.0\src\extra\libs\fsdrv;..\..\packages\lvgl-8.4.0\src\extra\libs\gif;..\..\packages\lvgl-8.4.0\src\extra\libs\png;..\..\packages\lvgl-8.4.0\src\extra\libs\qrcode;..\..\packages\lvgl-8.4.0\src\extra\libs\rlottie;..\..\packages\lvgl-8.4.0\src\extra\libs\sjpg;..\..\packages\lvgl-8.4.0\src\extra\libs\tiny_ttf;..\..\packages\lvgl-8.4.0\src\extra\others;..\..\packages\lvgl-8.4.0\src\extra\others\fragment;..\..\packages\lvgl-8.4.0\src\extra\others\gridnav;..\..\packages\lvgl-8.4.0\src\extra\others\ime;..\..\packages\lvgl-8.4.0\src\extra\others\imgfont;..\..\packages\lvgl-8.4.0\src\extra\others\monkey;..\..\packages\lvgl-8.4.0\src\extra\others\msg;..\..\packages\lvgl-8.4.0\src\extra\others\snapshot;..\..\packages\lvgl-8.4.0\src\extra\themes;..\..\packages\lvgl-8.4.0\src\extra\themes\basic;..\..\packages\lvgl-8.4.0\src\extra\themes\default;..\..\packages\lvgl-8.4.0\src\extra\themes\mono;..\..\packages\lvgl-8.4.0\src\extra\widgets;..\..\packages\lvgl-8.4.0\src\extra\widgets\animimg;..\..\packages\lvgl-8.4.0\src\extra\widgets\calendar;..\..\packages\lvgl-8.4.0\src\extra\widgets\chart;..\..\packages\lvgl-8.4.0\src\extra\widgets\colorwheel;..\..\packages\lvgl-8.4.0\src\extra\widgets\imgbtn;..\..\packages\lvgl-8.4.0\src\extra\widgets\keyboard;..\..\packages\lvgl-8.4.0\src\extra\widgets\led;..\..\packages\lvgl-8.4.0\src\extra\widgets\list;..\..\packages\lvgl-8.4.0\src\extra\widgets\menu;..\..\packages\lvgl-8.4.0\src\extra\widgets\meter;..\..\packages\lvgl-8.4.0\src\extra\widgets\msgbox;..\..\packages\lvgl-8.4.0\src\extra\widgets\span;..\..\packages\lvgl-8.4.0\src\extra\widgets\spinbox;..\..\packages\lvgl-8.4.0\src\extra\widgets\spinner;..\..\packages\lvgl-8.4.0\src\extra\widgets\tabview;..\..\packages\lvgl-8.4.0\src\extra\widgets\tileview;..\..\packages\lvgl-8.4.0\src\extra\widgets\win;..\..\packages\lvgl-8.4.0\src\font;..\..\packages\lvgl-8.4.0\src\hal;..\..\packages\lvgl-8.4.0\src\misc;..\..\packages\lvgl-8.4.0\src\widgets;..\..\rt-thread\components\dfs\dfs_v1\filesystems\devfs;..\..\rt-thread\components\dfs\dfs_v1\filesystems\elmfat;..\..\rt-thread\components\dfs\dfs_v1\include;..\..\rt-thread\components\drivers\include;..\..\rt-thread\components\drivers\ktime;..\..\rt-thread\components\drivers\ktime\inc;..\..\rt-thread\components\drivers\phy;..\..\rt-thread\components\drivers\smp_call;..\..\rt-thread\components\finsh;..\..\rt-thread\components\libc\compilers\common\extension;..\..\rt-thread\components\libc\compilers\common\extension\fcntl\msvc;..\..\rt-thread\components\libc\compilers\common\include;..\..\rt-thread\components\libc\cplusplus;..\..\rt-thread\components\libc\cplusplus\os;..\..\rt-thread\components\libc\posix\delay;..\..\rt-thread\components\libc\posix\io\epoll;..\..\rt-thread\components\libc\posix\io\eventfd;..\..\rt-thread\components\libc\posix\io\poll;..\..\rt-thread\components\libc\posix\io\stdio;..\..\rt-thread\components\libc\posix\ipc;..\..\rt-thread\components\libc\posix\pthreads;..\..\rt-thread\components\libc\posix\tls;..\..\rt-thread\components\net\netdev\include;..\..\rt-thread\components\net\sal\include;..\..\rt-thread\components\net\sal\include\dfs_net;..\..\rt-thread\components\net\sal\include\socket;..\..\rt-thread\components\net\sal\include\socket\sys_socket;..\..\rt-thread\include;..\..\rt-thread\libcpu\sim\win32;..\..\ui;..\..\ui\calculator;..\..\ui\filemanager;..\..\ui\launcher;..\..\ui\splash;SDL2\include;applications;drivers;lvgl;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>RT_USING_LIBC;_CRT_DECLARE_NONSTDC_NAMES=0;_CRT_ERRNO_DEFINED;_CRT_NO_TIME_T;_CRT_SECURE_NO_WARNINGS;NORESOURCE;WIN32_LEAN_AND_MEAN;__RTTHREAD__;__RT_KERNEL_SOURCE__;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
       <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
@@ -61,13 +61,13 @@
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>
   <ItemGroup>
-    <ClCompile Include="applications\platform.c">
+    <ClCompile Include="applications\application.c">
       <ObjectFileName>$(IntDir)bsp\applications\</ObjectFileName>
     </ClCompile>
     <ClCompile Include="applications\mnt.c">
       <ObjectFileName>$(IntDir)bsp\applications\</ObjectFileName>
     </ClCompile>
-    <ClCompile Include="applications\application.c">
+    <ClCompile Include="applications\platform.c">
       <ObjectFileName>$(IntDir)bsp\applications\</ObjectFileName>
     </ClCompile>
   </ItemGroup>
@@ -89,6 +89,29 @@
     </ClCompile>
     <ClCompile Include="..\..\rt-thread\components\libc\compilers\common\cwchar.c">
       <ObjectFileName>$(IntDir)kernel\components\libc\compilers\common\</ObjectFileName>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\rt-thread\components\libc\cplusplus\cpp11\atomic_8.c">
+      <ObjectFileName>$(IntDir)kernel\components\libc\cplusplus\cpp11\</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="..\..\rt-thread\components\libc\cplusplus\cpp11\thread_local_impl.cpp">
+      <ObjectFileName>$(IntDir)kernel\components\libc\cplusplus\cpp11\</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="..\..\rt-thread\components\libc\cplusplus\cxx_crt.cpp">
+      <ObjectFileName>$(IntDir)kernel\components\libc\cplusplus\</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="..\..\rt-thread\components\libc\cplusplus\cxx_crt_init.c">
+      <ObjectFileName>$(IntDir)kernel\components\libc\cplusplus\</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="..\..\rt-thread\components\libc\cplusplus\os\cxx_Mutex.cpp">
+      <ObjectFileName>$(IntDir)kernel\components\libc\cplusplus\os\</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="..\..\rt-thread\components\libc\cplusplus\os\cxx_Semaphore.cpp">
+      <ObjectFileName>$(IntDir)kernel\components\libc\cplusplus\os\</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="..\..\rt-thread\components\libc\cplusplus\os\cxx_Thread.cpp">
+      <ObjectFileName>$(IntDir)kernel\components\libc\cplusplus\os\</ObjectFileName>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -130,19 +153,19 @@
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="drivers\dfs_win32.c">
+    <ClCompile Include="drivers\sim_win32.c">
       <ObjectFileName>$(IntDir)bsp\drivers\</ObjectFileName>
     </ClCompile>
-    <ClCompile Include="drivers\drv_rtc.c">
+    <ClCompile Include="drivers\dfs_win32.c">
       <ObjectFileName>$(IntDir)bsp\drivers\</ObjectFileName>
     </ClCompile>
     <ClCompile Include="drivers\board.c">
       <ObjectFileName>$(IntDir)bsp\drivers\</ObjectFileName>
     </ClCompile>
-    <ClCompile Include="drivers\sim_win32.c">
+    <ClCompile Include="drivers\uart_console.c">
       <ObjectFileName>$(IntDir)bsp\drivers\</ObjectFileName>
     </ClCompile>
-    <ClCompile Include="drivers\uart_console.c">
+    <ClCompile Include="drivers\drv_rtc.c">
       <ObjectFileName>$(IntDir)bsp\drivers\</ObjectFileName>
     </ClCompile>
   </ItemGroup>
@@ -173,19 +196,19 @@
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="..\..\rt-thread\components\finsh\msh_parse.c">
+      <ObjectFileName>$(IntDir)kernel\components\finsh\</ObjectFileName>
+    </ClCompile>
     <ClCompile Include="..\..\rt-thread\components\finsh\msh_file.c">
+      <ObjectFileName>$(IntDir)kernel\components\finsh\</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="..\..\rt-thread\components\finsh\shell.c">
       <ObjectFileName>$(IntDir)kernel\components\finsh\</ObjectFileName>
     </ClCompile>
     <ClCompile Include="..\..\rt-thread\components\finsh\cmd.c">
       <ObjectFileName>$(IntDir)kernel\components\finsh\</ObjectFileName>
     </ClCompile>
     <ClCompile Include="..\..\rt-thread\components\finsh\msh.c">
-      <ObjectFileName>$(IntDir)kernel\components\finsh\</ObjectFileName>
-    </ClCompile>
-    <ClCompile Include="..\..\rt-thread\components\finsh\msh_parse.c">
-      <ObjectFileName>$(IntDir)kernel\components\finsh\</ObjectFileName>
-    </ClCompile>
-    <ClCompile Include="..\..\rt-thread\components\finsh\shell.c">
       <ObjectFileName>$(IntDir)kernel\components\finsh\</ObjectFileName>
     </ClCompile>
   </ItemGroup>
@@ -243,11 +266,22 @@
     <ClCompile Include="..\..\rt-thread\src\klibc\kerrno.c">
       <ObjectFileName>$(IntDir)kernel\src\klibc\</ObjectFileName>
     </ClCompile>
+    <ClCompile Include="..\..\rt-thread\src\klibc\kstdio.c">
+      <ObjectFileName>$(IntDir)kernel\src\klibc\</ObjectFileName>
+    </ClCompile>
     <ClCompile Include="..\..\rt-thread\src\klibc\kstring.c">
       <ObjectFileName>$(IntDir)kernel\src\klibc\</ObjectFileName>
     </ClCompile>
-    <ClCompile Include="..\..\rt-thread\src\klibc\kstdio.c">
-      <ObjectFileName>$(IntDir)kernel\src\klibc\</ObjectFileName>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\rt-thread\components\drivers\ktime\src\cputimer.c">
+      <ObjectFileName>$(IntDir)kernel\components\drivers\ktime\src\</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="..\..\rt-thread\components\drivers\ktime\src\hrtimer.c">
+      <ObjectFileName>$(IntDir)kernel\components\drivers\ktime\src\</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="..\..\rt-thread\components\drivers\ktime\src\boottime.c">
+      <ObjectFileName>$(IntDir)kernel\components\drivers\ktime\src\</ObjectFileName>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -259,581 +293,581 @@
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="..\..\packages\lvgl-8.4.0\src\font\lv_font_montserrat_48.c">
+    <ClCompile Include="..\..\packages\lvgl-8.4.0\src\extra\others\fragment\lv_fragment.c">
+      <ObjectFileName>$(IntDir)kernellvgl-8.4.0\src\extra\others\fragment\</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="..\..\packages\lvgl-8.4.0\src\font\lv_font_montserrat_38.c">
+      <ObjectFileName>$(IntDir)kernellvgl-8.4.0\src\font\</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="..\..\packages\lvgl-8.4.0\src\extra\libs\fsdrv\lv_fs_stdio.c">
+      <ObjectFileName>$(IntDir)kernellvgl-8.4.0\src\extra\libs\fsdrv\</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="..\..\packages\lvgl-8.4.0\src\font\lv_font_montserrat_22.c">
       <ObjectFileName>$(IntDir)kernellvgl-8.4.0\src\font\</ObjectFileName>
     </ClCompile>
     <ClCompile Include="..\..\packages\lvgl-8.4.0\src\extra\widgets\spinbox\lv_spinbox.c">
       <ObjectFileName>$(IntDir)kernellvgl-8.4.0\src\extra\widgets\spinbox\</ObjectFileName>
     </ClCompile>
-    <ClCompile Include="..\..\packages\lvgl-8.4.0\src\widgets\lv_table.c">
-      <ObjectFileName>$(IntDir)kernellvgl-8.4.0\src\widgets\</ObjectFileName>
-    </ClCompile>
-    <ClCompile Include="..\..\packages\lvgl-8.4.0\src\draw\nxp\vglite\lv_draw_vglite.c">
-      <ObjectFileName>$(IntDir)kernellvgl-8.4.0\src\draw\nxp\vglite\</ObjectFileName>
-    </ClCompile>
-    <ClCompile Include="..\..\packages\lvgl-8.4.0\src\font\lv_font_montserrat_16.c">
-      <ObjectFileName>$(IntDir)kernellvgl-8.4.0\src\font\</ObjectFileName>
-    </ClCompile>
-    <ClCompile Include="..\..\packages\lvgl-8.4.0\src\font\lv_font_montserrat_28.c">
-      <ObjectFileName>$(IntDir)kernellvgl-8.4.0\src\font\</ObjectFileName>
-    </ClCompile>
-    <ClCompile Include="..\..\packages\lvgl-8.4.0\src\draw\lv_draw_rect.c">
-      <ObjectFileName>$(IntDir)kernellvgl-8.4.0\src\draw\</ObjectFileName>
-    </ClCompile>
-    <ClCompile Include="..\..\packages\lvgl-8.4.0\src\extra\widgets\span\lv_span.c">
-      <ObjectFileName>$(IntDir)kernellvgl-8.4.0\src\extra\widgets\span\</ObjectFileName>
-    </ClCompile>
-    <ClCompile Include="..\..\packages\lvgl-8.4.0\src\extra\others\fragment\lv_fragment.c">
-      <ObjectFileName>$(IntDir)kernellvgl-8.4.0\src\extra\others\fragment\</ObjectFileName>
-    </ClCompile>
-    <ClCompile Include="..\..\packages\lvgl-8.4.0\src\extra\libs\bmp\lv_bmp.c">
-      <ObjectFileName>$(IntDir)kernellvgl-8.4.0\src\extra\libs\bmp\</ObjectFileName>
-    </ClCompile>
-    <ClCompile Include="..\..\packages\lvgl-8.4.0\src\draw\sdl\lv_draw_sdl_layer.c">
-      <ObjectFileName>$(IntDir)kernellvgl-8.4.0\src\draw\sdl\</ObjectFileName>
-    </ClCompile>
-    <ClCompile Include="..\..\packages\lvgl-8.4.0\src\draw\sdl\lv_draw_sdl_stack_blur.c">
-      <ObjectFileName>$(IntDir)kernellvgl-8.4.0\src\draw\sdl\</ObjectFileName>
-    </ClCompile>
-    <ClCompile Include="..\..\packages\lvgl-8.4.0\src\draw\lv_draw_line.c">
-      <ObjectFileName>$(IntDir)kernellvgl-8.4.0\src\draw\</ObjectFileName>
-    </ClCompile>
-    <ClCompile Include="..\..\packages\lvgl-8.4.0\src\core\lv_event.c">
+    <ClCompile Include="..\..\packages\lvgl-8.4.0\src\core\lv_obj_class.c">
       <ObjectFileName>$(IntDir)kernellvgl-8.4.0\src\core\</ObjectFileName>
     </ClCompile>
-    <ClCompile Include="..\..\packages\lvgl-8.4.0\src\extra\widgets\imgbtn\lv_imgbtn.c">
-      <ObjectFileName>$(IntDir)kernellvgl-8.4.0\src\extra\widgets\imgbtn\</ObjectFileName>
-    </ClCompile>
-    <ClCompile Include="..\..\packages\lvgl-8.4.0\src\widgets\lv_switch.c">
-      <ObjectFileName>$(IntDir)kernellvgl-8.4.0\src\widgets\</ObjectFileName>
-    </ClCompile>
-    <ClCompile Include="..\..\packages\lvgl-8.4.0\src\extra\libs\gif\gifdec.c">
-      <ObjectFileName>$(IntDir)kernellvgl-8.4.0\src\extra\libs\gif\</ObjectFileName>
-    </ClCompile>
-    <ClCompile Include="..\..\packages\lvgl-8.4.0\src\extra\themes\default\lv_theme_default.c">
-      <ObjectFileName>$(IntDir)kernellvgl-8.4.0\src\extra\themes\default\</ObjectFileName>
-    </ClCompile>
-    <ClCompile Include="..\..\packages\lvgl-8.4.0\src\misc\lv_async.c">
-      <ObjectFileName>$(IntDir)kernellvgl-8.4.0\src\misc\</ObjectFileName>
-    </ClCompile>
-    <ClCompile Include="..\..\packages\lvgl-8.4.0\src\core\lv_obj_scroll.c">
-      <ObjectFileName>$(IntDir)kernellvgl-8.4.0\src\core\</ObjectFileName>
-    </ClCompile>
-    <ClCompile Include="..\..\packages\lvgl-8.4.0\src\draw\sdl\lv_draw_sdl_composite.c">
-      <ObjectFileName>$(IntDir)kernellvgl-8.4.0\src\draw\sdl\</ObjectFileName>
-    </ClCompile>
-    <ClCompile Include="..\..\packages\lvgl-8.4.0\src\core\lv_obj_style.c">
-      <ObjectFileName>$(IntDir)kernellvgl-8.4.0\src\core\</ObjectFileName>
-    </ClCompile>
-    <ClCompile Include="..\..\packages\lvgl-8.4.0\src\font\lv_font_simsun_16_cjk.c">
-      <ObjectFileName>$(IntDir)kernellvgl-8.4.0\src\font\</ObjectFileName>
-    </ClCompile>
-    <ClCompile Include="..\..\packages\lvgl-8.4.0\src\extra\libs\qrcode\qrcodegen.c">
-      <ObjectFileName>$(IntDir)kernellvgl-8.4.0\src\extra\libs\qrcode\</ObjectFileName>
-    </ClCompile>
-    <ClCompile Include="..\..\packages\lvgl-8.4.0\src\misc\lv_mem.c">
-      <ObjectFileName>$(IntDir)kernellvgl-8.4.0\src\misc\</ObjectFileName>
-    </ClCompile>
-    <ClCompile Include="..\..\packages\lvgl-8.4.0\src\draw\nxp\pxp\lv_gpu_nxp_pxp_osa.c">
-      <ObjectFileName>$(IntDir)kernellvgl-8.4.0\src\draw\nxp\pxp\</ObjectFileName>
-    </ClCompile>
-    <ClCompile Include="..\..\packages\lvgl-8.4.0\src\misc\lv_timer.c">
-      <ObjectFileName>$(IntDir)kernellvgl-8.4.0\src\misc\</ObjectFileName>
-    </ClCompile>
-    <ClCompile Include="..\..\packages\lvgl-8.4.0\src\draw\nxp\vglite\lv_vglite_buf.c">
-      <ObjectFileName>$(IntDir)kernellvgl-8.4.0\src\draw\nxp\vglite\</ObjectFileName>
-    </ClCompile>
-    <ClCompile Include="..\..\packages\lvgl-8.4.0\src\hal\lv_hal_tick.c">
-      <ObjectFileName>$(IntDir)kernellvgl-8.4.0\src\hal\</ObjectFileName>
-    </ClCompile>
-    <ClCompile Include="..\..\packages\lvgl-8.4.0\src\draw\nxp\vglite\lv_draw_vglite_rect.c">
-      <ObjectFileName>$(IntDir)kernellvgl-8.4.0\src\draw\nxp\vglite\</ObjectFileName>
-    </ClCompile>
-    <ClCompile Include="..\..\packages\lvgl-8.4.0\src\font\lv_font_montserrat_14.c">
-      <ObjectFileName>$(IntDir)kernellvgl-8.4.0\src\font\</ObjectFileName>
-    </ClCompile>
-    <ClCompile Include="..\..\packages\lvgl-8.4.0\src\extra\widgets\tabview\lv_tabview.c">
-      <ObjectFileName>$(IntDir)kernellvgl-8.4.0\src\extra\widgets\tabview\</ObjectFileName>
-    </ClCompile>
-    <ClCompile Include="..\..\packages\lvgl-8.4.0\src\widgets\lv_canvas.c">
-      <ObjectFileName>$(IntDir)kernellvgl-8.4.0\src\widgets\</ObjectFileName>
-    </ClCompile>
-    <ClCompile Include="..\..\packages\lvgl-8.4.0\src\extra\others\monkey\lv_monkey.c">
-      <ObjectFileName>$(IntDir)kernellvgl-8.4.0\src\extra\others\monkey\</ObjectFileName>
-    </ClCompile>
-    <ClCompile Include="..\..\packages\lvgl-8.4.0\src\core\lv_indev.c">
-      <ObjectFileName>$(IntDir)kernellvgl-8.4.0\src\core\</ObjectFileName>
-    </ClCompile>
-    <ClCompile Include="..\..\packages\lvgl-8.4.0\src\core\lv_obj_draw.c">
+    <ClCompile Include="..\..\packages\lvgl-8.4.0\src\core\lv_group.c">
       <ObjectFileName>$(IntDir)kernellvgl-8.4.0\src\core\</ObjectFileName>
     </ClCompile>
     <ClCompile Include="..\..\packages\lvgl-8.4.0\src\draw\lv_draw_transform.c">
       <ObjectFileName>$(IntDir)kernellvgl-8.4.0\src\draw\</ObjectFileName>
     </ClCompile>
-    <ClCompile Include="..\..\packages\lvgl-8.4.0\src\extra\libs\tiny_ttf\lv_tiny_ttf.c">
-      <ObjectFileName>$(IntDir)kernellvgl-8.4.0\src\extra\libs\tiny_ttf\</ObjectFileName>
+    <ClCompile Include="..\..\packages\lvgl-8.4.0\src\extra\themes\default\lv_theme_default.c">
+      <ObjectFileName>$(IntDir)kernellvgl-8.4.0\src\extra\themes\default\</ObjectFileName>
     </ClCompile>
-    <ClCompile Include="..\..\packages\lvgl-8.4.0\src\extra\libs\rlottie\lv_rlottie.c">
-      <ObjectFileName>$(IntDir)kernellvgl-8.4.0\src\extra\libs\rlottie\</ObjectFileName>
-    </ClCompile>
-    <ClCompile Include="..\..\packages\lvgl-8.4.0\src\misc\lv_area.c">
-      <ObjectFileName>$(IntDir)kernellvgl-8.4.0\src\misc\</ObjectFileName>
-    </ClCompile>
-    <ClCompile Include="..\..\packages\lvgl-8.4.0\src\draw\nxp\vglite\lv_vglite_utils.c">
-      <ObjectFileName>$(IntDir)kernellvgl-8.4.0\src\draw\nxp\vglite\</ObjectFileName>
-    </ClCompile>
-    <ClCompile Include="..\..\packages\lvgl-8.4.0\src\draw\lv_draw_triangle.c">
+    <ClCompile Include="..\..\packages\lvgl-8.4.0\src\draw\lv_img_buf.c">
       <ObjectFileName>$(IntDir)kernellvgl-8.4.0\src\draw\</ObjectFileName>
-    </ClCompile>
-    <ClCompile Include="..\..\packages\lvgl-8.4.0\src\hal\lv_hal_indev.c">
-      <ObjectFileName>$(IntDir)kernellvgl-8.4.0\src\hal\</ObjectFileName>
-    </ClCompile>
-    <ClCompile Include="..\..\packages\lvgl-8.4.0\src\extra\others\fragment\lv_fragment_manager.c">
-      <ObjectFileName>$(IntDir)kernellvgl-8.4.0\src\extra\others\fragment\</ObjectFileName>
-    </ClCompile>
-    <ClCompile Include="..\..\packages\lvgl-8.4.0\src\draw\nxp\vglite\lv_draw_vglite_line.c">
-      <ObjectFileName>$(IntDir)kernellvgl-8.4.0\src\draw\nxp\vglite\</ObjectFileName>
-    </ClCompile>
-    <ClCompile Include="..\..\packages\lvgl-8.4.0\src\core\lv_disp.c">
-      <ObjectFileName>$(IntDir)kernellvgl-8.4.0\src\core\</ObjectFileName>
-    </ClCompile>
-    <ClCompile Include="..\..\packages\lvgl-8.4.0\src\draw\sdl\lv_draw_sdl_bg.c">
-      <ObjectFileName>$(IntDir)kernellvgl-8.4.0\src\draw\sdl\</ObjectFileName>
-    </ClCompile>
-    <ClCompile Include="..\..\packages\lvgl-8.4.0\src\font\lv_font_montserrat_22.c">
-      <ObjectFileName>$(IntDir)kernellvgl-8.4.0\src\font\</ObjectFileName>
-    </ClCompile>
-    <ClCompile Include="..\..\packages\lvgl-8.4.0\src\extra\widgets\keyboard\lv_keyboard.c">
-      <ObjectFileName>$(IntDir)kernellvgl-8.4.0\src\extra\widgets\keyboard\</ObjectFileName>
-    </ClCompile>
-    <ClCompile Include="..\..\packages\lvgl-8.4.0\src\widgets\lv_line.c">
-      <ObjectFileName>$(IntDir)kernellvgl-8.4.0\src\widgets\</ObjectFileName>
-    </ClCompile>
-    <ClCompile Include="..\..\packages\lvgl-8.4.0\src\extra\others\snapshot\lv_snapshot.c">
-      <ObjectFileName>$(IntDir)kernellvgl-8.4.0\src\extra\others\snapshot\</ObjectFileName>
-    </ClCompile>
-    <ClCompile Include="..\..\packages\lvgl-8.4.0\src\misc\lv_templ.c">
-      <ObjectFileName>$(IntDir)kernellvgl-8.4.0\src\misc\</ObjectFileName>
-    </ClCompile>
-    <ClCompile Include="..\..\packages\lvgl-8.4.0\src\draw\swm341_dma2d\lv_gpu_swm341_dma2d.c">
-      <ObjectFileName>$(IntDir)kernellvgl-8.4.0\src\draw\swm341_dma2d\</ObjectFileName>
-    </ClCompile>
-    <ClCompile Include="..\..\packages\lvgl-8.4.0\src\font\lv_font_loader.c">
-      <ObjectFileName>$(IntDir)kernellvgl-8.4.0\src\font\</ObjectFileName>
-    </ClCompile>
-    <ClCompile Include="..\..\packages\lvgl-8.4.0\src\font\lv_font_montserrat_44.c">
-      <ObjectFileName>$(IntDir)kernellvgl-8.4.0\src\font\</ObjectFileName>
-    </ClCompile>
-    <ClCompile Include="..\..\packages\lvgl-8.4.0\src\extra\widgets\meter\lv_meter.c">
-      <ObjectFileName>$(IntDir)kernellvgl-8.4.0\src\extra\widgets\meter\</ObjectFileName>
-    </ClCompile>
-    <ClCompile Include="..\..\packages\lvgl-8.4.0\src\draw\lv_draw_label.c">
-      <ObjectFileName>$(IntDir)kernellvgl-8.4.0\src\draw\</ObjectFileName>
-    </ClCompile>
-    <ClCompile Include="..\..\packages\lvgl-8.4.0\src\extra\libs\png\lv_png.c">
-      <ObjectFileName>$(IntDir)kernellvgl-8.4.0\src\extra\libs\png\</ObjectFileName>
-    </ClCompile>
-    <ClCompile Include="..\..\packages\lvgl-8.4.0\src\extra\libs\qrcode\lv_qrcode.c">
-      <ObjectFileName>$(IntDir)kernellvgl-8.4.0\src\extra\libs\qrcode\</ObjectFileName>
-    </ClCompile>
-    <ClCompile Include="..\..\packages\lvgl-8.4.0\src\extra\widgets\calendar\lv_calendar_header_dropdown.c">
-      <ObjectFileName>$(IntDir)kernellvgl-8.4.0\src\extra\widgets\calendar\</ObjectFileName>
-    </ClCompile>
-    <ClCompile Include="..\..\packages\lvgl-8.4.0\src\misc\lv_style.c">
-      <ObjectFileName>$(IntDir)kernellvgl-8.4.0\src\misc\</ObjectFileName>
-    </ClCompile>
-    <ClCompile Include="..\..\packages\lvgl-8.4.0\src\draw\sdl\lv_draw_sdl_mask.c">
-      <ObjectFileName>$(IntDir)kernellvgl-8.4.0\src\draw\sdl\</ObjectFileName>
-    </ClCompile>
-    <ClCompile Include="..\..\packages\lvgl-8.4.0\src\core\lv_group.c">
-      <ObjectFileName>$(IntDir)kernellvgl-8.4.0\src\core\</ObjectFileName>
-    </ClCompile>
-    <ClCompile Include="..\..\packages\lvgl-8.4.0\src\draw\nxp\pxp\lv_gpu_nxp_pxp.c">
-      <ObjectFileName>$(IntDir)kernellvgl-8.4.0\src\draw\nxp\pxp\</ObjectFileName>
-    </ClCompile>
-    <ClCompile Include="..\..\packages\lvgl-8.4.0\src\font\lv_font_montserrat_20.c">
-      <ObjectFileName>$(IntDir)kernellvgl-8.4.0\src\font\</ObjectFileName>
-    </ClCompile>
-    <ClCompile Include="..\..\packages\lvgl-8.4.0\src\extra\widgets\menu\lv_menu.c">
-      <ObjectFileName>$(IntDir)kernellvgl-8.4.0\src\extra\widgets\menu\</ObjectFileName>
-    </ClCompile>
-    <ClCompile Include="..\..\packages\lvgl-8.4.0\src\widgets\lv_checkbox.c">
-      <ObjectFileName>$(IntDir)kernellvgl-8.4.0\src\widgets\</ObjectFileName>
-    </ClCompile>
-    <ClCompile Include="..\..\packages\lvgl-8.4.0\src\extra\libs\sjpg\tjpgd.c">
-      <ObjectFileName>$(IntDir)kernellvgl-8.4.0\src\extra\libs\sjpg\</ObjectFileName>
-    </ClCompile>
-    <ClCompile Include="..\..\packages\lvgl-8.4.0\src\misc\lv_tlsf.c">
-      <ObjectFileName>$(IntDir)kernellvgl-8.4.0\src\misc\</ObjectFileName>
-    </ClCompile>
-    <ClCompile Include="..\..\packages\lvgl-8.4.0\src\draw\arm2d\lv_gpu_arm2d.c">
-      <ObjectFileName>$(IntDir)kernellvgl-8.4.0\src\draw\arm2d\</ObjectFileName>
-    </ClCompile>
-    <ClCompile Include="..\..\packages\lvgl-8.4.0\src\draw\lv_img_cache.c">
-      <ObjectFileName>$(IntDir)kernellvgl-8.4.0\src\draw\</ObjectFileName>
-    </ClCompile>
-    <ClCompile Include="..\..\packages\lvgl-8.4.0\src\core\lv_obj_pos.c">
-      <ObjectFileName>$(IntDir)kernellvgl-8.4.0\src\core\</ObjectFileName>
-    </ClCompile>
-    <ClCompile Include="..\..\packages\lvgl-8.4.0\src\widgets\lv_label.c">
-      <ObjectFileName>$(IntDir)kernellvgl-8.4.0\src\widgets\</ObjectFileName>
-    </ClCompile>
-    <ClCompile Include="..\..\packages\lvgl-8.4.0\src\extra\others\ime\lv_ime_pinyin.c">
-      <ObjectFileName>$(IntDir)kernellvgl-8.4.0\src\extra\others\ime\</ObjectFileName>
     </ClCompile>
     <ClCompile Include="..\..\packages\lvgl-8.4.0\src\extra\widgets\calendar\lv_calendar_header_arrow.c">
       <ObjectFileName>$(IntDir)kernellvgl-8.4.0\src\extra\widgets\calendar\</ObjectFileName>
     </ClCompile>
-    <ClCompile Include="..\..\packages\lvgl-8.4.0\src\misc\lv_log.c">
-      <ObjectFileName>$(IntDir)kernellvgl-8.4.0\src\misc\</ObjectFileName>
-    </ClCompile>
-    <ClCompile Include="..\..\packages\lvgl-8.4.0\src\draw\nxp\pxp\lv_draw_pxp_blend.c">
-      <ObjectFileName>$(IntDir)kernellvgl-8.4.0\src\draw\nxp\pxp\</ObjectFileName>
-    </ClCompile>
-    <ClCompile Include="..\..\packages\lvgl-8.4.0\src\core\lv_indev_scroll.c">
-      <ObjectFileName>$(IntDir)kernellvgl-8.4.0\src\core\</ObjectFileName>
-    </ClCompile>
-    <ClCompile Include="..\..\packages\lvgl-8.4.0\src\draw\sdl\lv_draw_sdl_polygon.c">
-      <ObjectFileName>$(IntDir)kernellvgl-8.4.0\src\draw\sdl\</ObjectFileName>
-    </ClCompile>
-    <ClCompile Include="..\..\packages\lvgl-8.4.0\src\font\lv_font_unscii_8.c">
-      <ObjectFileName>$(IntDir)kernellvgl-8.4.0\src\font\</ObjectFileName>
-    </ClCompile>
-    <ClCompile Include="..\..\packages\lvgl-8.4.0\src\extra\widgets\animimg\lv_animimg.c">
-      <ObjectFileName>$(IntDir)kernellvgl-8.4.0\src\extra\widgets\animimg\</ObjectFileName>
-    </ClCompile>
-    <ClCompile Include="..\..\packages\lvgl-8.4.0\src\widgets\lv_objx_templ.c">
-      <ObjectFileName>$(IntDir)kernellvgl-8.4.0\src\widgets\</ObjectFileName>
-    </ClCompile>
     <ClCompile Include="..\..\packages\lvgl-8.4.0\src\misc\lv_anim_timeline.c">
       <ObjectFileName>$(IntDir)kernellvgl-8.4.0\src\misc\</ObjectFileName>
     </ClCompile>
-    <ClCompile Include="..\..\packages\lvgl-8.4.0\src\draw\sdl\lv_draw_sdl_rect.c">
+    <ClCompile Include="..\..\packages\lvgl-8.4.0\src\core\lv_obj_scroll.c">
+      <ObjectFileName>$(IntDir)kernellvgl-8.4.0\src\core\</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="..\..\packages\lvgl-8.4.0\src\extra\others\msg\lv_msg.c">
+      <ObjectFileName>$(IntDir)kernellvgl-8.4.0\src\extra\others\msg\</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="..\..\packages\lvgl-8.4.0\src\draw\lv_draw_img.c">
+      <ObjectFileName>$(IntDir)kernellvgl-8.4.0\src\draw\</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="..\..\packages\lvgl-8.4.0\src\widgets\lv_switch.c">
+      <ObjectFileName>$(IntDir)kernellvgl-8.4.0\src\widgets\</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="..\..\packages\lvgl-8.4.0\src\extra\widgets\imgbtn\lv_imgbtn.c">
+      <ObjectFileName>$(IntDir)kernellvgl-8.4.0\src\extra\widgets\imgbtn\</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="..\..\packages\lvgl-8.4.0\src\extra\widgets\keyboard\lv_keyboard.c">
+      <ObjectFileName>$(IntDir)kernellvgl-8.4.0\src\extra\widgets\keyboard\</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="..\..\packages\lvgl-8.4.0\src\draw\sdl\lv_draw_sdl_line.c">
       <ObjectFileName>$(IntDir)kernellvgl-8.4.0\src\draw\sdl\</ObjectFileName>
     </ClCompile>
-    <ClCompile Include="..\..\packages\lvgl-8.4.0\src\misc\lv_math.c">
+    <ClCompile Include="..\..\packages\lvgl-8.4.0\src\core\lv_obj_style.c">
+      <ObjectFileName>$(IntDir)kernellvgl-8.4.0\src\core\</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="..\..\packages\lvgl-8.4.0\src\widgets\lv_textarea.c">
+      <ObjectFileName>$(IntDir)kernellvgl-8.4.0\src\widgets\</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="..\..\packages\lvgl-8.4.0\src\extra\widgets\meter\lv_meter.c">
+      <ObjectFileName>$(IntDir)kernellvgl-8.4.0\src\extra\widgets\meter\</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="..\..\packages\lvgl-8.4.0\src\draw\swm341_dma2d\lv_gpu_swm341_dma2d.c">
+      <ObjectFileName>$(IntDir)kernellvgl-8.4.0\src\draw\swm341_dma2d\</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="..\..\packages\lvgl-8.4.0\src\draw\nxp\vglite\lv_vglite_utils.c">
+      <ObjectFileName>$(IntDir)kernellvgl-8.4.0\src\draw\nxp\vglite\</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="..\..\packages\lvgl-8.4.0\src\misc\lv_txt.c">
       <ObjectFileName>$(IntDir)kernellvgl-8.4.0\src\misc\</ObjectFileName>
     </ClCompile>
-    <ClCompile Include="..\..\packages\lvgl-8.4.0\src\draw\lv_draw_mask.c">
+    <ClCompile Include="..\..\packages\lvgl-8.4.0\src\font\lv_font_montserrat_28_compressed.c">
+      <ObjectFileName>$(IntDir)kernellvgl-8.4.0\src\font\</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="..\..\packages\lvgl-8.4.0\src\extra\libs\qrcode\qrcodegen.c">
+      <ObjectFileName>$(IntDir)kernellvgl-8.4.0\src\extra\libs\qrcode\</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="..\..\packages\lvgl-8.4.0\src\draw\lv_img_decoder.c">
+      <ObjectFileName>$(IntDir)kernellvgl-8.4.0\src\draw\</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="..\..\packages\lvgl-8.4.0\src\font\lv_font_montserrat_42.c">
+      <ObjectFileName>$(IntDir)kernellvgl-8.4.0\src\font\</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="..\..\packages\lvgl-8.4.0\src\draw\sdl\lv_draw_sdl_texture_cache.c">
+      <ObjectFileName>$(IntDir)kernellvgl-8.4.0\src\draw\sdl\</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="..\..\packages\lvgl-8.4.0\src\core\lv_refr.c">
+      <ObjectFileName>$(IntDir)kernellvgl-8.4.0\src\core\</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="..\..\packages\lvgl-8.4.0\src\font\lv_font_montserrat_14.c">
+      <ObjectFileName>$(IntDir)kernellvgl-8.4.0\src\font\</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="..\..\packages\lvgl-8.4.0\src\extra\others\snapshot\lv_snapshot.c">
+      <ObjectFileName>$(IntDir)kernellvgl-8.4.0\src\extra\others\snapshot\</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="..\..\packages\lvgl-8.4.0\src\widgets\lv_btnmatrix.c">
+      <ObjectFileName>$(IntDir)kernellvgl-8.4.0\src\widgets\</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="..\..\packages\lvgl-8.4.0\src\extra\widgets\span\lv_span.c">
+      <ObjectFileName>$(IntDir)kernellvgl-8.4.0\src\extra\widgets\span\</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="..\..\packages\lvgl-8.4.0\src\draw\arm2d\lv_gpu_arm2d.c">
+      <ObjectFileName>$(IntDir)kernellvgl-8.4.0\src\draw\arm2d\</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="..\..\packages\lvgl-8.4.0\src\draw\nxp\vglite\lv_draw_vglite_arc.c">
+      <ObjectFileName>$(IntDir)kernellvgl-8.4.0\src\draw\nxp\vglite\</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="..\..\packages\lvgl-8.4.0\src\misc\lv_templ.c">
+      <ObjectFileName>$(IntDir)kernellvgl-8.4.0\src\misc\</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="..\..\packages\lvgl-8.4.0\src\extra\others\monkey\lv_monkey.c">
+      <ObjectFileName>$(IntDir)kernellvgl-8.4.0\src\extra\others\monkey\</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="..\..\packages\lvgl-8.4.0\src\widgets\lv_img.c">
+      <ObjectFileName>$(IntDir)kernellvgl-8.4.0\src\widgets\</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="..\..\packages\lvgl-8.4.0\src\extra\libs\freetype\lv_freetype.c">
+      <ObjectFileName>$(IntDir)kernellvgl-8.4.0\src\extra\libs\freetype\</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="..\..\packages\lvgl-8.4.0\src\draw\lv_draw_layer.c">
       <ObjectFileName>$(IntDir)kernellvgl-8.4.0\src\draw\</ObjectFileName>
     </ClCompile>
     <ClCompile Include="..\..\packages\lvgl-8.4.0\src\extra\widgets\spinner\lv_spinner.c">
       <ObjectFileName>$(IntDir)kernellvgl-8.4.0\src\extra\widgets\spinner\</ObjectFileName>
     </ClCompile>
-    <ClCompile Include="..\..\packages\lvgl-8.4.0\src\widgets\lv_dropdown.c">
-      <ObjectFileName>$(IntDir)kernellvgl-8.4.0\src\widgets\</ObjectFileName>
-    </ClCompile>
-    <ClCompile Include="..\..\packages\lvgl-8.4.0\src\extra\widgets\calendar\lv_calendar.c">
-      <ObjectFileName>$(IntDir)kernellvgl-8.4.0\src\extra\widgets\calendar\</ObjectFileName>
-    </ClCompile>
-    <ClCompile Include="..\..\packages\lvgl-8.4.0\src\misc\lv_utils.c">
-      <ObjectFileName>$(IntDir)kernellvgl-8.4.0\src\misc\</ObjectFileName>
-    </ClCompile>
-    <ClCompile Include="..\..\packages\lvgl-8.4.0\src\font\lv_font_montserrat_36.c">
-      <ObjectFileName>$(IntDir)kernellvgl-8.4.0\src\font\</ObjectFileName>
-    </ClCompile>
-    <ClCompile Include="..\..\packages\lvgl-8.4.0\src\draw\sdl\lv_draw_sdl_arc.c">
-      <ObjectFileName>$(IntDir)kernellvgl-8.4.0\src\draw\sdl\</ObjectFileName>
-    </ClCompile>
-    <ClCompile Include="..\..\packages\lvgl-8.4.0\src\font\lv_font_montserrat_38.c">
-      <ObjectFileName>$(IntDir)kernellvgl-8.4.0\src\font\</ObjectFileName>
-    </ClCompile>
-    <ClCompile Include="..\..\packages\lvgl-8.4.0\src\extra\widgets\msgbox\lv_msgbox.c">
-      <ObjectFileName>$(IntDir)kernellvgl-8.4.0\src\extra\widgets\msgbox\</ObjectFileName>
-    </ClCompile>
-    <ClCompile Include="..\..\packages\lvgl-8.4.0\src\widgets\lv_roller.c">
-      <ObjectFileName>$(IntDir)kernellvgl-8.4.0\src\widgets\</ObjectFileName>
-    </ClCompile>
-    <ClCompile Include="..\..\packages\lvgl-8.4.0\src\extra\widgets\list\lv_list.c">
-      <ObjectFileName>$(IntDir)kernellvgl-8.4.0\src\extra\widgets\list\</ObjectFileName>
-    </ClCompile>
-    <ClCompile Include="..\..\packages\lvgl-8.4.0\src\extra\libs\fsdrv\lv_fs_stdio.c">
-      <ObjectFileName>$(IntDir)kernellvgl-8.4.0\src\extra\libs\fsdrv\</ObjectFileName>
-    </ClCompile>
-    <ClCompile Include="..\..\packages\lvgl-8.4.0\src\misc\lv_fs.c">
-      <ObjectFileName>$(IntDir)kernellvgl-8.4.0\src\misc\</ObjectFileName>
-    </ClCompile>
-    <ClCompile Include="..\..\packages\lvgl-8.4.0\src\draw\renesas\lv_gpu_d2_ra6m3.c">
-      <ObjectFileName>$(IntDir)kernellvgl-8.4.0\src\draw\renesas\</ObjectFileName>
-    </ClCompile>
-    <ClCompile Include="..\..\packages\lvgl-8.4.0\src\font\lv_font_unscii_16.c">
-      <ObjectFileName>$(IntDir)kernellvgl-8.4.0\src\font\</ObjectFileName>
-    </ClCompile>
-    <ClCompile Include="..\..\packages\lvgl-8.4.0\src\font\lv_font_montserrat_28_compressed.c">
-      <ObjectFileName>$(IntDir)kernellvgl-8.4.0\src\font\</ObjectFileName>
-    </ClCompile>
-    <ClCompile Include="..\..\packages\lvgl-8.4.0\src\font\lv_font_montserrat_8.c">
-      <ObjectFileName>$(IntDir)kernellvgl-8.4.0\src\font\</ObjectFileName>
-    </ClCompile>
-    <ClCompile Include="..\..\packages\lvgl-8.4.0\src\draw\lv_draw.c">
-      <ObjectFileName>$(IntDir)kernellvgl-8.4.0\src\draw\</ObjectFileName>
-    </ClCompile>
-    <ClCompile Include="..\..\packages\lvgl-8.4.0\src\extra\widgets\led\lv_led.c">
-      <ObjectFileName>$(IntDir)kernellvgl-8.4.0\src\extra\widgets\led\</ObjectFileName>
-    </ClCompile>
-    <ClCompile Include="..\..\packages\lvgl-8.4.0\src\misc\lv_txt.c">
-      <ObjectFileName>$(IntDir)kernellvgl-8.4.0\src\misc\</ObjectFileName>
-    </ClCompile>
-    <ClCompile Include="..\..\packages\lvgl-8.4.0\src\draw\sdl\lv_draw_sdl.c">
-      <ObjectFileName>$(IntDir)kernellvgl-8.4.0\src\draw\sdl\</ObjectFileName>
-    </ClCompile>
-    <ClCompile Include="..\..\packages\lvgl-8.4.0\src\core\lv_obj_style_gen.c">
-      <ObjectFileName>$(IntDir)kernellvgl-8.4.0\src\core\</ObjectFileName>
-    </ClCompile>
-    <ClCompile Include="..\..\packages\lvgl-8.4.0\src\draw\nxp\vglite\lv_draw_vglite_arc.c">
-      <ObjectFileName>$(IntDir)kernellvgl-8.4.0\src\draw\nxp\vglite\</ObjectFileName>
-    </ClCompile>
-    <ClCompile Include="..\..\packages\lvgl-8.4.0\src\core\lv_obj.c">
-      <ObjectFileName>$(IntDir)kernellvgl-8.4.0\src\core\</ObjectFileName>
-    </ClCompile>
-    <ClCompile Include="..\..\packages\lvgl-8.4.0\src\draw\sw\lv_draw_sw_arc.c">
+    <ClCompile Include="..\..\packages\lvgl-8.4.0\src\draw\sw\lv_draw_sw_letter.c">
       <ObjectFileName>$(IntDir)kernellvgl-8.4.0\src\draw\sw\</ObjectFileName>
-    </ClCompile>
-    <ClCompile Include="..\..\packages\lvgl-8.4.0\src\draw\lv_img_buf.c">
-      <ObjectFileName>$(IntDir)kernellvgl-8.4.0\src\draw\</ObjectFileName>
-    </ClCompile>
-    <ClCompile Include="..\..\packages\lvgl-8.4.0\src\extra\others\gridnav\lv_gridnav.c">
-      <ObjectFileName>$(IntDir)kernellvgl-8.4.0\src\extra\others\gridnav\</ObjectFileName>
-    </ClCompile>
-    <ClCompile Include="..\..\packages\lvgl-8.4.0\src\core\lv_refr.c">
-      <ObjectFileName>$(IntDir)kernellvgl-8.4.0\src\core\</ObjectFileName>
-    </ClCompile>
-    <ClCompile Include="..\..\packages\lvgl-8.4.0\src\font\lv_font_montserrat_46.c">
-      <ObjectFileName>$(IntDir)kernellvgl-8.4.0\src\font\</ObjectFileName>
-    </ClCompile>
-    <ClCompile Include="..\..\packages\lvgl-8.4.0\src\draw\sw\lv_draw_sw_gradient.c">
-      <ObjectFileName>$(IntDir)kernellvgl-8.4.0\src\draw\sw\</ObjectFileName>
-    </ClCompile>
-    <ClCompile Include="..\..\packages\lvgl-8.4.0\src\font\lv_font_montserrat_24.c">
-      <ObjectFileName>$(IntDir)kernellvgl-8.4.0\src\font\</ObjectFileName>
     </ClCompile>
     <ClCompile Include="..\..\packages\lvgl-8.4.0\src\draw\sw\lv_draw_sw_img.c">
       <ObjectFileName>$(IntDir)kernellvgl-8.4.0\src\draw\sw\</ObjectFileName>
     </ClCompile>
-    <ClCompile Include="..\..\packages\lvgl-8.4.0\src\widgets\lv_textarea.c">
-      <ObjectFileName>$(IntDir)kernellvgl-8.4.0\src\widgets\</ObjectFileName>
+    <ClCompile Include="..\..\packages\lvgl-8.4.0\src\core\lv_event.c">
+      <ObjectFileName>$(IntDir)kernellvgl-8.4.0\src\core\</ObjectFileName>
     </ClCompile>
-    <ClCompile Include="..\..\packages\lvgl-8.4.0\src\extra\others\msg\lv_msg.c">
-      <ObjectFileName>$(IntDir)kernellvgl-8.4.0\src\extra\others\msg\</ObjectFileName>
-    </ClCompile>
-    <ClCompile Include="..\..\packages\lvgl-8.4.0\src\extra\libs\ffmpeg\lv_ffmpeg.c">
-      <ObjectFileName>$(IntDir)kernellvgl-8.4.0\src\extra\libs\ffmpeg\</ObjectFileName>
-    </ClCompile>
-    <ClCompile Include="..\..\packages\lvgl-8.4.0\src\misc\lv_color.c">
-      <ObjectFileName>$(IntDir)kernellvgl-8.4.0\src\misc\</ObjectFileName>
-    </ClCompile>
-    <ClCompile Include="..\..\packages\lvgl-8.4.0\src\font\lv_font_montserrat_40.c">
+    <ClCompile Include="..\..\packages\lvgl-8.4.0\src\font\lv_font_montserrat_8.c">
       <ObjectFileName>$(IntDir)kernellvgl-8.4.0\src\font\</ObjectFileName>
     </ClCompile>
-    <ClCompile Include="..\..\packages\lvgl-8.4.0\src\draw\sw\lv_draw_sw_rect.c">
-      <ObjectFileName>$(IntDir)kernellvgl-8.4.0\src\draw\sw\</ObjectFileName>
+    <ClCompile Include="..\..\packages\lvgl-8.4.0\src\extra\widgets\led\lv_led.c">
+      <ObjectFileName>$(IntDir)kernellvgl-8.4.0\src\extra\widgets\led\</ObjectFileName>
     </ClCompile>
-    <ClCompile Include="..\..\packages\lvgl-8.4.0\src\extra\widgets\colorwheel\lv_colorwheel.c">
-      <ObjectFileName>$(IntDir)kernellvgl-8.4.0\src\extra\widgets\colorwheel\</ObjectFileName>
-    </ClCompile>
-    <ClCompile Include="..\..\packages\lvgl-8.4.0\src\misc\lv_lru.c">
-      <ObjectFileName>$(IntDir)kernellvgl-8.4.0\src\misc\</ObjectFileName>
-    </ClCompile>
-    <ClCompile Include="..\..\packages\lvgl-8.4.0\src\font\lv_font_montserrat_32.c">
+    <ClCompile Include="..\..\packages\lvgl-8.4.0\src\font\lv_font_montserrat_48.c">
       <ObjectFileName>$(IntDir)kernellvgl-8.4.0\src\font\</ObjectFileName>
     </ClCompile>
-    <ClCompile Include="..\..\packages\lvgl-8.4.0\src\draw\sw\lv_draw_sw_letter.c">
-      <ObjectFileName>$(IntDir)kernellvgl-8.4.0\src\draw\sw\</ObjectFileName>
+    <ClCompile Include="..\..\packages\lvgl-8.4.0\src\extra\others\ime\lv_ime_pinyin.c">
+      <ObjectFileName>$(IntDir)kernellvgl-8.4.0\src\extra\others\ime\</ObjectFileName>
     </ClCompile>
-    <ClCompile Include="..\..\packages\lvgl-8.4.0\src\font\lv_font_montserrat_34.c">
-      <ObjectFileName>$(IntDir)kernellvgl-8.4.0\src\font\</ObjectFileName>
-    </ClCompile>
-    <ClCompile Include="..\..\packages\lvgl-8.4.0\src\draw\sw\lv_draw_sw_blend.c">
-      <ObjectFileName>$(IntDir)kernellvgl-8.4.0\src\draw\sw\</ObjectFileName>
-    </ClCompile>
-    <ClCompile Include="..\..\packages\lvgl-8.4.0\src\extra\libs\fsdrv\lv_fs_win32.c">
-      <ObjectFileName>$(IntDir)kernellvgl-8.4.0\src\extra\libs\fsdrv\</ObjectFileName>
-    </ClCompile>
-    <ClCompile Include="..\..\packages\lvgl-8.4.0\src\extra\widgets\win\lv_win.c">
-      <ObjectFileName>$(IntDir)kernellvgl-8.4.0\src\extra\widgets\win\</ObjectFileName>
-    </ClCompile>
-    <ClCompile Include="..\..\packages\lvgl-8.4.0\src\font\lv_font_fmt_txt.c">
-      <ObjectFileName>$(IntDir)kernellvgl-8.4.0\src\font\</ObjectFileName>
-    </ClCompile>
-    <ClCompile Include="..\..\packages\lvgl-8.4.0\src\hal\lv_hal_disp.c">
-      <ObjectFileName>$(IntDir)kernellvgl-8.4.0\src\hal\</ObjectFileName>
-    </ClCompile>
-    <ClCompile Include="..\..\packages\lvgl-8.4.0\src\draw\sw\lv_draw_sw_transform.c">
-      <ObjectFileName>$(IntDir)kernellvgl-8.4.0\src\draw\sw\</ObjectFileName>
-    </ClCompile>
-    <ClCompile Include="..\..\packages\lvgl-8.4.0\src\widgets\lv_btn.c">
-      <ObjectFileName>$(IntDir)kernellvgl-8.4.0\src\widgets\</ObjectFileName>
-    </ClCompile>
-    <ClCompile Include="..\..\packages\lvgl-8.4.0\src\draw\sw\lv_draw_sw_layer.c">
-      <ObjectFileName>$(IntDir)kernellvgl-8.4.0\src\draw\sw\</ObjectFileName>
-    </ClCompile>
-    <ClCompile Include="..\..\packages\lvgl-8.4.0\src\extra\libs\png\lodepng.c">
-      <ObjectFileName>$(IntDir)kernellvgl-8.4.0\src\extra\libs\png\</ObjectFileName>
-    </ClCompile>
-    <ClCompile Include="..\..\packages\lvgl-8.4.0\src\extra\libs\gif\lv_gif.c">
-      <ObjectFileName>$(IntDir)kernellvgl-8.4.0\src\extra\libs\gif\</ObjectFileName>
-    </ClCompile>
-    <ClCompile Include="..\..\packages\lvgl-8.4.0\src\misc\lv_gc.c">
-      <ObjectFileName>$(IntDir)kernellvgl-8.4.0\src\misc\</ObjectFileName>
-    </ClCompile>
-    <ClCompile Include="..\..\packages\lvgl-8.4.0\src\misc\lv_style_gen.c">
-      <ObjectFileName>$(IntDir)kernellvgl-8.4.0\src\misc\</ObjectFileName>
-    </ClCompile>
-    <ClCompile Include="..\..\packages\lvgl-8.4.0\src\font\lv_font_montserrat_26.c">
-      <ObjectFileName>$(IntDir)kernellvgl-8.4.0\src\font\</ObjectFileName>
-    </ClCompile>
-    <ClCompile Include="..\..\packages\lvgl-8.4.0\src\draw\sdl\lv_draw_sdl_img.c">
+    <ClCompile Include="..\..\packages\lvgl-8.4.0\src\draw\sdl\lv_draw_sdl_bg.c">
       <ObjectFileName>$(IntDir)kernellvgl-8.4.0\src\draw\sdl\</ObjectFileName>
     </ClCompile>
-    <ClCompile Include="..\..\packages\lvgl-8.4.0\src\font\lv_font_montserrat_12.c">
-      <ObjectFileName>$(IntDir)kernellvgl-8.4.0\src\font\</ObjectFileName>
+    <ClCompile Include="..\..\packages\lvgl-8.4.0\src\draw\nxp\vglite\lv_draw_vglite_rect.c">
+      <ObjectFileName>$(IntDir)kernellvgl-8.4.0\src\draw\nxp\vglite\</ObjectFileName>
     </ClCompile>
-    <ClCompile Include="..\..\packages\lvgl-8.4.0\src\draw\sw\lv_draw_sw_polygon.c">
-      <ObjectFileName>$(IntDir)kernellvgl-8.4.0\src\draw\sw\</ObjectFileName>
-    </ClCompile>
-    <ClCompile Include="..\..\packages\lvgl-8.4.0\src\font\lv_font_montserrat_12_subpx.c">
-      <ObjectFileName>$(IntDir)kernellvgl-8.4.0\src\font\</ObjectFileName>
-    </ClCompile>
-    <ClCompile Include="..\..\packages\lvgl-8.4.0\src\draw\sw\lv_draw_sw.c">
-      <ObjectFileName>$(IntDir)kernellvgl-8.4.0\src\draw\sw\</ObjectFileName>
-    </ClCompile>
-    <ClCompile Include="..\..\packages\lvgl-8.4.0\src\widgets\lv_arc.c">
-      <ObjectFileName>$(IntDir)kernellvgl-8.4.0\src\widgets\</ObjectFileName>
-    </ClCompile>
-    <ClCompile Include="..\..\packages\lvgl-8.4.0\src\misc\lv_anim.c">
+    <ClCompile Include="..\..\packages\lvgl-8.4.0\src\misc\lv_tlsf.c">
       <ObjectFileName>$(IntDir)kernellvgl-8.4.0\src\misc\</ObjectFileName>
-    </ClCompile>
-    <ClCompile Include="..\..\packages\lvgl-8.4.0\src\misc\lv_ll.c">
-      <ObjectFileName>$(IntDir)kernellvgl-8.4.0\src\misc\</ObjectFileName>
-    </ClCompile>
-    <ClCompile Include="..\..\packages\lvgl-8.4.0\src\draw\sdl\lv_draw_sdl_label.c">
-      <ObjectFileName>$(IntDir)kernellvgl-8.4.0\src\draw\sdl\</ObjectFileName>
-    </ClCompile>
-    <ClCompile Include="..\..\packages\lvgl-8.4.0\src\font\lv_font_montserrat_30.c">
-      <ObjectFileName>$(IntDir)kernellvgl-8.4.0\src\font\</ObjectFileName>
-    </ClCompile>
-    <ClCompile Include="..\..\packages\lvgl-8.4.0\src\draw\sdl\lv_draw_sdl_line.c">
-      <ObjectFileName>$(IntDir)kernellvgl-8.4.0\src\draw\sdl\</ObjectFileName>
-    </ClCompile>
-    <ClCompile Include="..\..\packages\lvgl-8.4.0\src\font\lv_font.c">
-      <ObjectFileName>$(IntDir)kernellvgl-8.4.0\src\font\</ObjectFileName>
-    </ClCompile>
-    <ClCompile Include="..\..\packages\lvgl-8.4.0\src\draw\stm32_dma2d\lv_gpu_stm32_dma2d.c">
-      <ObjectFileName>$(IntDir)kernellvgl-8.4.0\src\draw\stm32_dma2d\</ObjectFileName>
-    </ClCompile>
-    <ClCompile Include="..\..\packages\lvgl-8.4.0\src\widgets\lv_btnmatrix.c">
-      <ObjectFileName>$(IntDir)kernellvgl-8.4.0\src\widgets\</ObjectFileName>
-    </ClCompile>
-    <ClCompile Include="..\..\packages\lvgl-8.4.0\src\extra\layouts\flex\lv_flex.c">
-      <ObjectFileName>$(IntDir)kernellvgl-8.4.0\src\extra\layouts\flex\</ObjectFileName>
-    </ClCompile>
-    <ClCompile Include="..\..\packages\lvgl-8.4.0\src\misc\lv_bidi.c">
-      <ObjectFileName>$(IntDir)kernellvgl-8.4.0\src\misc\</ObjectFileName>
-    </ClCompile>
-    <ClCompile Include="..\..\packages\lvgl-8.4.0\src\draw\sdl\lv_draw_sdl_utils.c">
-      <ObjectFileName>$(IntDir)kernellvgl-8.4.0\src\draw\sdl\</ObjectFileName>
-    </ClCompile>
-    <ClCompile Include="..\..\packages\lvgl-8.4.0\src\extra\lv_extra.c">
-      <ObjectFileName>$(IntDir)kernellvgl-8.4.0\src\extra\</ObjectFileName>
-    </ClCompile>
-    <ClCompile Include="..\..\packages\lvgl-8.4.0\src\font\lv_font_montserrat_42.c">
-      <ObjectFileName>$(IntDir)kernellvgl-8.4.0\src\font\</ObjectFileName>
-    </ClCompile>
-    <ClCompile Include="..\..\packages\lvgl-8.4.0\src\draw\lv_img_decoder.c">
-      <ObjectFileName>$(IntDir)kernellvgl-8.4.0\src\draw\</ObjectFileName>
-    </ClCompile>
-    <ClCompile Include="..\..\packages\lvgl-8.4.0\src\draw\sw\lv_draw_sw_line.c">
-      <ObjectFileName>$(IntDir)kernellvgl-8.4.0\src\draw\sw\</ObjectFileName>
-    </ClCompile>
-    <ClCompile Include="..\..\packages\lvgl-8.4.0\src\extra\libs\freetype\lv_freetype.c">
-      <ObjectFileName>$(IntDir)kernellvgl-8.4.0\src\extra\libs\freetype\</ObjectFileName>
-    </ClCompile>
-    <ClCompile Include="..\..\packages\lvgl-8.4.0\src\extra\libs\fsdrv\lv_fs_posix.c">
-      <ObjectFileName>$(IntDir)kernellvgl-8.4.0\src\extra\libs\fsdrv\</ObjectFileName>
-    </ClCompile>
-    <ClCompile Include="..\..\packages\lvgl-8.4.0\src\misc\lv_printf.c">
-      <ObjectFileName>$(IntDir)kernellvgl-8.4.0\src\misc\</ObjectFileName>
-    </ClCompile>
-    <ClCompile Include="..\..\packages\lvgl-8.4.0\src\draw\renesas\lv_gpu_d2_draw_label.c">
-      <ObjectFileName>$(IntDir)kernellvgl-8.4.0\src\draw\renesas\</ObjectFileName>
     </ClCompile>
     <ClCompile Include="..\..\packages\lvgl-8.4.0\src\font\lv_font_montserrat_10.c">
       <ObjectFileName>$(IntDir)kernellvgl-8.4.0\src\font\</ObjectFileName>
     </ClCompile>
-    <ClCompile Include="..\..\packages\lvgl-8.4.0\src\widgets\lv_img.c">
-      <ObjectFileName>$(IntDir)kernellvgl-8.4.0\src\widgets\</ObjectFileName>
-    </ClCompile>
-    <ClCompile Include="..\..\packages\lvgl-8.4.0\src\extra\libs\sjpg\lv_sjpg.c">
-      <ObjectFileName>$(IntDir)kernellvgl-8.4.0\src\extra\libs\sjpg\</ObjectFileName>
-    </ClCompile>
-    <ClCompile Include="..\..\packages\lvgl-8.4.0\src\core\lv_obj_class.c">
-      <ObjectFileName>$(IntDir)kernellvgl-8.4.0\src\core\</ObjectFileName>
-    </ClCompile>
-    <ClCompile Include="..\..\packages\lvgl-8.4.0\src\core\lv_theme.c">
-      <ObjectFileName>$(IntDir)kernellvgl-8.4.0\src\core\</ObjectFileName>
-    </ClCompile>
-    <ClCompile Include="..\..\packages\lvgl-8.4.0\src\extra\widgets\tileview\lv_tileview.c">
-      <ObjectFileName>$(IntDir)kernellvgl-8.4.0\src\extra\widgets\tileview\</ObjectFileName>
-    </ClCompile>
-    <ClCompile Include="..\..\packages\lvgl-8.4.0\src\draw\lv_draw_arc.c">
-      <ObjectFileName>$(IntDir)kernellvgl-8.4.0\src\draw\</ObjectFileName>
-    </ClCompile>
-    <ClCompile Include="..\..\packages\lvgl-8.4.0\src\draw\sw\lv_draw_sw_dither.c">
-      <ObjectFileName>$(IntDir)kernellvgl-8.4.0\src\draw\sw\</ObjectFileName>
-    </ClCompile>
-    <ClCompile Include="..\..\packages\lvgl-8.4.0\src\widgets\lv_slider.c">
-      <ObjectFileName>$(IntDir)kernellvgl-8.4.0\src\widgets\</ObjectFileName>
-    </ClCompile>
-    <ClCompile Include="..\..\packages\lvgl-8.4.0\src\extra\themes\basic\lv_theme_basic.c">
-      <ObjectFileName>$(IntDir)kernellvgl-8.4.0\src\extra\themes\basic\</ObjectFileName>
-    </ClCompile>
-    <ClCompile Include="..\..\packages\lvgl-8.4.0\src\extra\libs\fsdrv\lv_fs_littlefs.c">
-      <ObjectFileName>$(IntDir)kernellvgl-8.4.0\src\extra\libs\fsdrv\</ObjectFileName>
-    </ClCompile>
-    <ClCompile Include="..\..\packages\lvgl-8.4.0\src\draw\nxp\pxp\lv_draw_pxp.c">
-      <ObjectFileName>$(IntDir)kernellvgl-8.4.0\src\draw\nxp\pxp\</ObjectFileName>
-    </ClCompile>
-    <ClCompile Include="..\..\packages\lvgl-8.4.0\src\misc\lv_txt_ap.c">
-      <ObjectFileName>$(IntDir)kernellvgl-8.4.0\src\misc\</ObjectFileName>
-    </ClCompile>
-    <ClCompile Include="..\..\packages\lvgl-8.4.0\src\draw\lv_draw_layer.c">
-      <ObjectFileName>$(IntDir)kernellvgl-8.4.0\src\draw\</ObjectFileName>
-    </ClCompile>
-    <ClCompile Include="..\..\packages\lvgl-8.4.0\src\font\lv_font_dejavu_16_persian_hebrew.c">
-      <ObjectFileName>$(IntDir)kernellvgl-8.4.0\src\font\</ObjectFileName>
-    </ClCompile>
-    <ClCompile Include="..\..\packages\lvgl-8.4.0\src\extra\widgets\chart\lv_chart.c">
-      <ObjectFileName>$(IntDir)kernellvgl-8.4.0\src\extra\widgets\chart\</ObjectFileName>
-    </ClCompile>
-    <ClCompile Include="..\..\packages\lvgl-8.4.0\src\widgets\lv_bar.c">
+    <ClCompile Include="..\..\packages\lvgl-8.4.0\src\widgets\lv_btn.c">
       <ObjectFileName>$(IntDir)kernellvgl-8.4.0\src\widgets\</ObjectFileName>
     </ClCompile>
     <ClCompile Include="..\..\packages\lvgl-8.4.0\src\extra\others\imgfont\lv_imgfont.c">
       <ObjectFileName>$(IntDir)kernellvgl-8.4.0\src\extra\others\imgfont\</ObjectFileName>
     </ClCompile>
-    <ClCompile Include="..\..\packages\lvgl-8.4.0\src\extra\layouts\grid\lv_grid.c">
-      <ObjectFileName>$(IntDir)kernellvgl-8.4.0\src\extra\layouts\grid\</ObjectFileName>
+    <ClCompile Include="..\..\packages\lvgl-8.4.0\src\font\lv_font_montserrat_12.c">
+      <ObjectFileName>$(IntDir)kernellvgl-8.4.0\src\font\</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="..\..\packages\lvgl-8.4.0\src\extra\widgets\colorwheel\lv_colorwheel.c">
+      <ObjectFileName>$(IntDir)kernellvgl-8.4.0\src\extra\widgets\colorwheel\</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="..\..\packages\lvgl-8.4.0\src\draw\nxp\vglite\lv_vglite_buf.c">
+      <ObjectFileName>$(IntDir)kernellvgl-8.4.0\src\draw\nxp\vglite\</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="..\..\packages\lvgl-8.4.0\src\font\lv_font_montserrat_40.c">
+      <ObjectFileName>$(IntDir)kernellvgl-8.4.0\src\font\</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="..\..\packages\lvgl-8.4.0\src\draw\lv_draw_line.c">
+      <ObjectFileName>$(IntDir)kernellvgl-8.4.0\src\draw\</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="..\..\packages\lvgl-8.4.0\src\font\lv_font_dejavu_16_persian_hebrew.c">
+      <ObjectFileName>$(IntDir)kernellvgl-8.4.0\src\font\</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="..\..\packages\lvgl-8.4.0\src\extra\libs\sjpg\lv_sjpg.c">
+      <ObjectFileName>$(IntDir)kernellvgl-8.4.0\src\extra\libs\sjpg\</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="..\..\packages\lvgl-8.4.0\src\draw\sdl\lv_draw_sdl_utils.c">
+      <ObjectFileName>$(IntDir)kernellvgl-8.4.0\src\draw\sdl\</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="..\..\packages\lvgl-8.4.0\src\draw\sdl\lv_draw_sdl_label.c">
+      <ObjectFileName>$(IntDir)kernellvgl-8.4.0\src\draw\sdl\</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="..\..\packages\lvgl-8.4.0\src\misc\lv_style_gen.c">
+      <ObjectFileName>$(IntDir)kernellvgl-8.4.0\src\misc\</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="..\..\packages\lvgl-8.4.0\src\extra\lv_extra.c">
+      <ObjectFileName>$(IntDir)kernellvgl-8.4.0\src\extra\</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="..\..\packages\lvgl-8.4.0\src\widgets\lv_slider.c">
+      <ObjectFileName>$(IntDir)kernellvgl-8.4.0\src\widgets\</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="..\..\packages\lvgl-8.4.0\src\draw\lv_draw_label.c">
+      <ObjectFileName>$(IntDir)kernellvgl-8.4.0\src\draw\</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="..\..\packages\lvgl-8.4.0\src\draw\sdl\lv_draw_sdl_layer.c">
+      <ObjectFileName>$(IntDir)kernellvgl-8.4.0\src\draw\sdl\</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="..\..\packages\lvgl-8.4.0\src\draw\sw\lv_draw_sw_arc.c">
+      <ObjectFileName>$(IntDir)kernellvgl-8.4.0\src\draw\sw\</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="..\..\packages\lvgl-8.4.0\src\draw\sdl\lv_draw_sdl_mask.c">
+      <ObjectFileName>$(IntDir)kernellvgl-8.4.0\src\draw\sdl\</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="..\..\packages\lvgl-8.4.0\src\misc\lv_style.c">
+      <ObjectFileName>$(IntDir)kernellvgl-8.4.0\src\misc\</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="..\..\packages\lvgl-8.4.0\src\misc\lv_txt_ap.c">
+      <ObjectFileName>$(IntDir)kernellvgl-8.4.0\src\misc\</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="..\..\packages\lvgl-8.4.0\src\font\lv_font_loader.c">
+      <ObjectFileName>$(IntDir)kernellvgl-8.4.0\src\font\</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="..\..\packages\lvgl-8.4.0\src\draw\lv_draw_arc.c">
+      <ObjectFileName>$(IntDir)kernellvgl-8.4.0\src\draw\</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="..\..\packages\lvgl-8.4.0\src\extra\libs\sjpg\tjpgd.c">
+      <ObjectFileName>$(IntDir)kernellvgl-8.4.0\src\extra\libs\sjpg\</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="..\..\packages\lvgl-8.4.0\src\draw\lv_draw_triangle.c">
+      <ObjectFileName>$(IntDir)kernellvgl-8.4.0\src\draw\</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="..\..\packages\lvgl-8.4.0\src\draw\sdl\lv_draw_sdl_polygon.c">
+      <ObjectFileName>$(IntDir)kernellvgl-8.4.0\src\draw\sdl\</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="..\..\packages\lvgl-8.4.0\src\misc\lv_color.c">
+      <ObjectFileName>$(IntDir)kernellvgl-8.4.0\src\misc\</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="..\..\packages\lvgl-8.4.0\src\core\lv_obj_pos.c">
+      <ObjectFileName>$(IntDir)kernellvgl-8.4.0\src\core\</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="..\..\packages\lvgl-8.4.0\src\font\lv_font_montserrat_36.c">
+      <ObjectFileName>$(IntDir)kernellvgl-8.4.0\src\font\</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="..\..\packages\lvgl-8.4.0\src\extra\libs\gif\lv_gif.c">
+      <ObjectFileName>$(IntDir)kernellvgl-8.4.0\src\extra\libs\gif\</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="..\..\packages\lvgl-8.4.0\src\widgets\lv_label.c">
+      <ObjectFileName>$(IntDir)kernellvgl-8.4.0\src\widgets\</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="..\..\packages\lvgl-8.4.0\src\draw\sdl\lv_draw_sdl_composite.c">
+      <ObjectFileName>$(IntDir)kernellvgl-8.4.0\src\draw\sdl\</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="..\..\packages\lvgl-8.4.0\src\draw\sw\lv_draw_sw.c">
+      <ObjectFileName>$(IntDir)kernellvgl-8.4.0\src\draw\sw\</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="..\..\packages\lvgl-8.4.0\src\draw\sdl\lv_draw_sdl_stack_blur.c">
+      <ObjectFileName>$(IntDir)kernellvgl-8.4.0\src\draw\sdl\</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="..\..\packages\lvgl-8.4.0\src\misc\lv_ll.c">
+      <ObjectFileName>$(IntDir)kernellvgl-8.4.0\src\misc\</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="..\..\packages\lvgl-8.4.0\src\misc\lv_area.c">
+      <ObjectFileName>$(IntDir)kernellvgl-8.4.0\src\misc\</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="..\..\packages\lvgl-8.4.0\src\hal\lv_hal_indev.c">
+      <ObjectFileName>$(IntDir)kernellvgl-8.4.0\src\hal\</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="..\..\packages\lvgl-8.4.0\src\font\lv_font_montserrat_12_subpx.c">
+      <ObjectFileName>$(IntDir)kernellvgl-8.4.0\src\font\</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="..\..\packages\lvgl-8.4.0\src\widgets\lv_dropdown.c">
+      <ObjectFileName>$(IntDir)kernellvgl-8.4.0\src\widgets\</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="..\..\packages\lvgl-8.4.0\src\extra\libs\gif\gifdec.c">
+      <ObjectFileName>$(IntDir)kernellvgl-8.4.0\src\extra\libs\gif\</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="..\..\packages\lvgl-8.4.0\src\draw\sw\lv_draw_sw_dither.c">
+      <ObjectFileName>$(IntDir)kernellvgl-8.4.0\src\draw\sw\</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="..\..\packages\lvgl-8.4.0\src\extra\widgets\animimg\lv_animimg.c">
+      <ObjectFileName>$(IntDir)kernellvgl-8.4.0\src\extra\widgets\animimg\</ObjectFileName>
     </ClCompile>
     <ClCompile Include="..\..\packages\lvgl-8.4.0\src\draw\nxp\vglite\lv_draw_vglite_blend.c">
       <ObjectFileName>$(IntDir)kernellvgl-8.4.0\src\draw\nxp\vglite\</ObjectFileName>
     </ClCompile>
-    <ClCompile Include="..\..\packages\lvgl-8.4.0\src\font\lv_font_montserrat_18.c">
-      <ObjectFileName>$(IntDir)kernellvgl-8.4.0\src\font\</ObjectFileName>
+    <ClCompile Include="..\..\packages\lvgl-8.4.0\src\misc\lv_fs.c">
+      <ObjectFileName>$(IntDir)kernellvgl-8.4.0\src\misc\</ObjectFileName>
     </ClCompile>
-    <ClCompile Include="..\..\packages\lvgl-8.4.0\src\core\lv_obj_tree.c">
-      <ObjectFileName>$(IntDir)kernellvgl-8.4.0\src\core\</ObjectFileName>
-    </ClCompile>
-    <ClCompile Include="..\..\packages\lvgl-8.4.0\src\draw\lv_draw_img.c">
-      <ObjectFileName>$(IntDir)kernellvgl-8.4.0\src\draw\</ObjectFileName>
-    </ClCompile>
-    <ClCompile Include="..\..\packages\lvgl-8.4.0\src\extra\themes\mono\lv_theme_mono.c">
-      <ObjectFileName>$(IntDir)kernellvgl-8.4.0\src\extra\themes\mono\</ObjectFileName>
+    <ClCompile Include="..\..\packages\lvgl-8.4.0\src\hal\lv_hal_disp.c">
+      <ObjectFileName>$(IntDir)kernellvgl-8.4.0\src\hal\</ObjectFileName>
     </ClCompile>
     <ClCompile Include="..\..\packages\lvgl-8.4.0\src\extra\libs\fsdrv\lv_fs_fatfs.c">
       <ObjectFileName>$(IntDir)kernellvgl-8.4.0\src\extra\libs\fsdrv\</ObjectFileName>
     </ClCompile>
-    <ClCompile Include="..\..\packages\lvgl-8.4.0\src\draw\sdl\lv_draw_sdl_texture_cache.c">
+    <ClCompile Include="..\..\packages\lvgl-8.4.0\src\font\lv_font_montserrat_46.c">
+      <ObjectFileName>$(IntDir)kernellvgl-8.4.0\src\font\</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="..\..\packages\lvgl-8.4.0\src\extra\layouts\flex\lv_flex.c">
+      <ObjectFileName>$(IntDir)kernellvgl-8.4.0\src\extra\layouts\flex\</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="..\..\packages\lvgl-8.4.0\src\font\lv_font_montserrat_16.c">
+      <ObjectFileName>$(IntDir)kernellvgl-8.4.0\src\font\</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="..\..\packages\lvgl-8.4.0\src\extra\widgets\list\lv_list.c">
+      <ObjectFileName>$(IntDir)kernellvgl-8.4.0\src\extra\widgets\list\</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="..\..\packages\lvgl-8.4.0\src\draw\sw\lv_draw_sw_rect.c">
+      <ObjectFileName>$(IntDir)kernellvgl-8.4.0\src\draw\sw\</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="..\..\packages\lvgl-8.4.0\src\draw\sdl\lv_draw_sdl.c">
       <ObjectFileName>$(IntDir)kernellvgl-8.4.0\src\draw\sdl\</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="..\..\packages\lvgl-8.4.0\src\misc\lv_lru.c">
+      <ObjectFileName>$(IntDir)kernellvgl-8.4.0\src\misc\</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="..\..\packages\lvgl-8.4.0\src\core\lv_indev_scroll.c">
+      <ObjectFileName>$(IntDir)kernellvgl-8.4.0\src\core\</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="..\..\packages\lvgl-8.4.0\src\extra\libs\fsdrv\lv_fs_posix.c">
+      <ObjectFileName>$(IntDir)kernellvgl-8.4.0\src\extra\libs\fsdrv\</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="..\..\packages\lvgl-8.4.0\src\font\lv_font_montserrat_18.c">
+      <ObjectFileName>$(IntDir)kernellvgl-8.4.0\src\font\</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="..\..\packages\lvgl-8.4.0\src\extra\libs\qrcode\lv_qrcode.c">
+      <ObjectFileName>$(IntDir)kernellvgl-8.4.0\src\extra\libs\qrcode\</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="..\..\packages\lvgl-8.4.0\src\extra\widgets\menu\lv_menu.c">
+      <ObjectFileName>$(IntDir)kernellvgl-8.4.0\src\extra\widgets\menu\</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="..\..\packages\lvgl-8.4.0\src\extra\widgets\msgbox\lv_msgbox.c">
+      <ObjectFileName>$(IntDir)kernellvgl-8.4.0\src\extra\widgets\msgbox\</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="..\..\packages\lvgl-8.4.0\src\misc\lv_utils.c">
+      <ObjectFileName>$(IntDir)kernellvgl-8.4.0\src\misc\</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="..\..\packages\lvgl-8.4.0\src\misc\lv_log.c">
+      <ObjectFileName>$(IntDir)kernellvgl-8.4.0\src\misc\</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="..\..\packages\lvgl-8.4.0\src\core\lv_obj_style_gen.c">
+      <ObjectFileName>$(IntDir)kernellvgl-8.4.0\src\core\</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="..\..\packages\lvgl-8.4.0\src\extra\libs\bmp\lv_bmp.c">
+      <ObjectFileName>$(IntDir)kernellvgl-8.4.0\src\extra\libs\bmp\</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="..\..\packages\lvgl-8.4.0\src\font\lv_font_montserrat_28.c">
+      <ObjectFileName>$(IntDir)kernellvgl-8.4.0\src\font\</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="..\..\packages\lvgl-8.4.0\src\extra\layouts\grid\lv_grid.c">
+      <ObjectFileName>$(IntDir)kernellvgl-8.4.0\src\extra\layouts\grid\</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="..\..\packages\lvgl-8.4.0\src\draw\lv_img_cache.c">
+      <ObjectFileName>$(IntDir)kernellvgl-8.4.0\src\draw\</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="..\..\packages\lvgl-8.4.0\src\misc\lv_timer.c">
+      <ObjectFileName>$(IntDir)kernellvgl-8.4.0\src\misc\</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="..\..\packages\lvgl-8.4.0\src\extra\widgets\calendar\lv_calendar_header_dropdown.c">
+      <ObjectFileName>$(IntDir)kernellvgl-8.4.0\src\extra\widgets\calendar\</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="..\..\packages\lvgl-8.4.0\src\widgets\lv_bar.c">
+      <ObjectFileName>$(IntDir)kernellvgl-8.4.0\src\widgets\</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="..\..\packages\lvgl-8.4.0\src\widgets\lv_line.c">
+      <ObjectFileName>$(IntDir)kernellvgl-8.4.0\src\widgets\</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="..\..\packages\lvgl-8.4.0\src\extra\widgets\calendar\lv_calendar.c">
+      <ObjectFileName>$(IntDir)kernellvgl-8.4.0\src\extra\widgets\calendar\</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="..\..\packages\lvgl-8.4.0\src\extra\widgets\tileview\lv_tileview.c">
+      <ObjectFileName>$(IntDir)kernellvgl-8.4.0\src\extra\widgets\tileview\</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="..\..\packages\lvgl-8.4.0\src\draw\sdl\lv_draw_sdl_arc.c">
+      <ObjectFileName>$(IntDir)kernellvgl-8.4.0\src\draw\sdl\</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="..\..\packages\lvgl-8.4.0\src\misc\lv_bidi.c">
+      <ObjectFileName>$(IntDir)kernellvgl-8.4.0\src\misc\</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="..\..\packages\lvgl-8.4.0\src\core\lv_obj_draw.c">
+      <ObjectFileName>$(IntDir)kernellvgl-8.4.0\src\core\</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="..\..\packages\lvgl-8.4.0\src\draw\lv_draw.c">
+      <ObjectFileName>$(IntDir)kernellvgl-8.4.0\src\draw\</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="..\..\packages\lvgl-8.4.0\src\font\lv_font_montserrat_26.c">
+      <ObjectFileName>$(IntDir)kernellvgl-8.4.0\src\font\</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="..\..\packages\lvgl-8.4.0\src\extra\libs\fsdrv\lv_fs_littlefs.c">
+      <ObjectFileName>$(IntDir)kernellvgl-8.4.0\src\extra\libs\fsdrv\</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="..\..\packages\lvgl-8.4.0\src\widgets\lv_arc.c">
+      <ObjectFileName>$(IntDir)kernellvgl-8.4.0\src\widgets\</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="..\..\packages\lvgl-8.4.0\src\draw\sw\lv_draw_sw_layer.c">
+      <ObjectFileName>$(IntDir)kernellvgl-8.4.0\src\draw\sw\</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="..\..\packages\lvgl-8.4.0\src\draw\sw\lv_draw_sw_polygon.c">
+      <ObjectFileName>$(IntDir)kernellvgl-8.4.0\src\draw\sw\</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="..\..\packages\lvgl-8.4.0\src\draw\renesas\lv_gpu_d2_draw_label.c">
+      <ObjectFileName>$(IntDir)kernellvgl-8.4.0\src\draw\renesas\</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="..\..\packages\lvgl-8.4.0\src\misc\lv_mem.c">
+      <ObjectFileName>$(IntDir)kernellvgl-8.4.0\src\misc\</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="..\..\packages\lvgl-8.4.0\src\draw\nxp\vglite\lv_draw_vglite_line.c">
+      <ObjectFileName>$(IntDir)kernellvgl-8.4.0\src\draw\nxp\vglite\</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="..\..\packages\lvgl-8.4.0\src\misc\lv_async.c">
+      <ObjectFileName>$(IntDir)kernellvgl-8.4.0\src\misc\</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="..\..\packages\lvgl-8.4.0\src\extra\libs\ffmpeg\lv_ffmpeg.c">
+      <ObjectFileName>$(IntDir)kernellvgl-8.4.0\src\extra\libs\ffmpeg\</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="..\..\packages\lvgl-8.4.0\src\font\lv_font_montserrat_24.c">
+      <ObjectFileName>$(IntDir)kernellvgl-8.4.0\src\font\</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="..\..\packages\lvgl-8.4.0\src\extra\libs\tiny_ttf\lv_tiny_ttf.c">
+      <ObjectFileName>$(IntDir)kernellvgl-8.4.0\src\extra\libs\tiny_ttf\</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="..\..\packages\lvgl-8.4.0\src\widgets\lv_roller.c">
+      <ObjectFileName>$(IntDir)kernellvgl-8.4.0\src\widgets\</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="..\..\packages\lvgl-8.4.0\src\draw\sdl\lv_draw_sdl_img.c">
+      <ObjectFileName>$(IntDir)kernellvgl-8.4.0\src\draw\sdl\</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="..\..\packages\lvgl-8.4.0\src\core\lv_indev.c">
+      <ObjectFileName>$(IntDir)kernellvgl-8.4.0\src\core\</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="..\..\packages\lvgl-8.4.0\src\core\lv_obj_tree.c">
+      <ObjectFileName>$(IntDir)kernellvgl-8.4.0\src\core\</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="..\..\packages\lvgl-8.4.0\src\widgets\lv_canvas.c">
+      <ObjectFileName>$(IntDir)kernellvgl-8.4.0\src\widgets\</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="..\..\packages\lvgl-8.4.0\src\font\lv_font_fmt_txt.c">
+      <ObjectFileName>$(IntDir)kernellvgl-8.4.0\src\font\</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="..\..\packages\lvgl-8.4.0\src\extra\themes\mono\lv_theme_mono.c">
+      <ObjectFileName>$(IntDir)kernellvgl-8.4.0\src\extra\themes\mono\</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="..\..\packages\lvgl-8.4.0\src\widgets\lv_objx_templ.c">
+      <ObjectFileName>$(IntDir)kernellvgl-8.4.0\src\widgets\</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="..\..\packages\lvgl-8.4.0\src\draw\sdl\lv_draw_sdl_rect.c">
+      <ObjectFileName>$(IntDir)kernellvgl-8.4.0\src\draw\sdl\</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="..\..\packages\lvgl-8.4.0\src\draw\renesas\lv_gpu_d2_ra6m3.c">
+      <ObjectFileName>$(IntDir)kernellvgl-8.4.0\src\draw\renesas\</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="..\..\packages\lvgl-8.4.0\src\misc\lv_printf.c">
+      <ObjectFileName>$(IntDir)kernellvgl-8.4.0\src\misc\</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="..\..\packages\lvgl-8.4.0\src\draw\nxp\vglite\lv_draw_vglite.c">
+      <ObjectFileName>$(IntDir)kernellvgl-8.4.0\src\draw\nxp\vglite\</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="..\..\packages\lvgl-8.4.0\src\misc\lv_math.c">
+      <ObjectFileName>$(IntDir)kernellvgl-8.4.0\src\misc\</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="..\..\packages\lvgl-8.4.0\src\font\lv_font_montserrat_32.c">
+      <ObjectFileName>$(IntDir)kernellvgl-8.4.0\src\font\</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="..\..\packages\lvgl-8.4.0\src\widgets\lv_checkbox.c">
+      <ObjectFileName>$(IntDir)kernellvgl-8.4.0\src\widgets\</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="..\..\packages\lvgl-8.4.0\src\extra\widgets\win\lv_win.c">
+      <ObjectFileName>$(IntDir)kernellvgl-8.4.0\src\extra\widgets\win\</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="..\..\packages\lvgl-8.4.0\src\draw\sw\lv_draw_sw_line.c">
+      <ObjectFileName>$(IntDir)kernellvgl-8.4.0\src\draw\sw\</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="..\..\packages\lvgl-8.4.0\src\core\lv_theme.c">
+      <ObjectFileName>$(IntDir)kernellvgl-8.4.0\src\core\</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="..\..\packages\lvgl-8.4.0\src\hal\lv_hal_tick.c">
+      <ObjectFileName>$(IntDir)kernellvgl-8.4.0\src\hal\</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="..\..\packages\lvgl-8.4.0\src\font\lv_font_montserrat_34.c">
+      <ObjectFileName>$(IntDir)kernellvgl-8.4.0\src\font\</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="..\..\packages\lvgl-8.4.0\src\font\lv_font_montserrat_20.c">
+      <ObjectFileName>$(IntDir)kernellvgl-8.4.0\src\font\</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="..\..\packages\lvgl-8.4.0\src\draw\nxp\pxp\lv_gpu_nxp_pxp_osa.c">
+      <ObjectFileName>$(IntDir)kernellvgl-8.4.0\src\draw\nxp\pxp\</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="..\..\packages\lvgl-8.4.0\src\misc\lv_anim.c">
+      <ObjectFileName>$(IntDir)kernellvgl-8.4.0\src\misc\</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="..\..\packages\lvgl-8.4.0\src\misc\lv_gc.c">
+      <ObjectFileName>$(IntDir)kernellvgl-8.4.0\src\misc\</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="..\..\packages\lvgl-8.4.0\src\extra\others\gridnav\lv_gridnav.c">
+      <ObjectFileName>$(IntDir)kernellvgl-8.4.0\src\extra\others\gridnav\</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="..\..\packages\lvgl-8.4.0\src\font\lv_font_montserrat_30.c">
+      <ObjectFileName>$(IntDir)kernellvgl-8.4.0\src\font\</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="..\..\packages\lvgl-8.4.0\src\extra\libs\png\lv_png.c">
+      <ObjectFileName>$(IntDir)kernellvgl-8.4.0\src\extra\libs\png\</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="..\..\packages\lvgl-8.4.0\src\font\lv_font_unscii_16.c">
+      <ObjectFileName>$(IntDir)kernellvgl-8.4.0\src\font\</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="..\..\packages\lvgl-8.4.0\src\draw\stm32_dma2d\lv_gpu_stm32_dma2d.c">
+      <ObjectFileName>$(IntDir)kernellvgl-8.4.0\src\draw\stm32_dma2d\</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="..\..\packages\lvgl-8.4.0\src\draw\sw\lv_draw_sw_gradient.c">
+      <ObjectFileName>$(IntDir)kernellvgl-8.4.0\src\draw\sw\</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="..\..\packages\lvgl-8.4.0\src\core\lv_disp.c">
+      <ObjectFileName>$(IntDir)kernellvgl-8.4.0\src\core\</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="..\..\packages\lvgl-8.4.0\src\font\lv_font.c">
+      <ObjectFileName>$(IntDir)kernellvgl-8.4.0\src\font\</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="..\..\packages\lvgl-8.4.0\src\extra\themes\basic\lv_theme_basic.c">
+      <ObjectFileName>$(IntDir)kernellvgl-8.4.0\src\extra\themes\basic\</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="..\..\packages\lvgl-8.4.0\src\font\lv_font_simsun_16_cjk.c">
+      <ObjectFileName>$(IntDir)kernellvgl-8.4.0\src\font\</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="..\..\packages\lvgl-8.4.0\src\extra\libs\fsdrv\lv_fs_win32.c">
+      <ObjectFileName>$(IntDir)kernellvgl-8.4.0\src\extra\libs\fsdrv\</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="..\..\packages\lvgl-8.4.0\src\draw\sw\lv_draw_sw_blend.c">
+      <ObjectFileName>$(IntDir)kernellvgl-8.4.0\src\draw\sw\</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="..\..\packages\lvgl-8.4.0\src\draw\sw\lv_draw_sw_transform.c">
+      <ObjectFileName>$(IntDir)kernellvgl-8.4.0\src\draw\sw\</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="..\..\packages\lvgl-8.4.0\src\draw\nxp\pxp\lv_draw_pxp_blend.c">
+      <ObjectFileName>$(IntDir)kernellvgl-8.4.0\src\draw\nxp\pxp\</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="..\..\packages\lvgl-8.4.0\src\font\lv_font_montserrat_44.c">
+      <ObjectFileName>$(IntDir)kernellvgl-8.4.0\src\font\</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="..\..\packages\lvgl-8.4.0\src\extra\libs\png\lodepng.c">
+      <ObjectFileName>$(IntDir)kernellvgl-8.4.0\src\extra\libs\png\</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="..\..\packages\lvgl-8.4.0\src\draw\lv_draw_rect.c">
+      <ObjectFileName>$(IntDir)kernellvgl-8.4.0\src\draw\</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="..\..\packages\lvgl-8.4.0\src\extra\libs\rlottie\lv_rlottie.c">
+      <ObjectFileName>$(IntDir)kernellvgl-8.4.0\src\extra\libs\rlottie\</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="..\..\packages\lvgl-8.4.0\src\widgets\lv_table.c">
+      <ObjectFileName>$(IntDir)kernellvgl-8.4.0\src\widgets\</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="..\..\packages\lvgl-8.4.0\src\extra\widgets\chart\lv_chart.c">
+      <ObjectFileName>$(IntDir)kernellvgl-8.4.0\src\extra\widgets\chart\</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="..\..\packages\lvgl-8.4.0\src\extra\widgets\tabview\lv_tabview.c">
+      <ObjectFileName>$(IntDir)kernellvgl-8.4.0\src\extra\widgets\tabview\</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="..\..\packages\lvgl-8.4.0\src\font\lv_font_unscii_8.c">
+      <ObjectFileName>$(IntDir)kernellvgl-8.4.0\src\font\</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="..\..\packages\lvgl-8.4.0\src\extra\others\fragment\lv_fragment_manager.c">
+      <ObjectFileName>$(IntDir)kernellvgl-8.4.0\src\extra\others\fragment\</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="..\..\packages\lvgl-8.4.0\src\draw\lv_draw_mask.c">
+      <ObjectFileName>$(IntDir)kernellvgl-8.4.0\src\draw\</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="..\..\packages\lvgl-8.4.0\src\draw\nxp\pxp\lv_draw_pxp.c">
+      <ObjectFileName>$(IntDir)kernellvgl-8.4.0\src\draw\nxp\pxp\</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="..\..\packages\lvgl-8.4.0\src\draw\nxp\pxp\lv_gpu_nxp_pxp.c">
+      <ObjectFileName>$(IntDir)kernellvgl-8.4.0\src\draw\nxp\pxp\</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="..\..\packages\lvgl-8.4.0\src\core\lv_obj.c">
+      <ObjectFileName>$(IntDir)kernellvgl-8.4.0\src\core\</ObjectFileName>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -854,11 +888,47 @@
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="..\..\rt-thread\components\libc\posix\delay\delay.c">
+      <ObjectFileName>$(IntDir)kernel\components\libc\posix\delay\</ObjectFileName>
+    </ClCompile>
     <ClCompile Include="..\..\rt-thread\components\libc\posix\io\poll\poll.c">
       <ObjectFileName>$(IntDir)kernel\components\libc\posix\io\poll\</ObjectFileName>
     </ClCompile>
     <ClCompile Include="..\..\rt-thread\components\libc\posix\io\poll\select.c">
       <ObjectFileName>$(IntDir)kernel\components\libc\posix\io\poll\</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="..\..\rt-thread\components\libc\posix\io\stdio\stdio.c">
+      <ObjectFileName>$(IntDir)kernel\components\libc\posix\io\stdio\</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="..\..\rt-thread\components\libc\posix\pthreads\pthread.c">
+      <ObjectFileName>$(IntDir)kernel\components\libc\posix\pthreads\</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="..\..\rt-thread\components\libc\posix\pthreads\pthread_attr.c">
+      <ObjectFileName>$(IntDir)kernel\components\libc\posix\pthreads\</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="..\..\rt-thread\components\libc\posix\pthreads\pthread_barrier.c">
+      <ObjectFileName>$(IntDir)kernel\components\libc\posix\pthreads\</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="..\..\rt-thread\components\libc\posix\pthreads\pthread_cond.c">
+      <ObjectFileName>$(IntDir)kernel\components\libc\posix\pthreads\</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="..\..\rt-thread\components\libc\posix\pthreads\pthread_mutex.c">
+      <ObjectFileName>$(IntDir)kernel\components\libc\posix\pthreads\</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="..\..\rt-thread\components\libc\posix\pthreads\pthread_rwlock.c">
+      <ObjectFileName>$(IntDir)kernel\components\libc\posix\pthreads\</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="..\..\rt-thread\components\libc\posix\pthreads\pthread_spin.c">
+      <ObjectFileName>$(IntDir)kernel\components\libc\posix\pthreads\</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="..\..\rt-thread\components\libc\posix\pthreads\pthread_tls.c">
+      <ObjectFileName>$(IntDir)kernel\components\libc\posix\pthreads\</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="..\..\rt-thread\components\libc\posix\pthreads\sched.c">
+      <ObjectFileName>$(IntDir)kernel\components\libc\posix\pthreads\</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="..\..\rt-thread\components\libc\posix\tls\emutls.c">
+      <ObjectFileName>$(IntDir)kernel\components\libc\posix\tls\</ObjectFileName>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -883,11 +953,11 @@
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
-    <ClCompile Include="..\..\ui\splash\splash_ui.c">
-      <ObjectFileName>$(IntDir)kernel\</ObjectFileName>
-    </ClCompile>
     <ClCompile Include="..\..\ui\filemanager\filemanager_ui.c">
       <ObjectFileName>$(IntDir)kernelnager\</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="..\..\ui\splash\splash_ui.c">
+      <ObjectFileName>$(IntDir)kernel\</ObjectFileName>
     </ClCompile>
     <ClCompile Include="..\..\ui\calculator\calculator_ui.c">
       <ObjectFileName>$(IntDir)kernelator\</ObjectFileName>
@@ -1129,6 +1199,7 @@
     <ClInclude Include="..\..\rt-thread\components\drivers\include\ipc\waitqueue.h" />
     <ClInclude Include="..\..\rt-thread\components\drivers\include\ipc\workqueue.h" />
     <ClInclude Include="..\..\rt-thread\components\drivers\include\rtdevice.h" />
+    <ClInclude Include="..\..\rt-thread\components\drivers\ktime\inc\ktime.h" />
     <ClInclude Include="..\..\rt-thread\components\drivers\pci\pci_ids.h" />
     <ClInclude Include="..\..\rt-thread\components\drivers\pci\pci_regs.h" />
     <ClInclude Include="..\..\rt-thread\components\drivers\phy\general_phy.h" />
@@ -1153,8 +1224,18 @@
     <ClInclude Include="..\..\rt-thread\components\libc\compilers\common\include\sys\time.h" />
     <ClInclude Include="..\..\rt-thread\components\libc\compilers\common\include\sys\unistd.h" />
     <ClInclude Include="..\..\rt-thread\components\libc\compilers\common\include\unistd.h" />
+    <ClInclude Include="..\..\rt-thread\components\libc\cplusplus\cxx_crt.h" />
+    <ClInclude Include="..\..\rt-thread\components\libc\cplusplus\os\cxx_mutex.h" />
+    <ClInclude Include="..\..\rt-thread\components\libc\cplusplus\os\cxx_semaphore.h" />
+    <ClInclude Include="..\..\rt-thread\components\libc\cplusplus\os\cxx_thread.h" />
+    <ClInclude Include="..\..\rt-thread\components\libc\posix\delay\delay.h" />
     <ClInclude Include="..\..\rt-thread\components\libc\posix\io\poll\poll.h" />
+    <ClInclude Include="..\..\rt-thread\components\libc\posix\io\stdio\posix\stdio.h" />
     <ClInclude Include="..\..\rt-thread\components\libc\posix\ipc\semaphore.h" />
+    <ClInclude Include="..\..\rt-thread\components\libc\posix\pthreads\posix_types.h" />
+    <ClInclude Include="..\..\rt-thread\components\libc\posix\pthreads\pthread.h" />
+    <ClInclude Include="..\..\rt-thread\components\libc\posix\pthreads\pthread_internal.h" />
+    <ClInclude Include="..\..\rt-thread\components\libc\posix\pthreads\sched.h" />
     <ClInclude Include="..\..\rt-thread\components\net\netdev\include\arpa\inet.h" />
     <ClInclude Include="..\..\rt-thread\components\net\netdev\include\netdev.h" />
     <ClInclude Include="..\..\rt-thread\components\net\netdev\include\netdev_ipaddr.h" />

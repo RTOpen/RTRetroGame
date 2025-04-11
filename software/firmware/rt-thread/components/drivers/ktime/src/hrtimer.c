@@ -103,7 +103,7 @@ static void _insert_timer_to_list_locked(rt_ktime_hrtimer_t timer)
 {
     rt_ktime_hrtimer_t iter;
 
-    rt_list_for_each_entry(iter, &_timer_list, node)
+    for (iter = rt_list_entry((&_timer_list)->next, struct rt_ktime_hrtimer, node); &iter->node != (&_timer_list); iter = rt_list_entry(iter->node.next, struct rt_ktime_hrtimer, node))
     {
         if (iter->timeout_cnt > timer->timeout_cnt)
         {

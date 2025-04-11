@@ -145,7 +145,11 @@ static void emutls_init(void)
 /* Returns control->object.index; set index if not allocated yet. */
 static __inline uintptr_t emutls_get_index(__emutls_control *control)
 {
+#if defined (_MSC_VER)  
+    uintptr_t index = control->object.index;
+#else
     uintptr_t index = __atomic_load_n(&control->object.index, __ATOMIC_ACQUIRE);
+#endif
     if (!index)
     {
         static pthread_once_t once = PTHREAD_ONCE_INIT;
@@ -155,7 +159,11 @@ static __inline uintptr_t emutls_get_index(__emutls_control *control)
         if (!index)
         {
             index = ++emutls_num_object;
+#if defined (_MSC_VER)  
+            control->object.index = index;
+#else
             __atomic_store_n(&control->object.index, index, __ATOMIC_RELEASE);
+#endif
         }
         pthread_mutex_unlock(&emutls_mutex);
     }

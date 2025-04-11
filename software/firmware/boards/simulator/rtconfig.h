@@ -66,13 +66,13 @@
 #define RT_ALIGN_SIZE 8
 #define RT_THREAD_PRIORITY_32
 #define RT_THREAD_PRIORITY_MAX 32
-#define RT_TICK_PER_SECOND 100
+#define RT_TICK_PER_SECOND 1000
 #define RT_USING_OVERFLOW_CHECK
 #define RT_USING_HOOK
 #define RT_HOOK_USING_FUNC_PTR
 #define RT_USING_IDLE_HOOK
 #define RT_IDLE_HOOK_LIST_SIZE 4
-#define IDLE_THREAD_STACK_SIZE 256
+#define IDLE_THREAD_STACK_SIZE 4096
 
 /* kservice options */
 
@@ -110,7 +110,7 @@
 
 #define RT_USING_COMPONENTS_INIT
 #define RT_USING_USER_MAIN
-#define RT_MAIN_THREAD_STACK_SIZE 2048
+#define RT_MAIN_THREAD_STACK_SIZE 4096
 #define RT_MAIN_THREAD_PRIORITY 10
 #define RT_USING_MSH
 #define RT_USING_FINSH
@@ -167,6 +167,7 @@
 #define RT_SERIAL_USING_DMA
 #define RT_SERIAL_RB_BUFSZ 64
 #define RT_USING_RTC
+#define RT_USING_KTIME
 /* end of Device Drivers */
 
 /* C/C++ and POSIX layer */
@@ -185,9 +186,15 @@
 /* POSIX (Portable Operating System Interface) layer */
 
 #define RT_USING_POSIX_FS
+#define RT_USING_POSIX_DEVIO
+#define RT_USING_POSIX_STDIO
 #define RT_USING_POSIX_POLL
 #define RT_USING_POSIX_SELECT
 #define RT_USING_POSIX_SOCKET
+#define RT_USING_POSIX_DELAY
+#define RT_USING_POSIX_CLOCK
+#define RT_USING_PTHREADS
+#define PTHREAD_NUM_MAX 8
 
 /* Interprocess Communication (IPC) */
 
@@ -196,6 +203,9 @@
 
 /* end of Interprocess Communication (IPC) */
 /* end of POSIX (Portable Operating System Interface) layer */
+#define RT_USING_CPLUSPLUS
+#define RT_USING_CPLUSPLUS11
+#define RT_USING_CPP_WRAPPER
 /* end of C/C++ and POSIX layer */
 
 /* Network */
