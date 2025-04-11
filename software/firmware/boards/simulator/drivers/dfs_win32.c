@@ -327,9 +327,9 @@ static int dfs_winfs_open_dir(struct dfs_file* file)
     char file_path[FILE_PATH_MAX];
 
     RT_ASSERT(file != RT_NULL);
-    RT_ASSERT(file->fs != RT_NULL);
-    RT_ASSERT(file->fs->data != RT_NULL);
-    RT_ASSERT(file->path != RT_NULL);
+    RT_ASSERT(file->vnode->fs != RT_NULL);
+    RT_ASSERT(file->vnode->fs->data != RT_NULL);
+    RT_ASSERT(file->vnode->path != RT_NULL);
 
     root = file->vnode->fs->data;
     /* make full path */
@@ -383,9 +383,9 @@ static int dfs_winfs_open_file(struct dfs_file* file)
     char file_path[FILE_PATH_MAX];
 
     RT_ASSERT(file != RT_NULL);
-    RT_ASSERT(file->fs != RT_NULL);
-    RT_ASSERT(file->fs->data != RT_NULL);
-    RT_ASSERT(file->path != RT_NULL);
+    RT_ASSERT(file->vnode->fs != RT_NULL);
+    RT_ASSERT(file->vnode->fs->data != RT_NULL);
+    RT_ASSERT(file->vnode->path != RT_NULL);
 
     struct dfs_filesystem* fs = file->vnode->fs;
     root = fs->data;
@@ -524,7 +524,7 @@ static int dfs_winfs_seek(struct dfs_file* file,
     sim_int64_t res;
 
     /* set offset as current offset */
-    if (file->vnode->size == FT_REGULAR)
+    if (file->vnode->type == FT_REGULAR)
     {
         struct winfs_regular* regular;
 
@@ -539,7 +539,7 @@ static int dfs_winfs_seek(struct dfs_file* file,
         else
             return win32_result_to_dfs(GetLastError());
     }
-    else if (file->vnode->size == FT_DIRECTORY)
+    else if (file->vnode->type == FT_DIRECTORY)
     {
         struct winfs_directory* dir;
 

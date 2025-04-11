@@ -16,3 +16,13 @@ int main(void)
     rt_kprintf("Hello RT-Thread!\n");
     return 0;
 }
+
+void lv_user_gui_init(void)
+{
+    /* display demo; you may replace with your LVGL application at here */
+    extern void ui_splash_init(void);
+    extern void launcher_init(void);
+    //ui_splash_init();
+    launcher_init();
+    //ui_init();
+}

@@ -1,0 +1,21 @@
+from building import *
+
+cwd = GetCurrentDir()
+
+# add the general drivers.
+src = Split("""
+launcher/launcher_ui.c
+splash/splash_ui.c
+filemanager/filemanager_ui.c
+calculator/calculator_ui.c
+""")
+
+CPPPATH = [cwd,cwd + '/launcher',cwd + '/splash',cwd + '/filemanager',cwd + '/calculator']
+
+CPPDEFINES = []
+
+
+groups =[]
+groups += DefineGroup('UI', src, depend = ['PKG_USING_LVGL'], CPPPATH = CPPPATH, CPPDEFINES=CPPDEFINES)
+ 
+Return('groups')

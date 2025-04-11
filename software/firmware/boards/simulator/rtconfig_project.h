@@ -12,6 +12,8 @@
 
 #define RT_HEAP_SIZE   (1024*1024*8)
 
+#define RT_USING_DFS_WINSHAREDIR
+
 #ifdef _MSC_VER
 /* disable some warning in MSC */
 // #pragma warning(disable:4273)   /* to ignore: warning C4273: inconsistent dll linkage */
