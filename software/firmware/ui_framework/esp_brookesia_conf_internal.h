@@ -5,14 +5,12 @@
  */
 #pragma once
 
-// *INDENT-OFF*
-/* Handle special Kconfig options */
-#ifndef ESP_BROOKESIA_KCONFIG_IGNORE
-    #include "sdkconfig.h"
-    #ifdef CONFIG_ESP_BROOKESIA_CONF_SKIP
-        #define ESP_BROOKESIA_CONF_SKIP
-    #endif
-#endif
+#include "rtthread.h"
+
+#ifdef CONFIG_ESP_BROOKESIA_CONF_SKIP
+#define ESP_BROOKESIA_CONF_SKIP
+ #endif
+
 
 #include "core/esp_brookesia_core_type.h"
 

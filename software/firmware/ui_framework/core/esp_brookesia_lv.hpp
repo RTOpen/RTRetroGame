@@ -29,14 +29,7 @@ struct LvTimerDeleter {
 #define ESP_BROOKESIA_LV_TIMER(func, t, data) ESP_Brookesia_LvTimer_t(lv_timer_create(func, t, data), LvTimerDeleter());
 
 using ESP_Brookesia_LvAnim_t = std::shared_ptr<lv_anim_t>;
-#define LvAnimConstructor()              \
-    ({                                   \
-        lv_anim_t *anim = new lv_anim_t; \
-        if (anim != nullptr) {           \
-            lv_anim_init(anim);          \
-        };                               \
-        anim;                            \
-    })
+
 struct LvAnimDeleter {
     void operator()(lv_anim_t *anim)
     {
@@ -44,4 +37,4 @@ struct LvAnimDeleter {
         free(anim);
     }
 };
-#define ESP_BROOKESIA_LV_ANIM() ESP_Brookesia_LvAnim_t(LvAnimConstructor(), LvAnimDeleter());
+//#define ESP_BROOKESIA_LV_ANIM() ESP_Brookesia_LvAnim_t(LvAnimConstructor(), LvAnimDeleter());

@@ -45,7 +45,6 @@ ESP_Brookesia_CoreApp::ESP_Brookesia_CoreApp(const ESP_Brookesia_CoreAppData_t &
 
 ESP_Brookesia_CoreApp::ESP_Brookesia_CoreApp(const char *name, const void *launcher_icon, bool use_default_screen):
     _core(nullptr),
-    _core_init_data(ESP_BROOKESIA_CORE_APP_DATA_DEFAULT(name, launcher_icon, use_default_screen)),
     _status(ESP_BROOKESIA_CORE_APP_STATUS_UNINSTALLED),
     _id(-1),
     _flags{},
@@ -60,6 +59,15 @@ ESP_Brookesia_CoreApp::ESP_Brookesia_CoreApp(const char *name, const void *launc
     _resource_head_timer(nullptr),
     _resource_head_anim(nullptr)
 {
+    _core_init_data.name = name;
+    _core_init_data.launcher_icon.resource = launcher_icon;
+    _core_init_data.screen_size.height_percent = 100;
+    _core_init_data.screen_size.width_percent = 100;
+    _core_init_data.screen_size.flags.enable_height_percent = 1;
+    _core_init_data.screen_size.flags.enable_width_percent = 1;
+    _core_init_data.flags.enable_default_screen = use_default_screen;
+    _core_init_data.flags.enable_recycle_resource = 1;
+    _core_init_data.flags.enable_resize_visual_area = 1;
 }
 
 bool ESP_Brookesia_CoreApp::notifyCoreClosed(void) const
@@ -67,11 +75,11 @@ bool ESP_Brookesia_CoreApp::notifyCoreClosed(void) const
     lv_obj_t *event_obj = nullptr;
     lv_event_code_t event_code = _LV_EVENT_LAST;
     lv_res_t res = LV_RES_OK;
-    ESP_Brookesia_CoreAppEventData_t event_data = {
-        .id = _id,
-        .type = ESP_BROOKESIA_CORE_APP_EVENT_TYPE_STOP,
-        .data = nullptr
-    };
+    ESP_Brookesia_CoreAppEventData_t event_data;
+    event_data.id = _id;
+    event_data.type = ESP_BROOKESIA_CORE_APP_EVENT_TYPE_STOP;
+    event_data.data = nullptr;
+
 
     ESP_BROOKESIA_CHECK_FALSE_RETURN(checkInitialized(), false, "Not initialized");
     ESP_BROOKESIA_LOGD("App(%s: %d) notify core closed", getName(), _id);

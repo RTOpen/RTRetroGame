@@ -108,27 +108,18 @@ typedef struct {
  * @param use_navigation_bar Flag to show the navigation bar
  *
  */
-#define ESP_BROOKESIA_PHONE_APP_DATA_DEFAULT(status_icon, use_status_bar, use_navigation_bar)                 \
-    {                                                                                                  \
-        .app_launcher_page_index = 0,                                                                  \
-        .status_icon_area_index = 0,                                                                   \
-        .status_icon_data = {                                                                          \
-            .size = {},                                                                                \
-            .icon = {                                                                                  \
-                .image_num = (uint8_t)((status_icon != NULL) ? 1 : 0),                                 \
-                .images = {                                                                            \
-                    ESP_BROOKESIA_STYLE_IMAGE(status_icon),                                                   \
-                },                                                                                     \
-            },                                                                                         \
-        },                                                                                             \
-        .status_bar_visual_mode = (use_status_bar) ? ESP_BROOKESIA_STATUS_BAR_VISUAL_MODE_SHOW_FIXED :        \
-                                                     ESP_BROOKESIA_STATUS_BAR_VISUAL_MODE_HIDE,               \
-        .navigation_bar_visual_mode = (use_navigation_bar) ? ESP_BROOKESIA_NAVIGATION_BAR_VISUAL_MODE_SHOW_FLEX : \
-                                                             ESP_BROOKESIA_NAVIGATION_BAR_VISUAL_MODE_HIDE,       \
-        .flags = {                                                                                     \
-            .enable_status_icon_common_size = 1,                                                       \
-            .enable_navigation_gesture = 1,                                                            \
-        },                                                                                             \
+#define ESP_BROOKESIA_PHONE_APP_DATA_DEFAULT(data, status_icon, use_status_bar, use_navigation_bar)        \
+    {                                                                                                      \
+        data.app_launcher_page_index = 0;                                                                  \
+        data.status_icon_area_index = 0;                                                                   \
+        data.status_icon_data.icon.image_num = (uint8_t)((status_icon != NULL) ? 1 : 0);                   \
+        data.status_icon_data.icon.images->resource = status_icon;                                         \
+        data.status_bar_visual_mode = (use_status_bar) ? ESP_BROOKESIA_STATUS_BAR_VISUAL_MODE_SHOW_FIXED :        \
+                                                     ESP_BROOKESIA_STATUS_BAR_VISUAL_MODE_HIDE;               \
+        data.navigation_bar_visual_mode = (use_navigation_bar) ? ESP_BROOKESIA_NAVIGATION_BAR_VISUAL_MODE_SHOW_FLEX : \
+                                                             ESP_BROOKESIA_NAVIGATION_BAR_VISUAL_MODE_HIDE;       \
+        data.flags .enable_status_icon_common_size = 1;                                                            \
+        data.flags .enable_navigation_gesture = 1;                                                         \
     }
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////

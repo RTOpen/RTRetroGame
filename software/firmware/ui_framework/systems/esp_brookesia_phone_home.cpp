@@ -112,9 +112,10 @@ bool ESP_Brookesia_PhoneHome::processAppInstall(ESP_Brookesia_CoreApp *app)
     ESP_BROOKESIA_CHECK_FALSE_RETURN(checkInitialized(), false, "Not initialized");
 
     // Process app launcher
-    icon_info = (ESP_Brookesia_AppLauncherIconInfo_t) {
-        phone_app->getName(), phone_app->getLauncherIcon(), phone_app->getId()
-    };
+    icon_info.name = phone_app->getName();
+    icon_info.image = phone_app->getLauncherIcon();
+    icon_info.id = phone_app->getId();
+
     if (phone_app->getLauncherIcon().resource == nullptr) {
         ESP_BROOKESIA_LOGW("No launcher icon provided, use default icon");
         icon_info.image = _data.app_launcher.default_image;
@@ -290,12 +291,12 @@ bool ESP_Brookesia_PhoneHome::getAppVisualArea(ESP_Brookesia_CoreApp *app, lv_ar
 
     ESP_BROOKESIA_CHECK_NULL_RETURN(phone_app, false, "Invalid phone app");
 
-    lv_area_t visual_area = {
-        .x1 = 0,
-        .y1 = 0,
-        .x2 = (lv_coord_t)(_core.getCoreData().screen_size.width - 1),
-        .y2 = (lv_coord_t)(_core.getCoreData().screen_size.height - 1),
-    };
+    lv_area_t visual_area;
+    visual_area.x1 = 0;
+    visual_area.y1 = 0;
+    visual_area.x2 = (lv_coord_t)(_core.getCoreData().screen_size.width - 1);
+    visual_area.y2 = (lv_coord_t)(_core.getCoreData().screen_size.height - 1);
+
     const ESP_Brookesia_PhoneAppData_t &app_data = phone_app->getActiveData();
 
     // Process status bar

@@ -126,9 +126,8 @@ extern "C" {
  * @param ... Additional arguments for the format string
  */
 #define ESP_BROOKESIA_CHECK_VALUE_RETURN(x, min, max, ret, fmt, ...) do { \
-            __typeof__(x) _x = (x);                                \
-            if ((_x < min) || (_x > max)) {                        \
-                ESP_BROOKESIA_LOGE("Invalid value: %d, should be in range [%d, %d]", _x, min, max); \
+            if ((x < min) || (x > max)) {                        \
+                ESP_BROOKESIA_LOGE("Invalid value: %d, should be in range [%d, %d]", x, min, max); \
                 ESP_BROOKESIA_LOGE(fmt, ##__VA_ARGS__);                   \
                 return ret;                                        \
             }                                                      \
@@ -221,9 +220,8 @@ extern "C" {
  * @param ... Additional arguments for the format string
  */
 #define ESP_BROOKESIA_CHECK_VALUE_EXIT(x, min, max, fmt, ...) do { \
-            __typeof__(x) _x = (x);                         \
-            if ((_x < min) || (_x > max)) {                 \
-                ESP_BROOKESIA_LOGE("Invalid value: %d, should be in range [%d, %d]", _x, min, max); \
+            if ((x < min) || (x > max)) {                 \
+                ESP_BROOKESIA_LOGE("Invalid value: %d, should be in range [%d, %d]", x, min, max); \
                 ESP_BROOKESIA_LOGE(fmt, ##__VA_ARGS__);            \
                 return;                                     \
             }                                               \

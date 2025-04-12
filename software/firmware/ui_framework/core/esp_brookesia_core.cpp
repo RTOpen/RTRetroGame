@@ -48,10 +48,8 @@ bool ESP_Brookesia_Core::getDisplaySize(ESP_Brookesia_StyleSize_t &size)
         ESP_BROOKESIA_CHECK_NULL_RETURN(_display, false, "Display device is not initialized");
     }
 
-    size = {
-        .width = (uint16_t)lv_disp_get_hor_res(_display),
-        .height = (uint16_t)lv_disp_get_ver_res(_display),
-    };
+    size.width = (uint16_t)lv_disp_get_hor_res(_display);
+    size.height = (uint16_t)lv_disp_get_ver_res(_display);
 
     return true;
 }

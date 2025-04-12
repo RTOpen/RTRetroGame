@@ -24,7 +24,7 @@
 
 /* Systems */
 // Phone
-#include "systems/phone/esp_brookesia_phone_type.h"
+#include "systems/esp_brookesia_phone_type.h"
 
 /* Squareline */
 #ifdef ESP_BROOKESIA_SQUARELINE_USE_INTERNAL_UI_HELPERS

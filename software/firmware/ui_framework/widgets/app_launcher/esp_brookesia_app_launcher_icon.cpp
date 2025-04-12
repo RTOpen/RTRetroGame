@@ -189,9 +189,8 @@ void ESP_Brookesia_AppLauncherIcon::onIconTouchEventCallback(lv_event_t *event)
     ESP_Brookesia_AppLauncherIcon *icon = nullptr;
     lv_event_code_t event_code = _LV_EVENT_LAST;
     lv_obj_t *icon_image_obj = nullptr;
-    ESP_Brookesia_CoreAppEventData_t app_event_data = {
-        .type = ESP_BROOKESIA_CORE_APP_EVENT_TYPE_START,
-    };
+    ESP_Brookesia_CoreAppEventData_t app_event_data = { 0 };
+    app_event_data.type = ESP_BROOKESIA_CORE_APP_EVENT_TYPE_START;
 
     ESP_BROOKESIA_LOGD("Icon touch event callback");
     ESP_BROOKESIA_CHECK_NULL_EXIT(event, "Invalid event object");

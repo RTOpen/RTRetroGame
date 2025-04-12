@@ -75,9 +75,17 @@ bool ESP_Brookesia_NavigationBar::begin(lv_obj_t *parent)
     ESP_BROOKESIA_CHECK_FALSE_RETURN(_core.registerDateUpdateEventCallback(onDataUpdateEventCallback, this), false,
                                      "Register data update event callback failed");
     // Flex hide Timer
-    visual_flex_show_anim = ESP_BROOKESIA_LV_ANIM();
+    lv_anim_t* anim = new lv_anim_t;
+    if (anim != nullptr) {
+        lv_anim_init(anim);
+    };
+    visual_flex_show_anim = ESP_Brookesia_LvAnim_t(anim, LvAnimDeleter());
     ESP_BROOKESIA_CHECK_NULL_RETURN(visual_flex_show_anim, false, "Create flex show anim failed");
-    visual_flex_hide_anim = ESP_BROOKESIA_LV_ANIM();
+    anim = new lv_anim_t;
+    if (anim != nullptr) {
+        lv_anim_init(anim);
+    };
+    visual_flex_hide_anim = ESP_Brookesia_LvAnim_t(anim, LvAnimDeleter());
     ESP_BROOKESIA_CHECK_NULL_RETURN(visual_flex_hide_anim, false, "Create flex hide anim failed");
     visual_flex_hide_timer = ESP_BROOKESIA_LV_TIMER(onVisualFlexHideTimerCallback, 3000, this);
     ESP_BROOKESIA_CHECK_NULL_RETURN(visual_flex_hide_timer, false, "Create flex hide timer failed");

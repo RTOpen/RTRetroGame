@@ -1,0 +1,10 @@
+import os
+from building import *
+
+cwd = GetCurrentDir()
+src	= Glob('ui_comp/*.c')
+CPPPATH = [cwd, cwd+'/ui_comp', cwd+'/ui_helpers']
+
+group = DefineGroup('ui_framework', src, depend = [''], CPPPATH = CPPPATH)
+
+Return('group')

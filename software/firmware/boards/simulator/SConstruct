@@ -135,5 +135,8 @@ objs.extend(SConscript(os.path.join('../../', 'packages', 'SConscript'), variant
 # include ui
 objs.extend(SConscript(os.path.join('../../', 'ui', 'SConscript'), variant_dir = bsp_vdir + '/ui', duplicate = 0))
 
+# include ui
+objs.extend(SConscript(os.path.join('../../', 'ui_framework', 'SConscript'), variant_dir = bsp_vdir + '/ui_framework', duplicate = 0))
+
 # end building
 EndBuilding(TARGET, program)

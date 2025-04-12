@@ -45,6 +45,6 @@ private:
     ESP_Brookesia_PhoneHome _home;
     ESP_Brookesia_PhoneManager _manager;
 
-    static const ESP_Brookesia_PhoneStylesheet_t _default_stylesheet_dark;
+    static  ESP_Brookesia_PhoneStylesheet_t _default_stylesheet_dark;
 };
 // *INDENT-OFF*

@@ -1,0 +1,10 @@
+import os
+from building import *
+
+cwd = GetCurrentDir()
+src	= Glob('*.cpp')
+CPPPATH = [cwd, cwd+'/stylesheets']
+
+group = DefineGroup('ui_framework', src, depend = [''], CPPPATH = CPPPATH)
+
+Return('group')

@@ -949,9 +949,8 @@ void ESP_Brookesia_PhoneManager::onRecentsScreenGesturePressEventCallback(lv_eve
     gesture_info = (ESP_Brookesia_GestureInfo_t *)lv_event_get_param(event);
     ESP_BROOKESIA_CHECK_NULL_EXIT(gesture_info, "Invalid gesture info");
 
-    start_point = (lv_point_t) {
-        (lv_coord_t)gesture_info->start_x, (lv_coord_t)gesture_info->start_y
-    };
+    start_point.x = (lv_coord_t)gesture_info->start_x;
+    start_point.y = (lv_coord_t)gesture_info->start_y;
 
     // Check if the start point is inside the recents_screen
     if (!recents_screen->checkPointInsideMain(start_point)) {
@@ -1015,9 +1014,9 @@ void ESP_Brookesia_PhoneManager::onRecentsScreenGesturePressingEventCallback(lv_
         manager->_flags.is_recents_screen_snapshot_move_hor = true;
     }
 
-    start_point = (lv_point_t) {
-        (lv_coord_t)gesture_info->start_x, (lv_coord_t)gesture_info->start_y,
-    };
+    start_point.x = (lv_coord_t)gesture_info->start_x;
+    start_point.y = (lv_coord_t)gesture_info->start_y;
+
     drag_app_id = recents_screen->getSnapshotIdPointIn(start_point);
     data = &manager->data;
     // Check if the snapshot is dragged
@@ -1049,9 +1048,8 @@ void ESP_Brookesia_PhoneManager::onRecentsScreenGesturePressingEventCallback(lv_
         manager->_flags.is_recents_screen_snapshot_move_ver = true;
     }
 
-    manager->_recents_screen_last_point = (lv_point_t) {
-        (lv_coord_t)gesture_info->stop_x, (lv_coord_t)gesture_info->stop_y
-    };
+    manager->_recents_screen_last_point.x = (lv_coord_t)gesture_info->stop_x;
+    manager->_recents_screen_last_point.y = (lv_coord_t)gesture_info->stop_y;
 }
 
 void ESP_Brookesia_PhoneManager::onRecentsScreenGestureReleaseEventCallback(lv_event_t *event)
@@ -1080,9 +1078,9 @@ void ESP_Brookesia_PhoneManager::onRecentsScreenGestureReleaseEventCallback(lv_e
     ESP_Brookesia_PhoneManager *manager = nullptr;
     ESP_Brookesia_RecentsScreen *recents_screen = nullptr;
     ESP_Brookesia_GestureInfo_t *gesture_info = nullptr;
-    ESP_Brookesia_CoreAppEventData_t app_event_data = {
-        .type = ESP_BROOKESIA_CORE_APP_EVENT_TYPE_MAX,
-    };
+    ESP_Brookesia_CoreAppEventData_t app_event_data = { 0 };
+    app_event_data.type = ESP_BROOKESIA_CORE_APP_EVENT_TYPE_MAX;
+
     const ESP_Brookesia_PhoneManagerData_t *data = nullptr;
 
     ESP_BROOKESIA_CHECK_NULL_EXIT(event, "Invalid event");
@@ -1105,9 +1103,9 @@ void ESP_Brookesia_PhoneManager::onRecentsScreenGestureReleaseEventCallback(lv_e
         goto process;
     }
 
-    start_point = (lv_point_t) {
-        (lv_coord_t)gesture_info->start_x, (lv_coord_t)gesture_info->start_y,
-    };
+    start_point.x = (lv_coord_t)gesture_info->start_x;
+    start_point.y = (lv_coord_t)gesture_info->start_y;
+
     target_app_id = recents_screen->getSnapshotIdPointIn(start_point);
     if (target_app_id < 0) {
         if (manager->_recents_screen_pause_app != nullptr) {
@@ -1191,9 +1189,10 @@ void ESP_Brookesia_PhoneManager::onRecentsScreenSnapshotDeletedEventCallback(lv_
     int app_id = -1;
     ESP_Brookesia_PhoneManager *manager = nullptr;
     ESP_Brookesia_RecentsScreen *recents_screen = nullptr;
-    ESP_Brookesia_CoreAppEventData_t app_event_data = {
-        .type = ESP_BROOKESIA_CORE_APP_EVENT_TYPE_STOP,
-    };
+    ESP_Brookesia_CoreAppEventData_t app_event_data;
+    app_event_data.type = ESP_BROOKESIA_CORE_APP_EVENT_TYPE_STOP;
+    app_event_data.id = 0;
+    app_event_data.data = nullptr;
 
     ESP_BROOKESIA_LOGD("Recents screen snapshot deleted event callback");
     ESP_BROOKESIA_CHECK_NULL_EXIT(event, "Invalid event object");

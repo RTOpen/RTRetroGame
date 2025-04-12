@@ -23,16 +23,19 @@ ESP_Brookesia_PhoneApp::ESP_Brookesia_PhoneApp(const ESP_Brookesia_CoreAppData_t
 ESP_Brookesia_PhoneApp::ESP_Brookesia_PhoneApp(const char *name, const void *launcher_icon, bool use_default_screen,
         bool use_status_bar, bool use_navigation_bar):
     ESP_Brookesia_CoreApp(name, launcher_icon, use_default_screen),
-    _init_data(ESP_BROOKESIA_PHONE_APP_DATA_DEFAULT(launcher_icon, use_status_bar, use_navigation_bar)),
     _recents_screen_snapshot_conf{}
 {
+   memset(&_init_data,0,sizeof(_init_data));
+   ESP_BROOKESIA_PHONE_APP_DATA_DEFAULT(_init_data,launcher_icon, use_status_bar, use_navigation_bar);
 }
 
 ESP_Brookesia_PhoneApp::ESP_Brookesia_PhoneApp(const char *name, const void *launcher_icon, bool use_default_screen):
     ESP_Brookesia_CoreApp(name, launcher_icon, use_default_screen),
-    _init_data(ESP_BROOKESIA_PHONE_APP_DATA_DEFAULT(launcher_icon, true, false)),
+    _init_data(),
     _recents_screen_snapshot_conf{}
 {
+    memset(&_init_data, 0, sizeof(_init_data));
+    ESP_BROOKESIA_PHONE_APP_DATA_DEFAULT(_init_data, launcher_icon, true, false);
 }
 
 ESP_Brookesia_PhoneApp::~ESP_Brookesia_PhoneApp()
@@ -114,12 +117,10 @@ bool ESP_Brookesia_PhoneApp::updateRecentsScreenSnapshotConf(const void *image_r
     ESP_BROOKESIA_LOGD("Update recents_screen snapshot conf");
     ESP_BROOKESIA_CHECK_FALSE_RETURN(checkInitialized(), false, "App is not initialized");
 
-    _recents_screen_snapshot_conf = (ESP_Brookesia_RecentsScreenSnapshotConf_t) {
-        .name = getName(),
-        .icon_image_resource = getLauncherIcon().resource,
-        .snapshot_image_resource = (image_resource == nullptr) ? getLauncherIcon().resource : image_resource,
-        .id = getId(),
-    };
+    _recents_screen_snapshot_conf.name = getName();
+    _recents_screen_snapshot_conf.icon_image_resource = getLauncherIcon().resource;
+    _recents_screen_snapshot_conf.snapshot_image_resource = (image_resource == nullptr) ? getLauncherIcon().resource : image_resource;
+    _recents_screen_snapshot_conf.id = getId();
 
     return true;
 }

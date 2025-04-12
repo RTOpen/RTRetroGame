@@ -14,21 +14,19 @@
 
 using namespace std;
 
-#define ESP_BROOKESIA_GESTURE_INFO_INIT()                \
+#define ESP_BROOKESIA_GESTURE_INFO_INIT(data)                \
     {                                             \
-        .direction = ESP_BROOKESIA_GESTURE_DIR_NONE,     \
-        .start_area = ESP_BROOKESIA_GESTURE_AREA_CENTER, \
-        .stop_area = ESP_BROOKESIA_GESTURE_AREA_CENTER,  \
-        .start_x = -1,                            \
-        .start_y = -1,                            \
-        .stop_x = -1,                             \
-        .stop_y = -1,                             \
-        .duration_ms = 0,                         \
-        .distance_px = 0,                         \
-        .flags = {                                \
-            .slow_speed = 0,                      \
-            .short_duration = 0,                  \
-        },                                        \
+        data.direction = ESP_BROOKESIA_GESTURE_DIR_NONE;    \
+        data.start_area = ESP_BROOKESIA_GESTURE_AREA_CENTER; \
+        data.stop_area = ESP_BROOKESIA_GESTURE_AREA_CENTER;  \
+        data.start_x = -1;                            \
+        data.start_y = -1;                            \
+        data.stop_x = -1;                             \
+        data.stop_y = -1;                             \
+        data.duration_ms = 0;                         \
+        data.distance_px = 0;                         \
+        data.flags.slow_speed =  0;                   \
+        data.flags.short_duration =  0;               \
     }
 
 ESP_Brookesia_Gesture::ESP_Brookesia_Gesture(ESP_Brookesia_Core &core_in, const ESP_Brookesia_GestureData_t &data_in):
@@ -48,10 +46,10 @@ ESP_Brookesia_Gesture::ESP_Brookesia_Gesture(ESP_Brookesia_Core &core_in, const 
     _indicator_bar_scale_factors{},
     _press_event_code(LV_EVENT_ALL),
     _pressing_event_code(LV_EVENT_ALL),
-    _release_event_code(LV_EVENT_ALL),
-    _info((ESP_Brookesia_GestureInfo_t)ESP_BROOKESIA_GESTURE_INFO_INIT()),
-    _event_data((ESP_Brookesia_GestureInfo_t)ESP_BROOKESIA_GESTURE_INFO_INIT())
+    _release_event_code(LV_EVENT_ALL)
 {
+    ESP_BROOKESIA_GESTURE_INFO_INIT(_info);
+    ESP_BROOKESIA_GESTURE_INFO_INIT(_event_data);
 }
 
 ESP_Brookesia_Gesture::~ESP_Brookesia_Gesture()
@@ -92,12 +90,14 @@ bool ESP_Brookesia_Gesture::begin(lv_obj_t *parent)
     for (int i = 0; i < ESP_BROOKESIA_GESTURE_INDICATOR_BAR_TYPE_MAX; i++) {
         indicator_bars[i] = ESP_BROOKESIA_LV_OBJ(bar, parent);
         ESP_BROOKESIA_CHECK_NULL_RETURN(indicator_bars[i], false, "Create indicator bar failed");
-        indicator_bar_scale_back_anims[i] = ESP_BROOKESIA_LV_ANIM();
-        ESP_BROOKESIA_CHECK_NULL_RETURN(indicator_bar_scale_back_anims[i], false, "Create indicator bar animation failed");
-        _indicator_bar_anim_var[i] = {
-            .gesture = this,
-            .type = (ESP_Brookesia_GestureIndicatorBarType_t)i,
+        lv_anim_t* anim = new lv_anim_t; 
+        if (anim != nullptr) {
+           lv_anim_init(anim);
         };
+        indicator_bar_scale_back_anims[i] = ESP_Brookesia_LvAnim_t(anim, LvAnimDeleter());
+        ESP_BROOKESIA_CHECK_NULL_RETURN(indicator_bar_scale_back_anims[i], false, "Create indicator bar animation failed");
+        _indicator_bar_anim_var[i].gesture = this;
+        _indicator_bar_anim_var[i].type = (ESP_Brookesia_GestureIndicatorBarType_t)i;
     }
 
     /* Setup objects */
@@ -412,7 +412,8 @@ bool ESP_Brookesia_Gesture::controlIndicatorBarScaleBackAnim(ESP_Brookesia_Gestu
 
 void ESP_Brookesia_Gesture::resetGestureInfo(void)
 {
-    ESP_Brookesia_GestureInfo_t reset_info = (ESP_Brookesia_GestureInfo_t)ESP_BROOKESIA_GESTURE_INFO_INIT();
+    ESP_Brookesia_GestureInfo_t reset_info = { 0 };
+    ESP_BROOKESIA_GESTURE_INFO_INIT(reset_info);
     _info = reset_info;
 }
 
