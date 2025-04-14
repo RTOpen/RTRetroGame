@@ -63,7 +63,58 @@
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>
   <ItemGroup>
-    <ClCompile Include="..\..\ui_framework\core\esp_brookesia_core_utils.c" />
+    <ClCompile Include="..\..\ui_framework\assets\fonts\maison_neue_book\hmi_font_maison_neue_book_10.c" />
+    <ClCompile Include="..\..\ui_framework\assets\fonts\maison_neue_book\hmi_font_maison_neue_book_12.c" />
+    <ClCompile Include="..\..\ui_framework\assets\fonts\maison_neue_book\hmi_font_maison_neue_book_14.c" />
+    <ClCompile Include="..\..\ui_framework\assets\fonts\maison_neue_book\hmi_font_maison_neue_book_16.c" />
+    <ClCompile Include="..\..\ui_framework\assets\fonts\maison_neue_book\hmi_font_maison_neue_book_18.c" />
+    <ClCompile Include="..\..\ui_framework\assets\fonts\maison_neue_book\hmi_font_maison_neue_book_20.c" />
+    <ClCompile Include="..\..\ui_framework\assets\fonts\maison_neue_book\hmi_font_maison_neue_book_22.c" />
+    <ClCompile Include="..\..\ui_framework\assets\fonts\maison_neue_book\hmi_font_maison_neue_book_24.c" />
+    <ClCompile Include="..\..\ui_framework\assets\fonts\maison_neue_book\hmi_font_maison_neue_book_26.c" />
+    <ClCompile Include="..\..\ui_framework\assets\fonts\maison_neue_book\hmi_font_maison_neue_book_28.c" />
+    <ClCompile Include="..\..\ui_framework\assets\fonts\maison_neue_book\hmi_font_maison_neue_book_30.c" />
+    <ClCompile Include="..\..\ui_framework\assets\fonts\maison_neue_book\hmi_font_maison_neue_book_32.c" />
+    <ClCompile Include="..\..\ui_framework\assets\fonts\maison_neue_book\hmi_font_maison_neue_book_34.c" />
+    <ClCompile Include="..\..\ui_framework\assets\fonts\maison_neue_book\hmi_font_maison_neue_book_36.c" />
+    <ClCompile Include="..\..\ui_framework\assets\fonts\maison_neue_book\hmi_font_maison_neue_book_38.c" />
+    <ClCompile Include="..\..\ui_framework\assets\fonts\maison_neue_book\hmi_font_maison_neue_book_40.c" />
+    <ClCompile Include="..\..\ui_framework\assets\fonts\maison_neue_book\hmi_font_maison_neue_book_42.c" />
+    <ClCompile Include="..\..\ui_framework\assets\fonts\maison_neue_book\hmi_font_maison_neue_book_44.c" />
+    <ClCompile Include="..\..\ui_framework\assets\fonts\maison_neue_book\hmi_font_maison_neue_book_46.c" />
+    <ClCompile Include="..\..\ui_framework\assets\fonts\maison_neue_book\hmi_font_maison_neue_book_48.c" />
+    <ClCompile Include="..\..\ui_framework\assets\fonts\maison_neue_book\hmi_font_maison_neue_book_8.c" />
+    <ClCompile Include="..\..\ui_framework\assets\images\large\hmi_image_large_app_launcher_default_112_112.c" />
+    <ClCompile Include="..\..\ui_framework\assets\images\large\hmi_image_large_navigation_bar_back_36_36.c" />
+    <ClCompile Include="..\..\ui_framework\assets\images\large\hmi_image_large_navigation_bar_home_36_36.c" />
+    <ClCompile Include="..\..\ui_framework\assets\images\large\hmi_image_large_navigation_bar_recents_screen_36_36.c" />
+    <ClCompile Include="..\..\ui_framework\assets\images\large\hmi_image_large_recents_screen_trash_64_64.c" />
+    <ClCompile Include="..\..\ui_framework\assets\images\large\hmi_image_large_status_bar_battery_charge_36_36.c" />
+    <ClCompile Include="..\..\ui_framework\assets\images\large\hmi_image_large_status_bar_battery_level1_36_36.c" />
+    <ClCompile Include="..\..\ui_framework\assets\images\large\hmi_image_large_status_bar_battery_level2_36_36.c" />
+    <ClCompile Include="..\..\ui_framework\assets\images\large\hmi_image_large_status_bar_battery_level3_36_36.c" />
+    <ClCompile Include="..\..\ui_framework\assets\images\large\hmi_image_large_status_bar_battery_level4_36_36.c" />
+    <ClCompile Include="..\..\ui_framework\assets\images\large\hmi_image_large_status_bar_wifi_close_36_36.c" />
+    <ClCompile Include="..\..\ui_framework\assets\images\large\hmi_image_large_status_bar_wifi_level1_36_36.c" />
+    <ClCompile Include="..\..\ui_framework\assets\images\large\hmi_image_large_status_bar_wifi_level2_36_36.c" />
+    <ClCompile Include="..\..\ui_framework\assets\images\large\hmi_image_large_status_bar_wifi_level3_36_36.c" />
+    <ClCompile Include="..\..\ui_framework\assets\images\large\hmi_image_large_wallpaper_dark_720_720.c" />
+    <ClCompile Include="..\..\ui_framework\assets\images\small\hmi_image_small_app_launcher_default_98_98.c" />
+    <ClCompile Include="..\..\ui_framework\assets\images\small\hmi_image_small_navigation_bar_back_24_24.c" />
+    <ClCompile Include="..\..\ui_framework\assets\images\small\hmi_image_small_navigation_bar_home_24_24.c" />
+    <ClCompile Include="..\..\ui_framework\assets\images\small\hmi_image_small_navigation_bar_recents_screen_24_24.c" />
+    <ClCompile Include="..\..\ui_framework\assets\images\small\hmi_image_small_recents_screen_trash_38_38.c" />
+    <ClCompile Include="..\..\ui_framework\assets\images\small\hmi_image_small_status_bar_battery_charge_20_20.c" />
+    <ClCompile Include="..\..\ui_framework\assets\images\small\hmi_image_small_status_bar_battery_level1_20_20.c" />
+    <ClCompile Include="..\..\ui_framework\assets\images\small\hmi_image_small_status_bar_battery_level2_20_20.c" />
+    <ClCompile Include="..\..\ui_framework\assets\images\small\hmi_image_small_status_bar_battery_level3_20_20.c" />
+    <ClCompile Include="..\..\ui_framework\assets\images\small\hmi_image_small_status_bar_battery_level4_20_20.c" />
+    <ClCompile Include="..\..\ui_framework\assets\images\small\hmi_image_small_status_bar_wifi_close_20_20.c" />
+    <ClCompile Include="..\..\ui_framework\assets\images\small\hmi_image_small_status_bar_wifi_level1_20_20.c" />
+    <ClCompile Include="..\..\ui_framework\assets\images\small\hmi_image_small_status_bar_wifi_level2_20_20.c" />
+    <ClCompile Include="..\..\ui_framework\assets\images\small\hmi_image_small_status_bar_wifi_level3_20_20.c" />
+    <ClCompile Include="..\..\ui_framework\assets\images\small\hmi_image_small_wallpaper_dark_240_240.c" />
+    <ClCompile Include="..\..\ui_framework\core\hmi_core_utils.c" />
     <ClCompile Include="applications\application.c">
       <ObjectFileName>$(IntDir)bsp\applications\</ObjectFileName>
     </ClCompile>
@@ -970,58 +1021,58 @@
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="..\..\ui_framework\core\esp_brookesia_core.cpp">
+    <ClCompile Include="..\..\ui_framework\core\hmi_core.cpp">
       <ObjectFileName>$(IntDir)kernelork\core\</ObjectFileName>
     </ClCompile>
-    <ClCompile Include="..\..\ui_framework\core\esp_brookesia_core_app.cpp">
+    <ClCompile Include="..\..\ui_framework\core\hmi_core_app.cpp">
       <ObjectFileName>$(IntDir)kernelork\core\</ObjectFileName>
     </ClCompile>
-    <ClCompile Include="..\..\ui_framework\core\esp_brookesia_core_event.cpp">
+    <ClCompile Include="..\..\ui_framework\core\hmi_core_event.cpp">
       <ObjectFileName>$(IntDir)kernelork\core\</ObjectFileName>
     </ClCompile>
-    <ClCompile Include="..\..\ui_framework\core\esp_brookesia_core_home.cpp">
+    <ClCompile Include="..\..\ui_framework\core\hmi_core_home.cpp">
       <ObjectFileName>$(IntDir)kernelork\core\</ObjectFileName>
     </ClCompile>
-    <ClCompile Include="..\..\ui_framework\core\esp_brookesia_core_manager.cpp">
+    <ClCompile Include="..\..\ui_framework\core\hmi_core_manager.cpp">
       <ObjectFileName>$(IntDir)kernelork\core\</ObjectFileName>
     </ClCompile>
     <ClCompile Include="..\..\ui_framework\squareline\ui_comp\ui_comp.c">
       <ObjectFileName>$(IntDir)kernelork\squareline\ui_comp\</ObjectFileName>
     </ClCompile>
-    <ClCompile Include="..\..\ui_framework\systems\esp_brookesia_phone.cpp">
+    <ClCompile Include="..\..\ui_framework\systems\hmi_phone.cpp">
       <ObjectFileName>$(IntDir)kernelork\systems\</ObjectFileName>
     </ClCompile>
-    <ClCompile Include="..\..\ui_framework\systems\esp_brookesia_phone_app.cpp">
+    <ClCompile Include="..\..\ui_framework\systems\hmi_phone_app.cpp">
       <ObjectFileName>$(IntDir)kernelork\systems\</ObjectFileName>
     </ClCompile>
-    <ClCompile Include="..\..\ui_framework\systems\esp_brookesia_phone_home.cpp">
+    <ClCompile Include="..\..\ui_framework\systems\hmi_phone_home.cpp">
       <ObjectFileName>$(IntDir)kernelork\systems\</ObjectFileName>
     </ClCompile>
-    <ClCompile Include="..\..\ui_framework\systems\esp_brookesia_phone_manager.cpp">
+    <ClCompile Include="..\..\ui_framework\systems\hmi_phone_manager.cpp">
       <ObjectFileName>$(IntDir)kernelork\systems\</ObjectFileName>
     </ClCompile>
-    <ClCompile Include="..\..\ui_framework\widgets\app_launcher\esp_brookesia_app_launcher.cpp">
+    <ClCompile Include="..\..\ui_framework\widgets\app_launcher\hmi_app_launcher.cpp">
       <ObjectFileName>$(IntDir)kernelork\widgets\app_launcher\</ObjectFileName>
     </ClCompile>
-    <ClCompile Include="..\..\ui_framework\widgets\app_launcher\esp_brookesia_app_launcher_icon.cpp">
+    <ClCompile Include="..\..\ui_framework\widgets\app_launcher\hmi_app_launcher_icon.cpp">
       <ObjectFileName>$(IntDir)kernelork\widgets\app_launcher\</ObjectFileName>
     </ClCompile>
-    <ClCompile Include="..\..\ui_framework\widgets\gesture\esp_brookesia_gesture.cpp">
+    <ClCompile Include="..\..\ui_framework\widgets\gesture\hmi_gesture.cpp">
       <ObjectFileName>$(IntDir)kernelork\widgets\gesture\</ObjectFileName>
     </ClCompile>
-    <ClCompile Include="..\..\ui_framework\widgets\navigation_bar\esp_brookesia_navigation_bar.cpp">
+    <ClCompile Include="..\..\ui_framework\widgets\navigation_bar\hmi_navigation_bar.cpp">
       <ObjectFileName>$(IntDir)kernelork\widgets\navigation_bar\</ObjectFileName>
     </ClCompile>
-    <ClCompile Include="..\..\ui_framework\widgets\recents_screen\esp_brookesia_recents_screen.cpp">
+    <ClCompile Include="..\..\ui_framework\widgets\recents_screen\hmi_recents_screen.cpp">
       <ObjectFileName>$(IntDir)kernelork\widgets\recents_screen\</ObjectFileName>
     </ClCompile>
-    <ClCompile Include="..\..\ui_framework\widgets\recents_screen\esp_brookesia_recents_screen_snapshot.cpp">
+    <ClCompile Include="..\..\ui_framework\widgets\recents_screen\hmi_recents_screen_snapshot.cpp">
       <ObjectFileName>$(IntDir)kernelork\widgets\recents_screen\</ObjectFileName>
     </ClCompile>
-    <ClCompile Include="..\..\ui_framework\widgets\status_bar\esp_brookesia_status_bar.cpp">
+    <ClCompile Include="..\..\ui_framework\widgets\status_bar\hmi_status_bar.cpp">
       <ObjectFileName>$(IntDir)kernelork\widgets\status_bar\</ObjectFileName>
     </ClCompile>
-    <ClCompile Include="..\..\ui_framework\widgets\status_bar\esp_brookesia_status_bar_icon.cpp">
+    <ClCompile Include="..\..\ui_framework\widgets\status_bar\hmi_status_bar_icon.cpp">
       <ObjectFileName>$(IntDir)kernelork\widgets\status_bar\</ObjectFileName>
     </ClCompile>
   </ItemGroup>

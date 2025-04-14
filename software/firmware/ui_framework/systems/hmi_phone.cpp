@@ -189,13 +189,154 @@ ESP_Brookesia_Phone::ESP_Brookesia_Phone(lv_disp_t *display):
         _default_stylesheet_dark.home.navigation_bar.data.main.size_max.width_percent = 100;
         _default_stylesheet_dark.home.navigation_bar.data.main.size_max.height = 60;
         _default_stylesheet_dark.home.navigation_bar.data.main.size_max.flags.enable_width_percent = 1;
+        _default_stylesheet_dark.home.navigation_bar.data.main.background_color.color = 0x38393A;
+        _default_stylesheet_dark.home.navigation_bar.data.main.background_color.opacity = 255;
+        _default_stylesheet_dark.home.navigation_bar.data.button.icon_size.width_percent = 50;
+        _default_stylesheet_dark.home.navigation_bar.data.button.icon_size.height_percent = 50;
+        _default_stylesheet_dark.home.navigation_bar.data.button.icon_size.flags.enable_height_percent = 1;
+        _default_stylesheet_dark.home.navigation_bar.data.button.icon_size.flags.enable_width_percent = 1;
+        _default_stylesheet_dark.home.navigation_bar.data.button.icon_size.flags.enable_square = 1;
+        _default_stylesheet_dark.home.navigation_bar.data.button.icon_images[0].resource = &esp_brookesia_image_large_navigation_bar_back_36_36;
+        _default_stylesheet_dark.home.navigation_bar.data.button.icon_images[0].recolor.color = 0xFFFFFF;
+        _default_stylesheet_dark.home.navigation_bar.data.button.icon_images[0].recolor.opacity = 255;
+        _default_stylesheet_dark.home.navigation_bar.data.button.icon_images[0].flags.enable_recolor = 1;
+        _default_stylesheet_dark.home.navigation_bar.data.button.icon_images[1].resource = &esp_brookesia_image_large_navigation_bar_home_36_36;
+        _default_stylesheet_dark.home.navigation_bar.data.button.icon_images[1].recolor.color = 0xFFFFFF;
+        _default_stylesheet_dark.home.navigation_bar.data.button.icon_images[1].recolor.opacity = 255;
+        _default_stylesheet_dark.home.navigation_bar.data.button.icon_images[1].flags.enable_recolor = 1;
+        _default_stylesheet_dark.home.navigation_bar.data.button.icon_images[2].resource = &esp_brookesia_image_large_navigation_bar_recents_screen_36_36;
+        _default_stylesheet_dark.home.navigation_bar.data.button.icon_images[2].recolor.color = 0xFFFFFF;
+        _default_stylesheet_dark.home.navigation_bar.data.button.icon_images[2].recolor.opacity = 255;
+        _default_stylesheet_dark.home.navigation_bar.data.button.icon_images[2].flags.enable_recolor = 1;
+        _default_stylesheet_dark.home.navigation_bar.data.button.navigate_types[0] = ESP_BROOKESIA_CORE_NAVIGATE_TYPE_BACK;
+        _default_stylesheet_dark.home.navigation_bar.data.button.navigate_types[1] = ESP_BROOKESIA_CORE_NAVIGATE_TYPE_HOME;
+        _default_stylesheet_dark.home.navigation_bar.data.button.navigate_types[2] = ESP_BROOKESIA_CORE_NAVIGATE_TYPE_RECENTS_SCREEN;
+        _default_stylesheet_dark.home.navigation_bar.data.button.active_background_color.color = 0xFFFFFF;
+        _default_stylesheet_dark.home.navigation_bar.data.button.active_background_color.opacity = LV_OPA_50;
+        _default_stylesheet_dark.home.navigation_bar.data.visual_flex.show_animation_time_ms = 200;
+        _default_stylesheet_dark.home.navigation_bar.data.visual_flex.show_animation_delay_ms = 0;
+        _default_stylesheet_dark.home.navigation_bar.data.visual_flex.show_animation_path_type = ESP_BROOKESIA_LV_ANIM_PATH_TYPE_EASE_OUT;
+        _default_stylesheet_dark.home.navigation_bar.data.visual_flex.show_duration_ms = 2000;
+        _default_stylesheet_dark.home.navigation_bar.data.visual_flex.hide_animation_time_ms = 200;
+        _default_stylesheet_dark.home.navigation_bar.data.visual_flex.hide_animation_delay_ms = 0;
+        _default_stylesheet_dark.home.navigation_bar.data.visual_flex.hide_animation_path_type = ESP_BROOKESIA_LV_ANIM_PATH_TYPE_EASE_IN;
+        _default_stylesheet_dark.home.navigation_bar.data.flags.enable_main_size_max = 1;
+        _default_stylesheet_dark.home.navigation_bar.data.flags.enable_main_size_min = 1;
+        _default_stylesheet_dark.home.navigation_bar.visual_mode = ESP_BROOKESIA_NAVIGATION_BAR_VISUAL_MODE_HIDE;
+        _default_stylesheet_dark.home.app_launcher.data.main.y_start = 0;
+        _default_stylesheet_dark.home.app_launcher.data.main.size.width_percent = 100;
+        _default_stylesheet_dark.home.app_launcher.data.main.size.height_percent = 100;
+        _default_stylesheet_dark.home.app_launcher.data.main.size.flags.enable_height_percent = 1;
+        _default_stylesheet_dark.home.app_launcher.data.main.size.flags.enable_width_percent = 1;
+        _default_stylesheet_dark.home.app_launcher.data.table.default_num = 3;
+        _default_stylesheet_dark.home.app_launcher.data.table.size.width_percent = 100;
+        _default_stylesheet_dark.home.app_launcher.data.table.size.height_percent = 70;
+        _default_stylesheet_dark.home.app_launcher.data.table.size.flags.enable_height_percent = 1;
+        _default_stylesheet_dark.home.app_launcher.data.table.size.flags.enable_width_percent = 1;
+        _default_stylesheet_dark.home.app_launcher.data.indicator.main_size.height = 20;
+        _default_stylesheet_dark.home.app_launcher.data.indicator.main_size.width_percent = 100;
+        _default_stylesheet_dark.home.app_launcher.data.indicator.main_size.flags.enable_width_percent = 1;
+        _default_stylesheet_dark.home.app_launcher.data.indicator.main_layout_column_pad = 10;
+        _default_stylesheet_dark.home.app_launcher.data.indicator.main_layout_bottom_offset = 30;
+        _default_stylesheet_dark.home.app_launcher.data.indicator.spot_inactive_size.width = 12;
+        _default_stylesheet_dark.home.app_launcher.data.indicator.spot_inactive_size.height = 12;
+        _default_stylesheet_dark.home.app_launcher.data.indicator.spot_active_size.width = 40;
+        _default_stylesheet_dark.home.app_launcher.data.indicator.spot_active_size.height = 12;
+        _default_stylesheet_dark.home.app_launcher.data.indicator.spot_inactive_background_color.color = 0xC6C6C6;
+        _default_stylesheet_dark.home.app_launcher.data.indicator.spot_inactive_background_color.opacity = 255;
+        _default_stylesheet_dark.home.app_launcher.data.indicator.spot_active_background_color.color = 0xFFFFFF;
+        _default_stylesheet_dark.home.app_launcher.data.indicator.spot_active_background_color.opacity = 255;
+        _default_stylesheet_dark.home.app_launcher.data.icon.main.size.width = 140;
+        _default_stylesheet_dark.home.app_launcher.data.icon.main.size.height = 140;
+        _default_stylesheet_dark.home.app_launcher.data.icon.main.layout_row_pad = 10;
+        _default_stylesheet_dark.home.app_launcher.data.icon.image.default_size.width = 98;
+        _default_stylesheet_dark.home.app_launcher.data.icon.image.default_size.height = 98;
+        _default_stylesheet_dark.home.app_launcher.data.icon.image.press_size.width = 98;
+        _default_stylesheet_dark.home.app_launcher.data.icon.image.press_size.height = 98;
+        _default_stylesheet_dark.home.app_launcher.data.icon.label.text_font.size_px = 16;
+        _default_stylesheet_dark.home.app_launcher.data.icon.label.text_color.color = 0xFFFFFF;
+        _default_stylesheet_dark.home.app_launcher.data.icon.label.text_color.opacity = 255;
+        _default_stylesheet_dark.home.app_launcher.data.flags.enable_table_scroll_anim = 0;
+        _default_stylesheet_dark.home.app_launcher.default_image.resource = &esp_brookesia_image_small_app_launcher_default_98_98;
+        _default_stylesheet_dark.home.recents_screen.data.main.y_start = 0;
+        _default_stylesheet_dark.home.recents_screen.data.main.size.width_percent = 100;
+        _default_stylesheet_dark.home.recents_screen.data.main.size.height_percent = 100;
+        _default_stylesheet_dark.home.recents_screen.data.main.size.flags.enable_height_percent = 1;
+        _default_stylesheet_dark.home.recents_screen.data.main.size.flags.enable_width_percent = 1;
+        _default_stylesheet_dark.home.recents_screen.data.main.layout_row_pad = 10;
+        _default_stylesheet_dark.home.recents_screen.data.main.layout_top_pad = 10;
+        _default_stylesheet_dark.home.recents_screen.data.main.layout_bottom_pad = 10;
+        _default_stylesheet_dark.home.recents_screen.data.main.background_color.color = 0x1A1A1A;
+        _default_stylesheet_dark.home.recents_screen.data.main.background_color.opacity = 255;
+        _default_stylesheet_dark.home.recents_screen.data.memory.main_size.height = 16;
+        _default_stylesheet_dark.home.recents_screen.data.memory.main_size.width_percent = 100;
+        _default_stylesheet_dark.home.recents_screen.data.memory.main_size.flags.enable_width_percent = 1;
+        _default_stylesheet_dark.home.recents_screen.data.memory.main_layout_x_right_offset = 10;
+        _default_stylesheet_dark.home.recents_screen.data.memory.label_text_font.height_percent = 100;
+        _default_stylesheet_dark.home.recents_screen.data.memory.label_text_font.flags.enable_height = 1;
+        _default_stylesheet_dark.home.recents_screen.data.memory.label_text_font.flags.enable_height_percent = 1;
+        _default_stylesheet_dark.home.recents_screen.data.memory.label_text_color.color = 0xFFFFFF;
+        _default_stylesheet_dark.home.recents_screen.data.memory.label_text_color.opacity = 255;
+        _default_stylesheet_dark.home.recents_screen.data.memory.label_unit_text = "KB";
+        _default_stylesheet_dark.home.recents_screen.data.snapshot_table.main_size.width_percent = 100;
+        _default_stylesheet_dark.home.recents_screen.data.snapshot_table.main_size.height_percent = 100;
+        _default_stylesheet_dark.home.recents_screen.data.snapshot_table.main_size.flags.enable_height_percent = 1;
+        _default_stylesheet_dark.home.recents_screen.data.snapshot_table.main_size.flags.enable_width_percent = 1;
+        _default_stylesheet_dark.home.recents_screen.data.snapshot_table.main_layout_column_pad = 20;
+        _default_stylesheet_dark.home.recents_screen.data.snapshot_table.snapshot.main_size.height_percent = 47;
+        _default_stylesheet_dark.home.recents_screen.data.snapshot_table.snapshot.main_size.width_percent = 40;
+        _default_stylesheet_dark.home.recents_screen.data.snapshot_table.snapshot.main_size.flags.enable_height_percent = 1;
+        _default_stylesheet_dark.home.recents_screen.data.snapshot_table.snapshot.main_size.flags.enable_width_percent = 1;
+        _default_stylesheet_dark.home.recents_screen.data.snapshot_table.snapshot.title.main_size.height = 16;
+        _default_stylesheet_dark.home.recents_screen.data.snapshot_table.snapshot.title.main_size.width_percent = 40;
+        _default_stylesheet_dark.home.recents_screen.data.snapshot_table.snapshot.title.main_size.flags.enable_width_percent = 1;
+        _default_stylesheet_dark.home.recents_screen.data.snapshot_table.snapshot.title.main_layout_column_pad = 10;
+        _default_stylesheet_dark.home.recents_screen.data.snapshot_table.snapshot.title.icon_size.width_percent = 100;
+        _default_stylesheet_dark.home.recents_screen.data.snapshot_table.snapshot.title.icon_size.height_percent = 100;
+        _default_stylesheet_dark.home.recents_screen.data.snapshot_table.snapshot.title.icon_size.flags.enable_height_percent = 1;
+        _default_stylesheet_dark.home.recents_screen.data.snapshot_table.snapshot.title.icon_size.flags.enable_width_percent = 1;
+        _default_stylesheet_dark.home.recents_screen.data.snapshot_table.snapshot.title.text_font.height_percent = 80;
+        _default_stylesheet_dark.home.recents_screen.data.snapshot_table.snapshot.title.text_font.flags.enable_height = 1;
+        _default_stylesheet_dark.home.recents_screen.data.snapshot_table.snapshot.title.text_font.flags.enable_height_percent = 1;
+        _default_stylesheet_dark.home.recents_screen.data.snapshot_table.snapshot.title.text_color.color = 0xFFFFFF;
+        _default_stylesheet_dark.home.recents_screen.data.snapshot_table.snapshot.title.text_color.opacity = 255;
+        _default_stylesheet_dark.home.recents_screen.data.snapshot_table.snapshot.image.main_size.height_percent = 40;
+        _default_stylesheet_dark.home.recents_screen.data.snapshot_table.snapshot.image.main_size.width_percent = 40;
+        _default_stylesheet_dark.home.recents_screen.data.snapshot_table.snapshot.image.main_size.flags.enable_width_percent = 1;
+        _default_stylesheet_dark.home.recents_screen.data.snapshot_table.snapshot.image.main_size.flags.enable_height_percent = 1;
+        _default_stylesheet_dark.home.recents_screen.data.snapshot_table.snapshot.image.radius = 20;
+        _default_stylesheet_dark.home.recents_screen.data.snapshot_table.snapshot.flags.enable_all_main_size_refer_screen = 1;
+        _default_stylesheet_dark.home.recents_screen.data.trash_icon.default_size.width = 48;
+        _default_stylesheet_dark.home.recents_screen.data.trash_icon.default_size.height = 48;
+        _default_stylesheet_dark.home.recents_screen.data.trash_icon.press_size.width = 43;
+        _default_stylesheet_dark.home.recents_screen.data.trash_icon.press_size.height = 43;
+        _default_stylesheet_dark.home.recents_screen.data.trash_icon.image.resource = &esp_brookesia_image_large_recents_screen_trash_64_64;
+        _default_stylesheet_dark.home.recents_screen.data.flags.enable_memory = 1;
+        _default_stylesheet_dark.home.recents_screen.data.flags.enable_table_height_flex = 1;
+        _default_stylesheet_dark.home.recents_screen.data.flags.enable_table_snapshot_use_icon_image = 0;
+        _default_stylesheet_dark.home.recents_screen.data.flags.enable_table_scroll_anim = 0;
+        _default_stylesheet_dark.home.recents_screen.status_bar_visual_mode = ESP_BROOKESIA_STATUS_BAR_VISUAL_MODE_HIDE;
+        _default_stylesheet_dark.home.recents_screen.navigation_bar_visual_mode = ESP_BROOKESIA_NAVIGATION_BAR_VISUAL_MODE_HIDE;
+        _default_stylesheet_dark.home.flags.enable_status_bar = 1;
+        _default_stylesheet_dark.home.flags.enable_navigation_bar = 1;
+        _default_stylesheet_dark.home.flags.enable_app_launcher_flex_size = 1;
+        _default_stylesheet_dark.home.flags.enable_recents_screen = 1;
+        _default_stylesheet_dark.home.flags.enable_recents_screen_flex_size = 1;
+        _default_stylesheet_dark.manager.gesture.detect_period_ms = 20;
+        _default_stylesheet_dark.manager.gesture.threshold.direction_vertical = 50;
+        _default_stylesheet_dark.manager.gesture.threshold.direction_horizon = 50;
+        _default_stylesheet_dark.manager.gesture.threshold.direction_angle = 60;
+        _default_stylesheet_dark.manager.gesture.threshold.horizontal_edge = 10;
+        _default_stylesheet_dark.manager.gesture.threshold.vertical_edge = 20;
+        _default_stylesheet_dark.manager.gesture.threshold.duration_short_ms = 800;
+        _default_stylesheet_dark.manager.gesture.threshold.speed_slow_px_per_ms = 0.1;
 
-        {
-            .navigation_bar = {.data = {.main = {.size = {.width_percent = 100, .height_percent = 15, .flags = {.enable_width_percent = 1, .enable_height_percent = 1, }, },
-                                                 .size_min = {.height = 36, .width_percent = 100, .flags = {.enable_width_percent = 1, }, },
-                                                 .size_max = {.height = 60, .width_percent = 100, .flags = {.enable_width_percent = 1, }, },
-                                                 .background_color = {.color = 0x38393A, .opacity = 255, }, }, 
-                                        .button = {.icon_size = {.width_percent = 50, .height_percent = 50, .flags = {.enable_width_percent = 1, .enable_height_percent = 1, .enable_square = 1, }, }, .icon_images = { {.resource = &esp_brookesia_image_large_navigation_bar_back_36_36, .recolor = {.color = 0xFFFFFF, .opacity = 255, }, .flags = {.enable_recolor = 1, }, },{.resource = &esp_brookesia_image_large_navigation_bar_home_36_36, .recolor = {.color = 0xFFFFFF, .opacity = 255, }, .flags = {.enable_recolor = 1, }, },{.resource = &esp_brookesia_image_large_navigation_bar_recents_screen_36_36, .recolor = {.color = 0xFFFFFF, .opacity = 255, }, .flags = {.enable_recolor = 1, }, }, }, .navigate_types = { ESP_BROOKESIA_CORE_NAVIGATE_TYPE_BACK, ESP_BROOKESIA_CORE_NAVIGATE_TYPE_HOME, ESP_BROOKESIA_CORE_NAVIGATE_TYPE_RECENTS_SCREEN, }, .active_background_color = {.color = 0xFFFFFF, .opacity = LV_OPA_50, }, }, .visual_flex = {.show_animation_time_ms = 200, .show_animation_delay_ms = 0, .show_animation_path_type = ESP_BROOKESIA_LV_ANIM_PATH_TYPE_EASE_OUT, .show_duration_ms = 2000, .hide_animation_time_ms = 200, .hide_animation_delay_ms = 0, .hide_animation_path_type = ESP_BROOKESIA_LV_ANIM_PATH_TYPE_EASE_IN, }, .flags = {.enable_main_size_min = 1, .enable_main_size_max = 1, }, }, .visual_mode = ESP_BROOKESIA_NAVIGATION_BAR_VISUAL_MODE_HIDE, }, .app_launcher = {.data = {.main = {.y_start = 0, .size = {.width_percent = 100, .height_percent = 100, .flags = {.enable_width_percent = 1, .enable_height_percent = 1, }, }, }, .table = {.default_num = 3, .size = {.width_percent = 100, .height_percent = 70, .flags = {.enable_width_percent = 1, .enable_height_percent = 1, }, }, }, .indicator = {.main_size = {.height = 20, .width_percent = 100, .flags = {.enable_width_percent = 1, }, }, .main_layout_column_pad = 10, .main_layout_bottom_offset = 30, .spot_inactive_size = {.width = 12, .height = 12, }, .spot_active_size = {.width = 40, .height = 12, }, .spot_inactive_background_color = {.color = 0xC6C6C6, .opacity = 255, }, .spot_active_background_color = {.color = 0xFFFFFF, .opacity = 255, }, }, .icon = {.main = {.size = {.width = 140, .height = 140, }, .layout_row_pad = 10, }, .image = {.default_size = {.width = 98, .height = 98, }, .press_size = {.width = 88, .height = 88, }, }, .label = {.text_font = {.size_px = 16, }, .text_color = {.color = 0xFFFFFF, .opacity = 255, }, }, }, .flags = {.enable_table_scroll_anim = 0, }, }, .default_image = {.resource = &esp_brookesia_image_small_app_launcher_default_98_98, }, }, .recents_screen = {.data = {.main = {.y_start = 0, .size = {.width_percent = 100, .height_percent = 100, .flags = {.enable_width_percent = 1, .enable_height_percent = 1, }, }, .layout_row_pad = 10, .layout_top_pad = 10, .layout_bottom_pad = 10, .background_color = {.color = 0x1A1A1A, .opacity = 255, }, }, .memory = {.main_size = {.height = 16, .width_percent = 100, .flags = {.enable_width_percent = 1, }, }, .main_layout_x_right_offset = 10, .label_text_font = {.height_percent = 100, .flags = {.enable_height = 1, .enable_height_percent = 1, }, }, .label_text_color = {.color = 0xFFFFFF, .opacity = 255, }, .label_unit_text = "KB", }, .snapshot_table = {.main_size = {.width_percent = 100, .height_percent = 100, .flags = {.enable_width_percent = 1, .enable_height_percent = 1, }, }, .main_layout_column_pad = 20, .snapshot = {.main_size = {.width_percent = 40, .height_percent = 47, .flags = {.enable_width_percent = 1, .enable_height_percent = 1, }, }, .title = {.main_size = {.height = 16, .width_percent = 40, .flags = {.enable_width_percent = 1, }, }, .main_layout_column_pad = 10, .icon_size = {.width_percent = 100, .height_percent = 100, .flags = {.enable_width_percent = 1, .enable_height_percent = 1, .enable_square = 1, }, }, .text_font = {.height_percent = 80, .flags = {.enable_height = 1, .enable_height_percent = 1, }, }, .text_color = {.color = 0xFFFFFF, .opacity = 255, }, }, .image = {.main_size = {.width_percent = 40, .height_percent = 40, .flags = {.enable_width_percent = 1, .enable_height_percent = 1, }, }, .radius = 20, }, .flags = {.enable_all_main_size_refer_screen = 1, }, }, }, .trash_icon = {.default_size = {.width = 48, .height = 48, }, .press_size = {.width = 43, .height = 43, }, .image = {.resource = &esp_brookesia_image_large_recents_screen_trash_64_64, }, }, .flags = {.enable_memory = 1, .enable_table_height_flex = 1, .enable_table_snapshot_use_icon_image = 0, .enable_table_scroll_anim = 0, }, }, .status_bar_visual_mode = ESP_BROOKESIA_STATUS_BAR_VISUAL_MODE_HIDE, .navigation_bar_visual_mode = ESP_BROOKESIA_NAVIGATION_BAR_VISUAL_MODE_HIDE, }, .flags = {.enable_status_bar = 1, .enable_navigation_bar = 1, .enable_app_launcher_flex_size = 1, .enable_recents_screen = 1, .enable_recents_screen_flex_size = 1, }, }, .manager = { .gesture = {.detect_period_ms = 20, .threshold = {.direction_vertical = 50, .direction_horizon = 50, .direction_angle = 60, .horizontal_edge = 10, .vertical_edge = 20, .duration_short_ms = 800, .speed_slow_px_per_ms = 0.1, }, .indicator_bars = { [ESP_BROOKESIA_GESTURE_INDICATOR_BAR_TYPE_LEFT] = {.main = {.size_min = {.width = 10, .height = 0, }, .size_max = {.width = 10, .height_percent = 50, .flags = {.enable_height_percent = 1, }, }, .radius = 5, .layout_pad_all = 2, .color = {.color = 0x000000, .opacity = 255, }, }, .indicator = {.radius = 5, .color = {.color = 0xFFFFFF, .opacity = 255, }, }, .animation = {.scale_back_path_type = ESP_BROOKESIA_LV_ANIM_PATH_TYPE_BOUNCE, .scale_back_time_ms = 500, }, },[ESP_BROOKESIA_GESTURE_INDICATOR_BAR_TYPE_RIGHT] = {.main = {.size_min = {.width = 10, .height = 0, }, .size_max = {.width = 10, .height_percent = 50, .flags = {.enable_height_percent = 1, }, }, .radius = 5, .layout_pad_all = 2, .color = {.color = 0x000000, .opacity = 255, }, }, .indicator = {.radius = 5, .color = {.color = 0xFFFFFF, .opacity = 255, }, }, .animation = {.scale_back_path_type = ESP_BROOKESIA_LV_ANIM_PATH_TYPE_BOUNCE, .scale_back_time_ms = 500, }, },[ESP_BROOKESIA_GESTURE_INDICATOR_BAR_TYPE_BOTTOM] = {.main = {.size_min = {.width = 0, .height = 10, }, .size_max = {.height = 10, .width_percent = 50, .flags = {.enable_width_percent = 1, }, }, .radius = 5, .layout_pad_all = 2, .color = {.color = 0x1A1A1A, .opacity = 255, }, }, .indicator = {.radius = 5, .color = {.color = 0xFFFFFF, .opacity = 255, }, }, .animation = {.scale_back_path_type = ESP_BROOKESIA_LV_ANIM_PATH_TYPE_BOUNCE, .scale_back_time_ms = 500, }, }, }, .flags = {.enable_indicator_bars = { [ESP_BROOKESIA_GESTURE_INDICATOR_BAR_TYPE_LEFT] = 0,[ESP_BROOKESIA_GESTURE_INDICATOR_BAR_TYPE_RIGHT] = 0,[ESP_BROOKESIA_GESTURE_INDICATOR_BAR_TYPE_BOTTOM] = 1, }, }, }, .gesture_mask_indicator_trigger_time_ms = 0, .recents_screen = {.drag_snapshot_y_step = 10, .drag_snapshot_y_threshold = 50, .drag_snapshot_angle_threshold = 60, .delete_snapshot_y_threshold = 50, }, .flags = {.enable_gesture = 1, .enable_gesture_navigation_back = 0, .enable_recents_screen_snapshot_drag = 1, .enable_recents_screen_hide_when_no_snapshot = 1, }, }, }
+        .manager = { .gesture = {.detect_period_ms = 20, 
+                                 .threshold = {.direction_vertical = 50, .direction_horizon = 50, .direction_angle = 60, .horizontal_edge = 10, .vertical_edge = 20, .duration_short_ms = 800, .speed_slow_px_per_ms = 0.1, }, 
+                                 .indicator_bars = { [ESP_BROOKESIA_GESTURE_INDICATOR_BAR_TYPE_LEFT] = {.main = {.size_min = {.width = 10, .height = 0, }, .size_max = {.width = 10, .height_percent = 50, .flags = {.enable_height_percent = 1, }, }, .radius = 5, .layout_pad_all = 2, .color = {.color = 0x000000, .opacity = 255, }, }, .indicator = {.radius = 5, .color = {.color = 0xFFFFFF, .opacity = 255, }, }, .animation = {.scale_back_path_type = ESP_BROOKESIA_LV_ANIM_PATH_TYPE_BOUNCE, .scale_back_time_ms = 500, }, }
+                                                    ,[ESP_BROOKESIA_GESTURE_INDICATOR_BAR_TYPE_RIGHT] = {.main = {.size_min = {.width = 10, .height = 0, }, .size_max = {.width = 10, .height_percent = 50, .flags = {.enable_height_percent = 1, }, }, .radius = 5, .layout_pad_all = 2, .color = {.color = 0x000000, .opacity = 255, }, }, .indicator = {.radius = 5, .color = {.color = 0xFFFFFF, .opacity = 255, }, }, .animation = {.scale_back_path_type = ESP_BROOKESIA_LV_ANIM_PATH_TYPE_BOUNCE, .scale_back_time_ms = 500, }, },
+                                                     [ESP_BROOKESIA_GESTURE_INDICATOR_BAR_TYPE_BOTTOM] = {.main = {.size_min = {.width = 0, .height = 10, }, .size_max = {.height = 10, .width_percent = 50, .flags = {.enable_width_percent = 1, }, }, .radius = 5, .layout_pad_all = 2, .color = {.color = 0x1A1A1A, .opacity = 255, }, }, .indicator = {.radius = 5, .color = {.color = 0xFFFFFF, .opacity = 255, }, }, .animation = {.scale_back_path_type = ESP_BROOKESIA_LV_ANIM_PATH_TYPE_BOUNCE, .scale_back_time_ms = 500, }, }, },
+                                 .flags = {.enable_indicator_bars = { [ESP_BROOKESIA_GESTURE_INDICATOR_BAR_TYPE_LEFT] = 0,[ESP_BROOKESIA_GESTURE_INDICATOR_BAR_TYPE_RIGHT] = 0,[ESP_BROOKESIA_GESTURE_INDICATOR_BAR_TYPE_BOTTOM] = 1, }, }, }, .gesture_mask_indicator_trigger_time_ms = 0, .recents_screen = {.drag_snapshot_y_step = 10, .drag_snapshot_y_threshold = 50, .drag_snapshot_angle_threshold = 60, .delete_snapshot_y_threshold = 50, }, .flags = {.enable_gesture = 1, .enable_gesture_navigation_back = 0, .enable_recents_screen_snapshot_drag = 1, .enable_recents_screen_hide_when_no_snapshot = 1, }, }, }
         inited = true;
     }
 }
